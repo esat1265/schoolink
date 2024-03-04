@@ -13,6 +13,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
 
   <title>Dashboard Template for Bootstrap</title>
 
@@ -25,19 +27,12 @@
 
   <!-- Custom styles for this template -->
   <link href="dashboard.css" rel="stylesheet">
-<style type="text/css">/* Chart.js */
-@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
-
-
-
+  <style type="text/css">/* Chart.js */
+  @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
   </head>
-
   <body>
-<%= render "shared/flashes" %>
-
-<%= render "shared/body_bootstrap" %>
-
-
+    <%= render "shared/flashes" %>
+    <%= render "shared/navbar" %>
     <%= yield %>
   </body>
 </html>
