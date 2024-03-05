@@ -75,15 +75,18 @@ puts "____________Create 20 courses"
   puts "Course #{n+1} created"
 end
 
-puts "____________Create 60 grades"
-60.times do |n|
-  Grade.create(
-    course_id: Course.pluck(:id).sample,
-    grade: (rand(1.0..6.0) * 2).round / 2,
-    date: random_date = Date.today - rand(1..365),
-    exam_name: Faker::Dessert.topping,
-    comment: Faker::Hipster.paragraph(sentence_count: 2),
-    student_id: Student.pluck(:id).sample
-  )
-  puts "Grades #{n+1} created"
+puts "____________Create 30 grades per student"
+students = Student.all
+students.each do |student|
+  30.times do |n|
+    Grade.create(
+      course_id: Course.pluck(:id).sample,
+      grade: (rand(1.0..6.0) * 2).round / 2,
+      date: random_date = Date.today - rand(1..365),
+      exam_name: Faker::Dessert.topping,
+      comment: Faker::Hipster.paragraph(sentence_count: 2),
+      student_id: student.id
+    )
+    puts "Grades #{n+1} for student #{student.first_name} created"
+  end
 end
