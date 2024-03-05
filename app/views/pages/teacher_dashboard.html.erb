@@ -1,19 +1,17 @@
 <h1>Welcome Teacher!</h1>
 <div class="second-container">
-<h2>All your classes </h2>
-<div id="top-cards-dashboard">
-   <% @sections.each do |section| %>
+  <h2>All your classes </h2>
+  <div id="top-cards-dashboard">
+    <% @sections.each do |section| %>
       <%= render 'sections/grades', section: section  %>
-   <% end %>
-    <div class="header"></div>
+    <% end %>
     <i class="fa-solid fa-plus" id="plus"></i>
-      <div class="info">
-        <p class="title" id="add-new-class">Add a new class</p>
-      </div>
-      <div class="footer">
-        <p class="tag"></p>
+    <div class="info">
+      <p class="title" id="add-new-class">Add a new class</p>
     </div>
-  </div>
+    <div class="footer">
+      <p class="tag"></p>
+    </div>
   </div>
   <div class="bottom-container-dashboard">
     <div class="notifications-dashboard">
@@ -29,23 +27,23 @@
       <div class="notif-cards">
       </div>
       <div class="notif-cards">
+      </div>
     </div>
-  </div>
 
-  <div class="todo-dashboard">
-    <h3>To do today</h3>
-    <div class="todo-cards">
+    <div class="todo-dashboard">
+      <h3>To do today</h3>
+      <div class="todo-cards">
+      </div>
+      <div class="todo-cards">
+      </div>
+      <div class="todo-cards">
+      </div>
+      <div class="todo-cards">
+      </div>
+      <div class="todo-cards">
+      </div>
+      <div class="todo-cards">
+      </div>
     </div>
-    <div class="todo-cards">
-    </div>
-    <div class="todo-cards">
-    </div>
-    <div class="todo-cards">
-    </div>
-    <div class="todo-cards">
-    </div>
-    <div class="todo-cards">
-    </div>
-  </div>
   </div>
 </div>
