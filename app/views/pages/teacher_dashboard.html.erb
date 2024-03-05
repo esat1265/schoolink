@@ -1,68 +1,10 @@
 <h1>Welcome Teacher!</h1>
 <div class="second-container">
 <h2>All your classes </h2>
-<div class="container-ok" id="top-cards-dashboard">
-  <div class="card-dashboard">
-    <div class="header"></div>
-    <h1>3A</h1>
-      <div class="info">
-      <div class="notif">
-      <i class="fa-solid fa-bell"></i><p class="title">8 notifications</p>
-      </div>
-      <div class="students-number">
-      <i class="fa-solid fa-person"> </i><p class="title">36 students</p>
-      </div>
-      </div>
-      <div class="footer">
-        <p class="tag"></p>
-    </div>
-  </div>
-  <div class="card-dashboard">
-    <div class="header"></div>
-    <h1>3A</h1>
-      <div class="info">
-      <div class="notif">
-      <i class="fa-solid fa-bell"></i><p class="title">8 notifications</p>
-      </div>
-      <div class="students-number">
-      <i class="fa-solid fa-person"> </i><p class="title">36 students</p>
-      </div>
-      </div>
-      <div class="footer">
-        <p class="tag"></p>
-    </div>
-  </div>
-  <div class="card-dashboard">
-    <div class="header"></div>
-    <h1>3A</h1>
-      <div class="info">
-      <div class="notif">
-      <i class="fa-solid fa-bell"></i><p class="title">8 notifications</p>
-      </div>
-      <div class="students-number">
-      <i class="fa-solid fa-person"> </i><p class="title">36 students</p>
-      </div>
-      </div>
-      <div class="footer">
-        <p class="tag"></p>
-    </div>
-  </div>
-  <div class="card-dashboard">
-    <div class="header"></div>
-    <h1>3A</h1>
-      <div class="info">
-      <div class="notif">
-      <i class="fa-solid fa-bell"></i><p class="title">8 notifications</p>
-      </div>
-      <div class="students-number">
-      <i class="fa-solid fa-person"> </i><p class="title">36 students</p>
-      </div>
-      </div>
-      <div class="footer">
-        <p class="tag"></p>
-    </div>
-  </div>
-    <div class="card-dashboard">
+<div id="top-cards-dashboard">
+   <% @sections.each do |section| %>
+      <%= render 'sections/grades', section: section  %>
+   <% end %>
     <div class="header"></div>
     <i class="fa-solid fa-plus" id="plus"></i>
       <div class="info">
