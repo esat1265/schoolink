@@ -4,11 +4,11 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 0.75rem;
-  background: rgb(22, 1, 242);
+  background: rgb(0, 80, 251);
   background: linear-gradient(
     90deg,
-    rgba(22, 1, 242, 0.8764238117121849) 60%,
-    rgba(52, 125, 233, 0.6887487416841737) 100%
+    rgba(0, 80, 251, 1) 37%,
+    rgba(52, 125, 233, 1) 67%
   );
   width: 170px;
   height: 170px;
@@ -53,7 +53,7 @@ h1 {
 .second-container {
   background-color: white;
   height: 100vh;
-  opacity: 0.5;
+  background-color: #fff6;
   width: 98%;
   border-radius: 20px;
   margin-left: 8px;
@@ -61,4 +61,23 @@ h1 {
 
 .second-container h2 {
   margin-left: 140px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.notif {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.students-number {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
