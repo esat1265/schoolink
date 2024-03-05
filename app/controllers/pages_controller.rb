@@ -9,6 +9,6 @@ class PagesController < ApplicationController
   end
 
   def teacher_dashboard
-
+    @sections = current_user.sections
   end
 end
