@@ -1,7 +1,13 @@
-<div data-controller="datepicker" class="navbar">
-  <div class="container-fluid">
-    <nav>
-
-    </nav>
+<header class="header-container">
+  <div class="date-container">
+    <div class="arrow-container">
+      <a href="#" class="arrow">&lt;</a>
+    </div>
+    <div class="today-container">
+      <%= Time.now.strftime("%B %d, %Y") %>
+    </div>
+    <div class="arrow-container">
+      <a href="#" class="arrow">&gt;</a>
+    </div>
   </div>
-</div>
+</header>

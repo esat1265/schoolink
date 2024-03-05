@@ -39,18 +39,25 @@ Section.create(name: "8B")
 puts "Section 8B created"
 
 puts "____________Create 5 teachers per section"
-sections = Section.all
-sections.each do |section|
-  5.times do |n|
-    Teacher.create!(
-      email: "teacher#{section.name}_#{n+1}@example.com",
-      password: "password",
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      section_id: section.id
-      )
-    puts "Teacher #{n+1} in section #{section.name} created"
+
+5.times do |n|
+  teacher = Teacher.create!(
+    email: "teacher#{n+1}@example.com",
+    password: "password",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+  )
+
+  courses = [
+  "French", "English", "German", "Maths", "Physics",
+  "Biology", "Chemistry", "IT", "Sport", "Geography",
+  "History","Economy", "Music", "Philosophy", "Civic education"
+]
+  rand(1..4).times do
+    section = Section.where.not(id: teacher.sections).sample
+    teacher.courses.create!(section: section, name: courses.sample)
   end
+  puts "Teacher #{n+1} in section created"
 end
 
 
@@ -62,44 +69,20 @@ puts "____________Create 100 parents"
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     phone_number: 123456789,
-  )
+    )
   puts "Parent #{n+1} created"
+   Student.create!(
+      email: "student#{n+1}@example.com",
+      password: "password",
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      type: "Student",
+      section: Section.all.sample,
+      parent: parent
+    )
+    puts "Student #{n+1} created"
 end
 
-puts "____________Create 1 student per parent (100 students in total) and add students in section"
-parents = Parent.all
-parents.each_with_index do |parent, index|
-  student = Student.create!(
-    email: "student#{index+1}@example.com",
-    password: "password",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    type: "Student",
-    section: Section.all.sample,
-    parent_id: parent.id
-  )
-  puts "Student #{index+1} created"
-end
-
-
-puts "____________Create 15 courses"
-courses = [
-    "French", "English", "German", "Maths", "Physics",
-    "Biology", "Chemistry", "IT", "Sport", "Geography",
-    "History","Economy", "Music", "Philosophy", "Civic education"
-  ]
-
-15.times do |n|
-  section = Section.all.sample
-  teacher = Teacher.all.sample
-
-  Course.create!(
-    section: section,
-    name: courses[n],
-    teacher: teacher
-  )
-  puts "Course #{n+1} created"
-end
 
 puts "____________Create 30 grades per student"
 students = Student.all
