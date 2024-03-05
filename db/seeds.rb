@@ -1,13 +1,20 @@
 require 'faker'
 
-puts 'Delete data'
-Course.destroy_all
-Section.destroy_all
+
 Grade.destroy_all
+puts 'All grades destroyed'
+Course.destroy_all
+puts 'All courses destroyed'
+Section.destroy_all
+puts 'All sections destroyed'
 Teacher.destroy_all
+puts 'All teachers destroyed'
 Student.destroy_all
+puts 'All students destroyed'
 Parent.destroy_all
+puts 'All parents destroyed'
 User.destroy_all
+puts 'All users destroyed'
 
 puts "____________Create 10 sections"
 Section.create(name: "4A")
