@@ -25,12 +25,11 @@ puts "____________Create 5 teachers per section"
 sections = Section.all
 sections.each do |section|
   5.times do |n|
-    User.create(
+    Teacher.create(
       email: "teacher#{n+1}@example.com",
       password: "password",
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
-      type: "Teacher",
       section_id: section.id
       )
     puts "Teacher #{n+1} in section #{section.name} created"
@@ -38,35 +37,33 @@ sections.each do |section|
 end
 
 
-  puts "____________Create 20 parents"
-  20.times do |n|
-    parent = User.create(
-      email: "parent#{n+1}@example.com",
-      password: "password",
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      phone_number: 123456789,
-      type: "Parent"
-    )
-    puts "Parent #{n+1} created"
+puts "____________Create 100 parents"
+100.times do |n|
+  parent = Parent.create(
+    email: "parent#{n+1}@example.com",
+    password: "password",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone_number: 123456789,
+  )
+  puts "Parent #{n+1} created"
+end
 
-    # Assign each parent a random child/student
-
-  end
-
-  puts "____________Create 20 students"
-20.times do |n|
-  student = User.create(
-    email: "student#{n+1}@example.com",
+puts "____________Create 1 student per parent (100 students in total) and add students in section"
+parents = Parent.all
+parents.each_with_index do |parent, index|
+  student = Student.create(
+    email: "student#{index+1}@example.com",
     password: "password",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     type: "Student",
-    section_id: Section.pluck(:id).sample,
-    parent_id: Parent.pluck(:id).sample
+    section: Section.all.sample,
+    parent_id: parent.id
   )
-  puts "Student #{n+1} created"
+  puts "Student #{index+1} created"
 end
+
 
 puts "____________Create 20 courses"
 20.times do |n|
@@ -82,7 +79,7 @@ puts "____________Create 60 grades"
 60.times do |n|
   Grade.create(
     course_id: Course.pluck(:id).sample,
-    grade: rand(1..6),
+    grade: (rand(1.0..6.0) * 2).round / 2,
     date: random_date = Date.today - rand(1..365),
     exam_name: Faker::Dessert.topping,
     comment: Faker::Hipster.paragraph(sentence_count: 2),
