@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   end
 end
 
-
-
 # authenticated :user, ->(u) { u.super_admin? } do
 #   root 'companies#index', as: :admin_root
 # end
