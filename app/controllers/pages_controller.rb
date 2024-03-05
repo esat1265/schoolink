@@ -5,6 +5,11 @@ class PagesController < ApplicationController
   end
 
   def parent_dashboard
+    @parent = current_user
+    @student = @parent.students.first
+    @student_grades = @student.grades
+    @section = @student.section
+    # @section_teachers = @section.teachers
 
   end
 
