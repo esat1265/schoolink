@@ -4,7 +4,10 @@ puts 'Delete data'
 Section.destroy_all
 Grade.destroy_all
 Course.destroy_all
-# User.destroy_all
+Teacher.destroy_all
+Student.destroy_all
+Parent.destroy_all
+User.destroy_all
 
 puts "Create 10 sections"
 Section.create(name: "4A")
@@ -18,18 +21,22 @@ Section.create(name: "7B")
 Section.create(name: "8A")
 Section.create(name: "8B")
 
-puts "____________Create 5 teachers"
-5.times do |n|
-  User.create(
-    email: "teacher#{n+1}@example.com",
-    password: "password",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    type: "Teacher",
-    section_id: Section.pluck(:id).sample
-    )
-  puts "Teacher #{n+1} created"
-  end
+puts "____________Create 5 teachers per section"
+sections = Section.all
+sections.each do |section|
+  5.times do |n|
+    User.create(
+      email: "teacher#{n+1}@example.com",
+      password: "password",
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      type: "Teacher",
+      section_id: section.id
+      )
+    puts "Teacher #{n+1} in section #{section.name} created"
+    end
+end
+
 
   puts "____________Create 20 parents"
   20.times do |n|
