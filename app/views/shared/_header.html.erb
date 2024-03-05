@@ -1,0 +1,8 @@
+<div class="header">
+  <h1>Welcome to My App</h1>
+  <%= form_tag do %>
+    <%= label_tag :date, "Select a Date:" %>
+    <%= text_field_tag :date, nil, class: "datepicker" %>
+    <%= submit_tag "Submit" %>
+  <% end %>
+</div>
