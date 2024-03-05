@@ -65,7 +65,13 @@ parents.each_with_index do |parent, index|
 end
 
 
-puts "____________Create 20 courses"
+puts "____________Create 15 courses"
+course = [
+    "French", "English", "German", "Maths", "Physics",
+    "Biology", "Chemistry", "IT", "Sport", "Geography",
+    "History","Economy", "Music", "Philosophy", "Civic education"
+  ]
+
 20.times do |n|
   Course.create(
     section_id: Section.pluck(:id).sample,
