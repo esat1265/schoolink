@@ -3,4 +3,12 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def parent_dashboard
+
+  end
+
+  def teacher_dashboard
+
+  end
 end
