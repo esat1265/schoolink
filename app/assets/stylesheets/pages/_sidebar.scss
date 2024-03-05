@@ -1,0 +1,140 @@
+
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+ }
+
+
+
+.header{
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-image: asset-url("background.png");
+}
+
+.side-nav{
+  width: 110px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(105px);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  transition:  width 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.user div{
+  display: none;
+}
+
+.user h2{
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+
+}
+
+.user-img{
+  width: 40px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.star-img{
+  width: 20px;
+  display: none;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  list-style: none;
+  padding: 0 15px;
+}
+
+
+ul li{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+ul li img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+ul li p{
+  white-space: nowrap;
+  display: none;
+  width: 0px;
+  overflow: hidden;
+}
+
+.side-nav:hover{
+  width: 240px;
+  transition: width 0,5s;
+}
+
+.side-nav:hover .user div{
+  display: block;
+
+}
+
+.side-nav:hover .user {
+  width: 90%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  height: 120px;
+
+}
+
+.side-nav:hover .star-img{
+  display: block;
+}
+.side-nav:hover .user-img{
+  margin: 0;
+}
+
+.side-nav:hover ul li p{
+  display: block;
+  width: 100%;
+  transition: width 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.side-nav:hover ul li img{
+  margin-right: 10px;
+}
+
+.side-nav:hover ul li {
+  justify-content: flex-start;
+}
