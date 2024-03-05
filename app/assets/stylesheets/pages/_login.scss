@@ -1,18 +1,12 @@
-.bck-img{
-  background-image: asset-url("background.png");
-  height: 350px;
-}
-
 .shadow-login{
-  margin-top: -100px;
   background: hsla(0, 0%, 100%, 0.8);
   backdrop-filter: blur(40px);
-  box-shadow: -1px 7px 102px 48px rgba(0,0,0,0.75);
+  box-shadow: -1px 7px 30px 0px rgba(0,0,0,0.75);
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
-}
-
-.login-page{
-  // background-color: rgb(152, 203, 230);
-
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  left: 50%;
+  margin: auto;
 }
