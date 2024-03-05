@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.75rem;
+  background-color: white;
+  width: 170px;
+  height: 170px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+#top-cards-dashboard {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  margin-left: 240px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4f4f4f;
+  margin-bottom: 0.5rem;
+}

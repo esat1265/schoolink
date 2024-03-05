@@ -16,6 +16,7 @@ body {
   width: 110px;
   height: 100%;
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
   padding: 30px 15px;
@@ -26,6 +27,42 @@ body {
   flex-direction: column;
   transition: width 0.5s;
   transition-timing-function: ease-in-out;
+  &:hover {
+    width: 240px;
+    transition: width 0, 5s;
+    .user div {
+      display: block;
+    }
+
+    .user {
+      width: 90%;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(5px);
+      height: 120px;
+    }
+
+    .star-img {
+      display: block;
+    }
+    .user-img {
+      margin: 0;
+    }
+
+    ul li p {
+      display: block;
+      width: 100%;
+      transition: width 0.5s;
+      transition-timing-function: ease-in-out;
+    }
+
+    ul li img {
+      margin-right: 10px;
+    }
+
+    ul li {
+      justify-content: flex-start;
+    }
+  }
 }
 
 .user {
@@ -90,42 +127,4 @@ ul li p {
   display: none;
   width: 0px;
   overflow: hidden;
-}
-
-.side-nav:hover {
-  width: 240px;
-  transition: width 0, 5s;
-}
-
-.side-nav:hover .user div {
-  display: block;
-}
-
-.side-nav:hover .user {
-  width: 90%;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
-  height: 120px;
-}
-
-.side-nav:hover .star-img {
-  display: block;
-}
-.side-nav:hover .user-img {
-  margin: 0;
-}
-
-.side-nav:hover ul li p {
-  display: block;
-  width: 100%;
-  transition: width 0.5s;
-  transition-timing-function: ease-in-out;
-}
-
-.side-nav:hover ul li img {
-  margin-right: 10px;
-}
-
-.side-nav:hover ul li {
-  justify-content: flex-start;
 }

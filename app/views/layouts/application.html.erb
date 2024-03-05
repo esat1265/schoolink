@@ -14,11 +14,11 @@
     <meta name="author" content="">
   </head>
   <body>
-    <%= render "shared/navbar-top" %>
     <%= render "shared/sidebar" %>
     <%= render "shared/flashes" %>
-
-
-    <%= yield %>
+    <div class="main-container">
+      <%= render "shared/navbar-top" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
