@@ -12,7 +12,6 @@ $background-color_1: #4158D0;
 	transform-style: preserve-3d;
 	perspective: 1000px;
 	transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-	cursor: pointer;
 	&:hover {
 		transform: rotateY(10deg) rotateX(10deg) scale(1.05);
 		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -51,6 +50,7 @@ $background-color_1: #4158D0;
   position: relative;
   z-index: 1;
   display: flex;
+  justify-content: space-between;
   color: white;
   text-align: center;
   height: 100%;
@@ -63,7 +63,7 @@ $background-color_1: #4158D0;
     flex-direction: column;
     display: flex;
 	}
-	.notification-para {
+	.notification-para1 {
     color: inherit;
     opacity: 0.8;
     font-size: 14px;
@@ -72,5 +72,15 @@ $background-color_1: #4158D0;
     margin: 10px;
     text-align: center;
     margin-top: 17px;
+	}
+  .notification-para2 {
+    color: inherit;
+    opacity: 0.8;
+    font-size: 14px;
+    flex-direction: column;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+    margin-top: 10px;
 	}
 }
