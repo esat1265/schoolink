@@ -40,6 +40,7 @@ h1 {
   width: 98%;
   border-radius: 20px;
   margin-left: 18px;
+  margin-top: 8px;
 }
 
 .second-container h2 {
@@ -73,13 +74,9 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 0.75rem;
-  background-color: rgb(109, 134, 247);
-  width: 350px;
-  height: 70px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
-  opacity: 0.7;
 }
 
 .notifications-dashboard {
@@ -108,13 +105,11 @@ h1 {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
-  opacity: 0.7;
 }
 
 .bottom-container-dashboard {
   display: flex;
   justify-content: space-between;
-  opacity: 0.7;
 }
 
 .card-dashboard {
@@ -123,6 +118,21 @@ h1 {
   background: #3405a3;
   border-radius: 15px;
   box-shadow: 1px 5px 60px 0px #100a886b;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+    // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    // &:before {
+    // 	transform: translateX(-100%);
+    // }
+    // &:after {
+    // 	transform: translateX(100%);
+    // }
+  }
 }
 
 .card-dashboard .card-border-top {
@@ -194,4 +204,9 @@ h1 {
   padding-left: 10px;
   background-color: #fff6;
   height: 600px;
+}
+
+#top-cards-dashboard a {
+  text-decoration: none;
+  color: inherit;
 }

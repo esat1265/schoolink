@@ -1,0 +1,46 @@
+
+<div class="show-classes-container">
+  <div class="cards-container">
+    <h2>All your classes </h2>
+    <div id="top-cards-dashboard">
+      <% @sections.each do |section| %>
+        <%= link_to section_path(section) do %>
+        <%= render 'sections/grades_small', section: section %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="show-table-container">
+  <div class="tabs">
+    <!-- Tabs for navigation -->
+    <a href="/timetable">Timetable</a>
+    <a href="/personal_infos">Personal infos</a>
+    <a href="/students">Students</a>
+    <a href="/add_grades">Add grades</a>
+  </div>
+
+  <!-- Search bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search">
+  </div>
+
+  <!-- Student list -->
+  <div class="student-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Student name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each do |student| %>
+          <tr>
+            <td><%= student.first_name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  </div>

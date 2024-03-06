@@ -1,0 +1,177 @@
+.show-classes-container {
+  background-color: white;
+  height: 100vh;
+  background-color: #fff6;
+  width: 98%;
+  border-radius: 20px;
+  margin-left: 18px;
+  margin-top: 8px;
+}
+
+.show-classes-container h2 {
+  margin-left: 140px;
+  color: #3405a3;
+  margin-bottom: 18px;
+}
+
+#top-cards-dashboard a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#top-cards-dashboard {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-left: 140px;
+  padding: 20px;
+}
+
+.card-dashboard-small {
+  width: 90px;
+  height: 90px;
+  background: #3405a3;
+  border-radius: 15px;
+  box-shadow: 1px 5px 60px 0px #100a886b;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.card-dashboard-small .card-border-top {
+  width: 60%;
+  height: 3%;
+  background: #6b64f3;
+  margin: auto;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.card-dashboard-small span {
+  font-weight: 600;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.card-dashboard-small .job {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 6px;
+}
+
+.card-dashboard-small .img {
+  width: 60px;
+  height: 60px;
+  background: #6b64f3;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card-dashboard-small button:hover {
+  background: #534bf3;
+}
+
+.cards-container {
+  margin-bottom: 18px;
+}
+
+/* General Styles for Tabs */
+.tabs a {
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  color: #3405a3;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.tabs a:hover {
+  background-color: #eae7ff;
+  color: #fff;
+}
+
+/* Search Bar Styles */
+.search-bar {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 250px;
+}
+
+/* Styles for the Student List Table */
+.student-list table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.student-list th {
+  background-color: #3405a3;
+  color: white;
+  padding: 15px;
+  text-align: left;
+}
+
+.student-list td {
+  padding: 15px;
+  text-align: left;
+}
+
+.student-list tr {
+  border-radius: 20px;
+}
+
+.student-list tbody tr:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+
+.student-list tbody tr:hover {
+  background-color: #eae7ff;
+  cursor: pointer;
+}
+
+.show-table-container {
+  background-color: #fff6;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Tabs and Search Bar */
+@media (max-width: 768px) {
+  .search-bar {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .tabs a {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
