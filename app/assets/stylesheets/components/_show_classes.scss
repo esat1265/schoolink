@@ -138,6 +138,7 @@
 .student-list td {
   padding: 15px;
   text-align: left;
+  border-radius: 20px;
 }
 
 .student-list tr {
@@ -161,6 +162,16 @@
   margin-left: 140px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.parent-contact {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.parent-contact i {
+  color: #3405a3;
 }
 
 /* Responsive Design for Tabs and Search Bar */
