@@ -1,0 +1,88 @@
+$color_1: #000;
+$color_2: #ffffff;
+$color_3: #fff;
+
+.schedule-table {
+	table {
+		tbody {
+			td {
+				vertical-align: middle;
+				font-weight: 500;
+				padding: 30px;
+				text-align: center;
+        background-color: rgba($color: #ffffff, $alpha: 0.4);
+				.hover {
+					p {
+						font-size: 16px;
+						margin-bottom: 5px;
+						color: $color_2;
+						line-height: normal;
+					}
+					span {
+						color: $color_2;
+						font-weight: 600;
+						font-size: 18px;
+					}
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					width: 120%;
+					height: 120%;
+					transform: translate(-50%, -50%) scale(0.8);
+					z-index: 99;
+					background: #c5c5c5;
+					border-radius: 0.25rem;
+					padding: 25px 0;
+					visibility: hidden;
+					opacity: 0.8;
+					transition: all 0.3s linear 0s;
+				}
+			}
+			td.day {
+				font-size: 12px;
+				font-weight: 600;
+        color: $color_2;
+				background: #3405a3;
+				position: relative;
+				transition: all 0.3s linear 0s;
+				padding: 1px;
+        margin-bottom: 20px;
+				&:hover {
+					background: #3405a3;
+          opacity: 0.8;
+					color: $color_3;
+				}
+			}
+			td.active {
+				position: relative;
+				z-index: 10;
+				transition: all 0.3s linear 0s;
+				min-width: 165px;
+        margin-bottom: 20px;
+        background-color: rgba($color: #ffffff, $alpha: 0.4);
+				p {
+					font-size: 16px;
+					line-height: normal;
+					margin-bottom: 0;
+				}
+				&::before {
+					position: absolute;
+					content: "";
+					min-width: 100%;
+					min-height: 100%;
+					transform: scale(0);
+					top: 0;
+					left: 0;
+					z-index: -1;
+					border-radius: 0.25rem;
+					transition: all 0.3s linear 0s;
+				}
+				&:hover {
+						transform: scale(1.05);
+						visibility: visible;
+						opacity: 0.8;
+				}
+			}
+		}
+	}
+}
