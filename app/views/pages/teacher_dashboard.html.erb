@@ -1,16 +1,18 @@
-<h1>Welcome Teacher!</h1>
+<h1>Welcome <%= current_user.first_name %></h1>
 <div class="second-container">
   <h2>All your classes </h2>
   <div id="top-cards-dashboard">
     <% @sections.each do |section| %>
       <%= render 'sections/grades', section: section  %>
     <% end %>
+    <div class="card-dashboard">
     <i class="fa-solid fa-plus" id="plus"></i>
     <div class="info">
       <p class="title" id="add-new-class">Add a new class</p>
     </div>
     <div class="footer">
       <p class="tag"></p>
+    </div>
     </div>
   </div>
   <div class="bottom-container-dashboard">
