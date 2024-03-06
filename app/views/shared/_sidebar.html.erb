@@ -3,8 +3,8 @@
     <div class="user">
       <%= image_tag(("user.png") , :class => "user-img") %>
       <div>
-        <h2>John Doe</h2>
-        <p>j.doe@email.com</p>
+        <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+        <p><%= current_user.email %></p>
       </div>
       <%= image_tag(("star.png") , :class => "star-img") %>
     </div>
