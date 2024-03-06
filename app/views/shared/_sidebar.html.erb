@@ -9,13 +9,26 @@
       <%= image_tag(("star.png") , :class => "star-img") %>
     </div>
     <ul>
-      <li><%= image_tag("dashboard.png") %><p>Dashboard</p></li>
-      <li><%= image_tag("members.png") %><p>Classes</p></li>
-      <li><%= image_tag("members.png") %><p>Grades</p></li>
-      <li><%= image_tag("messages.png") %><p>Communications</p></li>
-      <li><%= image_tag("dashboard.png") %><p>Dashboard</p></li>
-      <li><%= image_tag("dashboard.png") %><p>Dashboard</p></li>
-      <li><%= image_tag("dashboard.png") %><p>Dashboard</p></li>
+      <li><%= link_to teacher_root_path do %>
+        <%= image_tag("dashboard.png") %>
+        <p>Dashboard</p>
+        <% end %>
+      </li>
+        <li><%= link_to "#" do %>
+      <%= image_tag("members.png") %>
+      <p>Classes</p>
+        <% end %>
+      </li>
+      <li><%= link_to "#" do %>
+        <%= image_tag("dashboard.png") %>
+        <p>Grades</p>
+        <% end %>
+      </li>
+      <li><%= link_to "#" do %>
+        <%= image_tag("dashboard.png") %>
+        <p>Communications</p>
+        <% end %>
+      </li>
     </ul>
     <ul>
       <li><%= image_tag("logout.png") %><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %></li>

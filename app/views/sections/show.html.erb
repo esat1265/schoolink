@@ -1,0 +1,11 @@
+
+<div class="second-container">
+  <h2>All your classes </h2>
+  <div id="top-cards-dashboard">
+    <% @sections.each do |section| %>
+      <%= link_to section_path(section) do %>
+      <%= render 'sections/grades', section: section %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

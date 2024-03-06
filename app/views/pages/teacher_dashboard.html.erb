@@ -3,7 +3,9 @@
   <h2>All your classes </h2>
   <div id="top-cards-dashboard">
     <% @sections.each do |section| %>
-      <%= render 'sections/grades', section: section  %>
+      <%= link_to section_path(section) do %>
+      <%= render 'sections/grades', section: section %>
+      <% end %>
     <% end %>
     <div class="card-dashboard">
       <i class="fa-solid fa-plus" id="plus"></i>

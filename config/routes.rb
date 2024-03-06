@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     authenticated :user, ->(u) { u.type == 'Teacher' } do
       root 'pages#teacher_dashboard', as: :teacher_root
+      resources :sections, only: [:index, :show]
     end
 
     unauthenticated do
