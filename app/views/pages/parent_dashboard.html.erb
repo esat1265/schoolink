@@ -1,11 +1,18 @@
+<div class="contaianer">
 
-<% @grades_by_course.each do |course, grades| %>
-  <div>
-    <h2><%= course.name %></h2>
-    <ul>
-      <% grades.each do |grade| %>
-        <li><%= grade.grade%></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+  <% @grades_by_course.each do |course, grades| %>
+    <div>
+      <h2><%= course.name %></h2>
+      <ul>
+        <% grades.each do |grade| %>
+          <li><%= grade.grade%></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <% @averages_by_course.each do |course, average_grade|%>
+    <p>Average grade for <%=course.name%>: <%=average_grade%></p>
+  <%end%>
+</div>

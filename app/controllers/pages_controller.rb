@@ -11,7 +11,18 @@ class PagesController < ApplicationController
     @courses = @section.courses
     @student_grades = @student.grades
 
-    @grades_by_course = @student_grades.group_by { |grade| grade.course }
+    # Group grades by course
+    @grades_by_course = @student_grades.group_by(&:course)
+
+    # Calculate averages of each course
+    @averages_by_course = {}
+    @grades_by_course.each do |course, grades|
+      total_grades = grades.length
+      total_points = grades.reduce(0) { |sum, grade| sum + grade.grade }
+      average_grade = (total_points / total_grades.to_f).round(1)
+      @averages_by_course[course] = average_grade
+    end
+
   end
 
   def teacher_dashboard
