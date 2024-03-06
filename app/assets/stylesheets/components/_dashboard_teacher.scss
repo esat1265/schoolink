@@ -40,6 +40,7 @@ h1 {
   width: 98%;
   border-radius: 20px;
   margin-left: 18px;
+  margin-top: 8px;
 }
 
 .second-container h2 {
@@ -118,11 +119,11 @@ h1 {
   border-radius: 15px;
   box-shadow: 1px 5px 60px 0px #100a886b;
   transform-style: preserve-3d;
-	perspective: 1000px;
-	transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-	cursor: pointer;
-	&:hover {
-		transform: scale(1.05);
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
     opacity: 0.8;
 	}
 }

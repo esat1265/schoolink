@@ -1,0 +1,167 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="parents-dashboard-container">
+  <div class="container mt-5">
+    <div class="row mt-3">
+      <div class="col-8">
+        <div class="card gradient-background">
+          <div class="card-body">
+            <h5 class="card-title">Weekly Calendar</h5>
+            <div class="row">
+              <div class="col">Sunday</div>
+              <div class="col">Monday</div>
+              <div class="col">Tuesday</div>
+              <div class="col">Wednesday</div>
+              <div class="col">Thursday</div>
+              <div class="col">Friday</div>
+              <div class="col">Saturday</div>
+            </div>
+            <div class="row">
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+            </div>
+            <div class="row">
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+              <div class="col">Events</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <div class="card graph-background">
+              <div class="card-body">
+                <canvas id="myLineChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card graph-background">
+              <div class="card-body">
+                <canvas id="myBarChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card gradient-background">
+          <div class="card-body">
+            <h5 class="card-title">Announcements</h5>
+            <div class="announcement">
+              <h6>Parent-Teacher Meeting</h6>
+              <p>The first parent-teacher meeting of the year will be held on September 15th. We encourage all parents to attend.</p>
+              <small>Posted on: September 10, 2024</small>
+            </div>
+            <div class="announcement">
+              <h6>School Science Fair</h6>
+              <p>Our annual school science fair is scheduled for October 20th. We look forward to seeing the innovative projects from our students.</p>
+              <small>Posted on: October 1, 2024</small>
+            </div>
+            <div class="announcement">
+              <h6>Holiday Schedule Reminder</h6>
+              <p>Please note the school will be closed from December 24th to January 2nd for the holiday break. Happy Holidays!</p>
+              <small>Posted on: December 1, 2024</small>
+            </div>
+            <div class="announcement">
+              <h6>Online Learning Resources</h6>
+              <p>Don't forget to check out the new online learning resources available on our website. Great for extra practice at home!</p>
+              <small>Posted on: November 15, 2024</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('myDoughnutChart').getContext('2d');
+    var myDoughnutChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow'],
+        datasets: [{
+          label: 'My First Dataset',
+          data: [300, 50, 100],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {}
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('myLineChart').getContext('2d');
+    var myLineChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // Example labels for the x-axis
+        datasets: [{
+          label: 'My First Dataset',
+          data: [65, 59, 80, 81, 56, 55, 40],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        }]
+      },
+      options: {}
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('myBarChart').getContext('2d');
+    var myBarChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May'],
+        datasets: [{
+          label: 'Sales',
+          data: [50, 60, 70, 80, 90],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  });
+</script>

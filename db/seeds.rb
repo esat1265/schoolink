@@ -55,7 +55,7 @@ Section.all.each_with_index do |section, index|
   )
 
   created_courses = []
-  rand(1..4).times do
+  5.times do
     random_course = (courses - created_courses).sample
     created_courses.push(random_course)
     teacher.courses.create!(section: section, name: random_course)
@@ -90,16 +90,20 @@ end
 puts "____________Create 30 grades per student"
 students = Student.all
 students.each do |student|
+  courses = student.section.courses.sample(5)
 
-  30.times do |n|
-    Grade.create!(
-      course_id: student.section.courses.pluck(:id).sample,
-      grade: (rand(1.0..6.0) * 2).round / 2,
-      date: random_date = Date.today - rand(1..365),
-      exam_name: Faker::Dessert.topping,
-      comment: Faker::Hipster.paragraph(sentence_count: 2),
-      student_id: student.id
-    )
-    puts "Grades #{n+1} for student #{student.first_name} created"
+  courses.each do |course|
+
+    6.times do |n|
+      Grade.create!(
+        course_id: course.id,
+        grade: (rand(1.0..6.0) * 2).round / 2,
+        date: random_date = Date.today - rand(1..365),
+        exam_name: Faker::Dessert.topping,
+        comment: Faker::Hipster.paragraph(sentence_count: 2),
+        student_id: student.id
+      )
+      puts "Grades #{n+1} for student #{student.first_name} created"
+    end
   end
 end
