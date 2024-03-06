@@ -23,6 +23,16 @@ class PagesController < ApplicationController
       @averages_by_course[course] = average_grade
     end
 
+    # Calculate averages of course entire class
+    @courses = @section.courses
+    @grades_by_course = {}
+
+    @courses.each do |course|
+      grades = Grade.where(course: course)
+      course_average = grades.average(:grade).round(1)
+      @grades_by_course[course] = course_average
+    end
+
   end
 
   def teacher_dashboard
