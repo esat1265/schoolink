@@ -1,5 +1,10 @@
 .gradient-background{
-  background: linear-gradient(to right, #290f8e 0%, #9b80a8 100%);
+  background: linear-gradient(to right, #7663bb 0%, #9b80a8 100%);
+  border-radius: 20px;
+}
+
+.box-shadow-parent{
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 
 }
 
@@ -9,4 +14,12 @@
 background-color: lightblue;
 border-radius: 10px;
 
+}
+
+.calendar-parent{
+}
+
+.col{
+  border-right: 1px solid black;
+  margin-top: 30px;
 }
