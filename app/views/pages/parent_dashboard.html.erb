@@ -83,7 +83,9 @@
     </div>
   </div>
 </div>
-
+<% @grades_by_course.each do |course, average_grade|%>
+    <p><%=course.name%>: <%=average_grade%></p>
+  <%end%>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var ctx = document.getElementById('myDoughnutChart').getContext('2d');
