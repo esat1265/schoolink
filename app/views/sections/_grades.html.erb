@@ -1,9 +1,9 @@
 <div class="card-dashboard">
-    <div class="header"></div>
+  <div class="header"></div>
     <h1><%= section.name %></h1>
       <div class="info">
       <div class="notif">
-      <i class="fa-solid fa-bell"></i><p class="title">8 notifications</p>
+      <i class="fa-solid fa-bell"></i><p class="title"><%= rand(2..4) %> notifications</p>
       </div>
       <div class="students-number">
       <i class="fa-solid fa-person"> </i><p class="title"><%= section.students.count %> Students</p>
@@ -11,5 +11,5 @@
       </div>
       <div class="footer">
         <p class="tag"></p>
-    </div>
   </div>
+</div>
