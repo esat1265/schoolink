@@ -1,0 +1,11 @@
+
+<% @grades_by_course.each do |course, grades| %>
+  <div>
+    <h2><%= course.name %></h2>
+    <ul>
+      <% grades.each do |grade| %>
+        <li><%= grade.grade%></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
