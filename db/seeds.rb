@@ -1,6 +1,5 @@
 require 'faker'
 
-
 Grade.destroy_all
 puts 'All grades destroyed'
 Course.destroy_all
@@ -17,26 +16,11 @@ User.destroy_all
 puts 'All users destroyed'
 
 puts "____________Create 10 sections"
-Section.create(name: "4A")
-puts "Section 4A created"
-Section.create(name: "4B")
-puts "Section 4B created"
-Section.create(name: "5A")
-puts "Section 5A created"
-Section.create(name: "5B")
-puts "Section 5B created"
-Section.create(name: "6A")
-puts "Section 6A created"
-Section.create(name: "6B")
-puts "Section 6B created"
-Section.create(name: "7A")
-puts "Section 7A created"
-Section.create(name: "7B")
-puts "Section 7B created"
-Section.create(name: "8A")
-puts "Section 8A created"
-Section.create(name: "8B")
-puts "Section 8B created"
+sections = ["4A", "4B", "5A", "5B", "6A", "6B", "7A", "7B", "8A", "8B"]
+sections.each do |section_name|
+  Section.create(name: section_name)
+  puts "Section #{section_name} created"
+end
 
 puts "____________Create 5 teachers per section"
 
