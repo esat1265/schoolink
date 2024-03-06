@@ -3,26 +3,30 @@
   backdrop-filter: blur(105px);
   height: 80px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   position: relative;
 }
 .date-container {
   width: 300px;
   height: auto;
-  position: absolute;
-  left: calc(33.33% / 2);
   border-radius: 10px;
+
+
 }
 .today-container {
   display: inline;
+  background: linear-gradient(to bottom, #add8e6 0%, #f0f8ff 100%);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+
 }
 .arrow-container {
   display: inline;
 }
 
 a.arrow {
-  background-color: #007bff;
+  background: linear-gradient(to right, #006994 0%, #00bfff 100%);
   color: white;
   padding: 8px 13px;
   text-align: center;
@@ -34,7 +38,7 @@ a.arrow {
 }
 
 a.arrow:hover {
-  background-color: #0056b3;
+  background-color: #061c35;
   color: #ffffcc;
 }
 
@@ -48,4 +52,28 @@ a.arrow:hover {
   font-size: 13px;
   font-family: 'Arial', sans-serif;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.videocall-container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+  width: fit-content;
+  padding-left: 40px;  width: auto;
+  border-radius: 6px;
+  background: linear-gradient(to right, #006994 0%, #00bfff 100%);
+}
+
+.search-contacts-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 40px 10px 40px;
+  width: auto;
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(to bottom, #add8e6 0%, #f0f8ff 100%);
+
 }
