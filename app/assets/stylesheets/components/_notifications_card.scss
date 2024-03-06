@@ -12,7 +12,6 @@ $background-color_1: #4158D0;
 	transform-style: preserve-3d;
 	perspective: 1000px;
 	transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-	cursor: pointer;
 	&:hover {
 		transform: rotateY(10deg) rotateX(10deg) scale(1.05);
 		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);

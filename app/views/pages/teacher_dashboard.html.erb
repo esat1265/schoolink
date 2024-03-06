@@ -26,13 +26,9 @@
 
     <div class="todo-dashboard">
       <h3>To do today</h3>
-      
-      <div class="todo-cards"></div>
-      <div class="todo-cards"></div>
-      <div class="todo-cards"></div>
-      <div class="todo-cards"></div>
-      <div class="todo-cards"> </div>
-      <div class="todo-cards"></div>
+      <% 6.times do %>
+        <%= render 'sections/todos', todos: @todos %>
+      <% end %>
     </div>
 
     <div class="timetable-dashboard">
