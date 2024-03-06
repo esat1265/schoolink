@@ -86,12 +86,14 @@ h1 {
   margin-top: 50px;
   margin-left: 140px;
   max-width: 350px;
+  flex-basis: 35%;
 }
 
 .todo-dashboard {
   margin-top: 50px;
   margin-left: 50px;
   max-width: 350px;
+  flex-basis: 35%;
 }
 
 .todo-cards {
@@ -111,10 +113,7 @@ h1 {
 
 .bottom-container-dashboard {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Cela répartira l'espace également et alignera votre timetable à droite */
-  align-items: start; /* Aligner les éléments enfants en haut */
-  width: 100%;
+  justify-content: space-between;
   opacity: 0.7;
 }
 
@@ -185,8 +184,14 @@ h1 {
 }
 
 .timetable-dashboard {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  align-items: flex-end;
   background-color: white;
+  flex-basis: 35%;
   border-radius: 8px;
   padding-left: 10px;
-  justify-content: flex-end;
+  background-color: #fff6;
+  height: 600px;
 }
