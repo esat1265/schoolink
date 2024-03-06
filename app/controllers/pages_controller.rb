@@ -10,5 +10,6 @@ class PagesController < ApplicationController
 
   def teacher_dashboard
     @sections = current_user.sections
+    @courses = Course.includes(:section).where(teacher_id: current_user.id)
   end
 end
