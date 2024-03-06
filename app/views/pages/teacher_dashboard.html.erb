@@ -35,11 +35,7 @@
 
     <div class="timetable-dashboard">
       <h3>Timetable</h3>
-      <div class="todo-cards"></div>
-      <div class="todo-cards"></div>
-      <div class="todo-cards"></div>
-      <div class="todo-cards"></div>
-      <div class="todo-cards"></div>
+      <%= render 'sections/calendar', courses: @courses, sections: @sections  %>
     </div>
   </div>
 </div>
