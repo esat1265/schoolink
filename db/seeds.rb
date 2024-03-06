@@ -30,23 +30,25 @@ courses = [
   "History","Economy", "Music", "Philosophy", "Civic education"
 ]
 
-Section.all.each_with_index do |section, index|
+5.times do |n|
   teacher = Teacher.create!(
-    email: "teacher#{index+1}@example.com",
+    email: "teacher#{n+1}@example.com",
     password: "password",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
   )
+  puts "Teacher #{n+1} created"
+end
 
+Section.all.each_with_index do |section, index|
   created_courses = []
   5.times do
     random_course = (courses - created_courses).sample
     created_courses.push(random_course)
-    teacher.courses.create!(section: section, name: random_course)
+    section.courses.create!(teacher: Teacher.all.sample, name: random_course)
+    puts "Course #{random_course} created with section #{section.name}"
   end
-  puts "Teacher #{index} in section created"
 end
-
 
 puts "____________Create 100 parents"
 100.times do |n|
@@ -55,7 +57,7 @@ puts "____________Create 100 parents"
     password: "password",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    phone_number: 123456789,
+    phone_number: "076 #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)}"
     )
   puts "Parent #{n+1} created"
    Student.create!(
