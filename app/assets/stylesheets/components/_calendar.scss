@@ -7,7 +7,7 @@ $color_3: #fff;
 		tbody {
 			td {
 				vertical-align: middle;
-				font-weight: 500;
+				font-weight: 400;
 				text-align: center;
         background-color: rgba($color: #ffffff, $alpha: 0.4);
 				.hover {
@@ -19,7 +19,7 @@ $color_3: #fff;
 					}
 					span {
 						color: $color_2;
-						font-weight: 600;
+						font-weight: 400;
 						font-size: 18px;
 					}
 					position: absolute;
@@ -43,7 +43,7 @@ $color_3: #fff;
       }
 			td.day {
 				font-size: 12px;
-				font-weight: 600;
+				font-weight: 400;
         color: $color_2;
 				background: #3405a3;
 				position: relative;

@@ -19,7 +19,7 @@
 }
 
 .second-container h2 {
-  margin-left: 140px;
+  margin-left: 10px;
   color: #3405a3;
   margin-bottom: 18px;
 }
@@ -37,7 +37,7 @@
 
 
 .show-classes-container h2 {
-  margin-left: 140px;
+  margin-left: 10px;
   color: #3405a3;
   margin-bottom: 18px;
 }
@@ -51,7 +51,7 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin-left: 140px;
+  margin-left: 10px;
   padding: 20px;
 }
 
@@ -84,7 +84,7 @@
 }
 
 .card-dashboard-small span {
-  font-weight: 600;
+  font-weight: 400;
   color: white;
   display: flex;
   flex-direction: row;
@@ -109,7 +109,7 @@
   margin: auto;
   margin-top: 10px;
   color: white;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 18px;
 }
 
@@ -129,7 +129,7 @@
   color: #3405a3;
   border-radius: 5px;
   margin-right: 5px;
-  font-weight: 600;
+  font-weight: 400;
   transition: background-color 0.3s ease;
 }
 
@@ -192,7 +192,7 @@
   padding: 20px;
   border-radius: 20px;
   margin-top: 20px;
-  margin-left: 140px;
+  margin-left: 10px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }

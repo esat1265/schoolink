@@ -17,8 +17,8 @@
 .today-container {
   display: inline;
   // background: linear-gradient(to bottom, #add8e6 0%, #f0f8ff 100%);
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
 
 }
 .arrow-container {
@@ -63,7 +63,7 @@
   width: fit-content;
   padding-left: 40px;  width: auto;
   border-radius: 6px;
-  background: linear-gradient(to right, #006994 0%, #00bfff 100%);
+  background-color: white;
 }
 
 .search-contacts-container{
@@ -76,4 +76,10 @@
   border-radius: 6px;
   background: linear-gradient(to bottom, #add8e6 0%, #f0f8ff 100%);
 
+}
+
+.zoom-style{
+  text-decoration: none;
+}
+.login-details{
 }

@@ -17,19 +17,19 @@
   }
 }
 
-body {
-  overflow: hidden;
-}
+// body {
+//   overflow: hidden;
+// }
 
 #top-cards-dashboard {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin-left: 140px;
+  margin-left: 10px;
 }
 
 h3 {
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   display: flex;
@@ -42,7 +42,7 @@ h3 {
   }
 
   &.classes {
-    margin-left: 140px;
+    margin-left: 10px;
   }
 }
 
@@ -76,22 +76,10 @@ h3 {
 }
 
 .second-container h2 {
-  margin-left: 140px;
+  margin-left: 10px;
   color: #3405a3;
   margin-bottom: 18px;
 }
-
-// .second-container h3 {
-//   font-weight: 600;
-//   margin-bottom: 0.5rem;
-//   margin-top: 0.5rem;
-//   margin-left: 140px;
-//   display: flex;
-//   justify-content: left;
-//   padding: 5px;
-//   color: rgba(0, 0, 0, 0.7);
-// }
-
 
 .info {
   display: flex;
@@ -153,9 +141,9 @@ h3 {
 
 .bottom-container-dashboard {
   display: flex;
-  justify-content: space-between;
-  margin-left: 140px;
-  margin-right: 140px;
+  justify-content: space-evenly;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .card-dashboard {
@@ -183,7 +171,7 @@ h3 {
 }
 
 .card-dashboard span {
-  font-weight: 600;
+  font-weight: 400;
   color: white;
   display: flex;
   flex-direction: row;
@@ -208,7 +196,7 @@ h3 {
   margin: auto;
   margin-top: 10px;
   color: white;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 18px;
 }
 
@@ -221,7 +209,7 @@ h3 {
   display: flex;
   justify-content: center;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .bell {
