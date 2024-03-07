@@ -14,15 +14,11 @@ Rails.application.routes.draw do
           post :create_grades, to: 'sections#create_grades'
         end
       end
+      resources :grades, only: [:index]
     end
   end
-end
-  resources :grades, only: [:index]
-
-
-    unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
-    end
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
   end
 end
 
