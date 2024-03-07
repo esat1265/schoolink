@@ -174,15 +174,24 @@
   color: #3405a3;
 }
 
-/* Responsive Design for Tabs and Search Bar */
-@media (max-width: 768px) {
-  .search-bar {
-    justify-content: center;
-    margin-bottom: 20px;
-  }
+.tabs a.active {
+  background-color: #292b2c; /* Couleur plus sombre pour l'onglet actif */
+  color: white;
+}
 
-  .tabs a {
-    display: block;
-    margin-bottom: 5px;
-  }
+.tabs a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #3405a3; /* Votre couleur existante */
+  background-color: #eae7ff; /* Fond plus clair pour les non-actifs */
+  margin-right: 10px; /* Espacement entre les liens */
+  border-radius: 5px; /* Bordures arrondies */
+  transition: background-color 0.3s; /* Transition douce pour le survol et le focus */
+}
+
+.tabs a:hover,
+.tabs a:focus {
+  background-color: #d1d0e5; /* Fond un peu plus sombre pour le survol */
+  color: white;
 }
