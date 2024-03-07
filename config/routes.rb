@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       resources :sections, only: [:index, :show] do
         member do
           get :students
+          get :add_grade, to: 'sections#add_grade'
+          post :create_grades, to: 'sections#create_grades'
         end
       end
     end
