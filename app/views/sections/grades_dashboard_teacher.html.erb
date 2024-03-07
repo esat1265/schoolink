@@ -1,0 +1,79 @@
+
+<div class="show-classes-container">
+  <div class="cards-container d-flex justify-content-around pt-3">
+    <h2><%=@student.first_name%>'s Grades</h2>
+    <h4>Class : <%=@section.name%></h4>
+  </div>
+  <div class="show-table-container me-4">
+    <div class="tabs">
+      <!-- Exemple pour Classroom Students (Assumant que c'est la page index des sections) -->
+      <div class="d-flex justify-content-between pe-5">
+        <h4>Grades</h4>
+        <h4>Averages</h4>
+      </div>
+    </div>
+
+
+    <!-- Student list -->
+    <div class="student-list d-flex">
+      <table class="me-2">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @grades_by_course.each do |course, grades| %>
+            <tr>
+              <td><%= course.name %></td>
+              <% grades.each do |grade| %>
+                <td><%= grade.grade%></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+      <table class="me-1" style="width: 120px;">
+        <thead>
+          <tr>
+            <th>Student</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @averages_by_course.each do |course, average_grade|%>
+            <tr>
+              <td><%=average_grade%></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+      <table style="width: 120px;">
+        <thead>
+          <tr>
+            <th>Class </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @grades_by_courses.each do |course, average_grade|%>
+            <tr>
+              <td><%=average_grade%></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>
