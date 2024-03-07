@@ -1,4 +1,26 @@
 // Specific CSS for your home-page
-* {
-  // border: 1px solid red;
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  .schedule-table table tbody td {
+    padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .schedule-table table tbody td {
+    padding: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .schedule-table table tbody td {
+    padding: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
