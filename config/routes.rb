@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   unauthenticated do
     root 'devise/sessions#new', as: :unauthenticated_root
   end
-  resources :grades, only: [:index]
+  resources :grades, only: [:index, :show]
 end
 
 # authenticated :user, ->(u) { u.super_admin? } do

@@ -36,7 +36,11 @@
             <tr>
               <td><%= course.name %></td>
               <% grades.each do |grade| %>
-                <td><%= grade.grade%></td>
+                <td>
+                  <%= link_to grade_path(grade), class: 'text-decoration-none', style: 'color: black;' do %>
+                  <%= grade.grade%>
+                  <% end %>
+                </td>
               <% end %>
             </tr>
           <% end %>
