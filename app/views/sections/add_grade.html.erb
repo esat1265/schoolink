@@ -6,7 +6,8 @@
   </div>
 
   <div class="add-grades-form">
-    <%= form_with url: create_grades_section_path, local: true do |form| %>
+    <%= form_with model: @section, url: create_grades_section_path(@section), method: :post, local: true do |form| %>
+
 
       <div class="form-group">
         <%= form.label :course_id, 'Course' %>
@@ -36,8 +37,8 @@
           <% @section.students.each_with_index do |student, index| %>
             <tr>
               <td><%= student.first_name %> <%= student.last_name %></td>
-              <td><%= form.number_field :grade, name: "grades[#{student.id}][grade]" %></td>
-              <td><%= form.text_area :comment, name: "grades[#{student.id}][comment]" %></td>
+              <td><%= number_field_tag "grades[#{student.id}][grade]", nil, name: "grades[#{student.id}][grade]" %></td>
+              <td><%= text_area_tag "grades[#{student.id}][comment]", nil, name: "grades[#{student.id}][comment]" %></td>
             </tr>
           <% end %>
         </tbody>
