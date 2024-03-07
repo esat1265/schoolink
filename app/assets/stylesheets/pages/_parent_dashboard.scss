@@ -1,3 +1,28 @@
+@media screen and (max-width: 768px) {
+  .schedule-table table tbody td, th {
+    padding: 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .schedule-table table tbody td, th {
+    padding: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .schedule-table table tbody td, th {
+    padding: 21px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
 .gradient-background{
   background: linear-gradient(to right, #7663bb 0%, #9b80a8 100%);
   border-radius: 20px;
@@ -20,5 +45,6 @@ border-radius: 10px;
   border-radius: 3px;
 }
 
-.col{
+table{
+  table-layout: fixed;
 }
