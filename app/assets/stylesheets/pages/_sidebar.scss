@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "nunito", Courier, monospace;
   background-image: asset-url("background.png");
 }
 
@@ -40,7 +39,6 @@ body {
       width: 90%;
       background: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(2px);
-      height: 150px;
     }
 
     .star-img {
@@ -50,7 +48,7 @@ body {
       margin: 0;
     }
 
-    ul li p {
+    ul li span {
       display: block;
       width: 100%;
       transition: width 0.5s;
@@ -73,19 +71,13 @@ body {
   text-decoration: none;
   color: inherit;
   padding: 8px;
+  overflow: hidden;
 }
 
 .side-nav ul li a p {
   padding-left: 5px;
   align-items: center;
 }
-
-/* Ajoutez des styles hover si nécessaire */
-// .side-nav ul li a:hover {
-//   width: 200px;
-//   background-color: white;
-//   border-radius: 8px;
-// }
 
 .user {
   display: flex;
@@ -109,7 +101,7 @@ body {
 
 .user h2 {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   white-space: nowrap;
 }
 
@@ -146,9 +138,9 @@ ul li img {
   margin-right: 10px;
 }
 
-ul li p {
+ul li span {
   white-space: nowrap;
   display: none;
-  width: 0px;
+  width: 0;
   overflow: hidden;
 }
