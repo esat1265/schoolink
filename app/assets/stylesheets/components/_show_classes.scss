@@ -1,11 +1,40 @@
-.show-classes-container {
+// .show-classes-container {
+//   background-color: white;
+//   background-color: #fff6;
+//   width: 98%;
+//   border-radius: 20px;
+//   margin-left: 18px;
+//   margin-top: 8px;
+// }
+
+.second-container {
   background-color: white;
+  height: 100%;
   background-color: #fff6;
   width: 98%;
   border-radius: 20px;
   margin-left: 18px;
-  margin-top: 8px;
+  margin-top: 40px;
+  margin-right: 40px;
 }
+
+.second-container h2 {
+  margin-left: 140px;
+  color: #3405a3;
+  margin-bottom: 18px;
+}
+
+.show-classes-container {
+  background-color: white;
+  height: 100%;
+  background-color: #fff6;
+  width: 98%;
+  border-radius: 20px;
+  margin-left: 18px;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+
 
 .show-classes-container h2 {
   margin-left: 140px;
@@ -39,6 +68,10 @@
   &:hover {
     transform: scale(1.05);
     opacity: 0.8;
+  }
+
+  &.active {
+    background: #1b0353;
   }
 }
 

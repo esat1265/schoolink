@@ -1,11 +1,11 @@
 
-<div class="show-classes-container">
+<div class="second-container">
   <div class="cards-container">
-    <h2>All your classes </h2>
+    <h3 class="subtitle classes">Classes </h3 class="subtitle">
     <div id="top-cards-dashboard">
       <% @sections.each do |section| %>
         <%= link_to section_path(section) do %>
-        <%= render 'sections/grades_small', section: section %>
+        <%= render 'sections/grades_small', section: section, active: @section %>
         <% end %>
       <% end %>
     </div>
@@ -19,14 +19,14 @@
 </div>
 
 
-  <!-- Search bar -->
+   <!--Search bar -->
   <div class="search-bar">
-    <input type="text" placeholder="Search">
+    <!-- <input type="text" placeholder="Search"> -->
   </div>
 
   <!-- Student list -->
 <div class="student-list">
-  <table>
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>First Name</th>

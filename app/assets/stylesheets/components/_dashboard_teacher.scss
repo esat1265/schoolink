@@ -17,6 +17,10 @@
   }
 }
 
+body {
+  overflow: hidden;
+}
+
 #top-cards-dashboard {
   display: flex;
   flex-direction: row;
@@ -62,12 +66,13 @@ h3 {
 
 .second-container {
   background-color: white;
-  height: 100vh;
+  height: 100%;
   background-color: #fff6;
   width: 98%;
   border-radius: 20px;
   margin-left: 18px;
-  margin-top: 8px;
+  margin-top: 40px;
+  margin-right: 40px;
 }
 
 .second-container h2 {
