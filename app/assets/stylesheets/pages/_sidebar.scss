@@ -33,13 +33,14 @@ body {
     padding: 8px;
     .user div {
       display: block;
+      padding: 32px;
     }
 
     .user {
       width: 90%;
       background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(5px);
-      height: 220px;
+      backdrop-filter: blur(2px);
+      height: 150px;
     }
 
     .star-img {
@@ -80,10 +81,11 @@ body {
 }
 
 /* Ajoutez des styles hover si nécessaire */
-.side-nav ul li a:hover {
-  background-color: white;
-  border-radius: 8px;
-}
+// .side-nav ul li a:hover {
+//   width: 200px;
+//   background-color: white;
+//   border-radius: 8px;
+// }
 
 .user {
   display: flex;
@@ -91,7 +93,6 @@ body {
   justify-content: space-between;
   width: 70px;
   height: 140px;
-  font-size: 12px;
   padding: 8px;
   border-radius: 8px;
   margin-left: auto;

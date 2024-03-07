@@ -1,6 +1,6 @@
 @media screen and (max-width: 768px) {
   .schedule-table table tbody td, th {
-    padding: 7px;
+    padding: 6px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -8,7 +8,7 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .schedule-table table tbody td, th {
-    padding: 14px;
+    padding: 12px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -16,7 +16,7 @@
 
 @media screen and (min-width: 1025px) {
   .schedule-table table tbody td, th {
-    padding: 10px;
+    padding: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -24,9 +24,17 @@
 
 
 .gradient-background{
-  background: linear-gradient(to right, #7663bb 0%, #9b80a8 100%);
-  border-radius: 20px;
-}
+  background-color: $background-color_1;
+	background-image: linear-gradient(43deg, #4158D0 0%, #7e50c8 46%, #de70ff 100%);
+	border-radius: 8px;
+	color: white;
+	overflow: hidden;
+	position: relative;
+	transform-style: preserve-3d;
+	perspective: 1000px;
+	transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+
+	}
 
 .box-shadow-parent{
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -36,7 +44,7 @@
 
 
 .graph-background{
-background-color: lightblue;
+// background-color: lightblue;
 border-radius: 10px;
 
 }

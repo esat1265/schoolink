@@ -1,12 +1,14 @@
 
   <div class="side-nav">
+
+    <div class="logo">
+
+    </div>
     <div class="user">
-      <%= image_tag(("user.png") , :class => "user-img") %>
+      <%= image_tag(("logo.png") , :class => "user-img") %>
       <div>
-        <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
-        <p><%= current_user.email %></p>
+        <p>Schoolink</p>
       </div>
-      <%= image_tag(("star.png") , :class => "star-img") %>
     </div>
     <ul>
       <li><%= link_to teacher_root_path do %>
@@ -29,8 +31,10 @@
         <p>Communications</p>
         <% end %>
       </li>
-    </ul>
-    <ul>
-      <li><%= image_tag("logout.png") %><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item" %></li>
+      <li class="ms-1 "><%= image_tag("logout.png") %>
+      <p>
+      <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item" %>
+      </p>
+      </li>
     </ul>
   </div>

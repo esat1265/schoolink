@@ -1,14 +1,14 @@
 <header class="d-flex header-container">
   <div class="date-container">
-    <div class="arrow-container">
+    <%# <div class="arrow-container">
       <a href="#" class="arrow">&lt;</a>
-    </div>
+    </div> %>
     <div class="today-container">
-      <%= Time.now.strftime("%B %d, %Y") %>
+      <%= Time.now.strftime("%B %d, %Y %H:%M") %>
     </div>
-    <div class="arrow-container">
+    <%# <div class="arrow-container">
       <a href="#" class="arrow arrow-right">&gt;</a>
-    </div>
+    </div> %>
   </div>
 
   <div class="videocall-container">
@@ -25,10 +25,3 @@
     </div>
   </div>
 </header>
-
-
-<%# <div class="d-flex">
-  <div style="background:pink;">
-  </div>
-  <div style="background:red;"></div>
-</div> %>
