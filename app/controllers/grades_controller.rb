@@ -6,6 +6,7 @@ class GradesController < ApplicationController
     @courses = @section.courses
     @student_grades = @student.grades
 
+
     # Group grades by course
     @grades_by_course = @student_grades.group_by(&:course)
 
