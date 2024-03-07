@@ -1,44 +1,52 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div class="second-container">
-  <h3 class="subtitle classes">Timetable </h3>
-  <div class="parents-dashboard-container">
-    <div class="container mt-5">
-      <div class="row mt-3">
-        <div class="col-8">
-          <div class="calendar-parent">
-            <div class="card-body calendar-parent">
-              <%= render 'sections/parent_calendar' %>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col">
-              <div class="card graph-background">
-                <div class="card-body">
-                  <canvas id="myLineChart"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card graph-background">
-                <div class="card-body">
-                  <canvas id="myBarChart"></canvas>
-                </div>
-              </div>
-            </div>
+<div class="parent-second-container d-flex flex-column">
+  <div class="d-flex align-items-baseline justify-content-evenly mb-4">
+
+    <!-- CALENDAR -->
+    <div class="parent-card-timetable">
+      <div>
+        <h3 class="subtitles">Timetable</h3>
+      </div>
+      <div class="card-body calendar-parent">
+        <%= render 'sections/parent_calendar' %>
+      </div>
+    </div>
+
+    <!-- ANNOUNCEMENTS -->
+    <div class="parent-card-annoucement">
+      <div>
+        <h3 class="subtitles">Announcements</h3>
+      </div>
+      <div class="card gradient-background box-shadow-parent">
+        <div class="card-body" style="max-width:400px">
+          <%= render 'sections/parent_announcements' %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CHARTS -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 p-2 parent-card-chart align-self-start">
+        <div class="card graph-background">
+          <div class="card-body">
+            <canvas id="myLineChart"></canvas>
           </div>
         </div>
-        <div class="col-4">
-          <div class="card gradient-background box-shadow-parent">
-            <div class="card-body">
-              <%= render 'sections/parent_announcements' %>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-2 p-2 align-self-center"></div>
+      <div class="col-md-4 p-2 card graph-background align-self-end">
+        <div class="card-body">
+          <canvas id="myBarChart"></canvas>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var ctx = document.getElementById('myLineChart').getContext('2d');
