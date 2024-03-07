@@ -76,6 +76,4 @@ class PagesController < ApplicationController
       "Teacher of the Year nominations due",
     ]
   end
-
-
 end
