@@ -5,6 +5,7 @@ class SectionsController < ApplicationController
     @sections = current_user.sections
     @section = Section.find(params[:id])
     @students = @section.students
+
   end
 
   def add_grade
@@ -29,8 +30,10 @@ class SectionsController < ApplicationController
         date: date
       )
     end
-    redirect_to create_grades_path
+
   end
+
+
 
   private
 

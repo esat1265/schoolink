@@ -59,29 +59,27 @@ puts "____________Create 100 parents and 100 students"
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     phone_number: "076 #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)}"
-    )
-   Student.create!(
-      email: "student#{n+1}@example.com",
-      password: "password",
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      type: "Student",
-      section: Section.all.sample,
-      parent: parent
-    )
+  )
+
+  Student.create!(
+    email: "student#{n+1}@example.com",
+    password: "password",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    type: "Student",
+    section: Section.all.sample,
+    parent: parent
+  )
 end
 
-
 puts "____________Create 30 grades per student"
-students = Student.all
-students.each do |student|
+Student.all.each do |student|
   courses = student.section.courses.sample(5)
   puts "Creating grades for student #{student.first_name}"
 
   courses.each do |course|
-
     6.times do |n|
-      Grade.create!(
+      Grade.create(
         course_id: course.id,
         grade: (rand(1.0..6.0) * 2).round / 2,
         date: random_date = Date.today - rand(1..365),

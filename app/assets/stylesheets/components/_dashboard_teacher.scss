@@ -1,24 +1,19 @@
 @media screen and (max-width: 768px) {
-  .schedule-table table tbody td.day {
-    padding: 6px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+  .schedule-table table tbody td, th {
+    padding: 7px;
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .schedule-table table tbody td.day {
-    padding: 12px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .schedule-table table tbody td, th {
+    padding: 14px;
   }
 }
 
 @media screen and (min-width: 1025px) {
-  .schedule-table table tbody td.day {
-    padding: 18px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .schedule-table table tbody td, th {
+    padding: 10px;
   }
 }
 
@@ -29,14 +24,22 @@
   margin-left: 140px;
 }
 
-h1 {
-  font-size: 2.5rem;
+h3 {
   font-weight: 600;
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
-  padding: 18px;
-  color: #4c44f4;
+  padding: 5px;
+  color: rgba(0,0,0,0.7);
+
+  &.subtitle {
+    justify-content: left;
+  }
+
+  &.classes {
+    margin-left: 140px;
+  }
 }
 
 #plus {
@@ -73,6 +76,18 @@ h1 {
   margin-bottom: 18px;
 }
 
+// .second-container h3 {
+//   font-weight: 600;
+//   margin-bottom: 0.5rem;
+//   margin-top: 0.5rem;
+//   margin-left: 140px;
+//   display: flex;
+//   justify-content: left;
+//   padding: 5px;
+//   color: rgba(0, 0, 0, 0.7);
+// }
+
+
 .info {
   display: flex;
   flex-direction: row;
@@ -104,15 +119,15 @@ h1 {
 }
 
 .notifications-dashboard {
-  margin-top: 50px;
-  margin-left: 140px;
+  margin-top: 10px;
+  padding: 20px;
   max-width: 350px;
   flex-basis: 35%;
 }
 
 .todo-dashboard {
-  margin-top: 50px;
-  margin-left: 50px;
+  margin-top: 10px;
+  padding: 20px;
   max-width: 350px;
   flex-basis: 35%;
 }
@@ -134,6 +149,8 @@ h1 {
 .bottom-container-dashboard {
   display: flex;
   justify-content: space-between;
+  margin-left: 140px;
+  margin-right: 140px;
 }
 
 .card-dashboard {
@@ -211,16 +228,20 @@ h1 {
 }
 
 .timetable-dashboard {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-  align-items: flex-end;
-  // background-color: white;
+  margin-top: 10px;
+  padding: 20px;
+  max-width: 350px;
   flex-basis: 35%;
-  border-radius: 8px;
-  padding-left: 10px;
-  // background-color: #fff6;
-  height: 600px;
+  // display: flex;
+  // flex-direction: column;
+  // margin-right: 20px;
+  // align-items: flex-end;
+  // // background-color: white;
+  // flex-basis: 35%;
+  // border-radius: 8px;
+  // padding-left: 10px;
+  // // background-color: #fff6;
+  // height: 600px;
 }
 
 #top-cards-dashboard a {

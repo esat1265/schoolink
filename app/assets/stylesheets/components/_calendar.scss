@@ -8,7 +8,6 @@ $color_3: #fff;
 			td {
 				vertical-align: middle;
 				font-weight: 500;
-				padding: 30px;
 				text-align: center;
         background-color: rgba($color: #ffffff, $alpha: 0.4);
 				.hover {
@@ -38,6 +37,10 @@ $color_3: #fff;
 					transition: all 0.3s linear 0s;
 				}
 			}
+      th {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 			td.day {
 				font-size: 12px;
 				font-weight: 600;
@@ -47,42 +50,22 @@ $color_3: #fff;
 				transition: all 0.3s linear 0s;
 				padding: 1px;
         margin-bottom: 20px;
+
 				&:hover {
 					background: #3405a3;
           opacity: 0.8;
 					color: $color_3;
 				}
 			}
-			td.active {
-				position: relative;
-				z-index: 10;
-				transition: all 0.3s linear 0s;
-				min-width: 165px;
-        margin-bottom: 20px;
-        background-color: rgba($color: #ffffff, $alpha: 0.4);
-				p {
-					font-size: 16px;
-					line-height: normal;
-					margin-bottom: 0;
-				}
-				&::before {
-					position: absolute;
-					content: "";
-					min-width: 100%;
-					min-height: 100%;
-					transform: scale(0);
-					top: 0;
-					left: 0;
-					z-index: -1;
-					border-radius: 0.25rem;
-					transition: all 0.3s linear 0s;
-				}
-				&:hover {
-						transform: scale(1.05);
-						visibility: visible;
-						opacity: 0.8;
-				}
-			}
+      td.active {
+        width: 60%;
+        h4 {
+          font-size: 15px;
+        }
+        p {
+          font-size: 13px;
+        }
+      }
 		}
 	}
 }
