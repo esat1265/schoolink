@@ -7,6 +7,7 @@
 <div class="notif-cards">
   <div class="notification">
     <div class="notification-content">
+      <% course = @courses.sample %>
       <p class="notification-title"><%= course.section.name %></p>
       <p class="notification-para1"><%= course.name %></p>
       <p class="notification-para2"><%= @notifications.sample %></p>
