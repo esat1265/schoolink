@@ -2,7 +2,7 @@
 
 /* Media queries */
 @media screen and (max-width: 768px) {
-  .schedule-table table tbody td {
+  .schedule-table table tbody td.day {
     padding: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .schedule-table table tbody td {
+  .schedule-table table tbody td.day {
     padding: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -18,7 +18,7 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .schedule-table table tbody td {
+  .schedule-table table tbody td.day {
     padding: 30px;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -1,4 +1,6 @@
 class SectionsController < ApplicationController
+  before_action :set_section, only: [:show, :add_grade, :create_grades]
+
   def show
     @sections = current_user.sections
     @section = Section.find(params[:id])
@@ -7,7 +9,36 @@ class SectionsController < ApplicationController
 
   def add_grade
     @section = Section.find(params[:id])
-
   end
 
+  def create_grades
+    course_id = params[:course_id]
+    exam_name = params[:exam_name]
+    date = params[:date]
+
+    # Correction : Assurez-vous d'extraire correctement les grades du hash de params
+    grades_params = params[:grades].permit!.to_h
+
+    grades_params.each do |student_id, grade_data|
+      Grade.create(
+        course_id: course_id,
+        student_id: student_id,
+        grade: grade_data['grade'],
+        comment: grade_data['comment'],
+        exam_name: exam_name,
+        date: date
+      )
+    end
+    redirect_to create_grades_path
+  end
+
+  private
+
+  def set_section
+    @section = Section.find(params[:id])
+  end
+
+  def grades_params
+    params.require(:grades).permit(grades: [:grade, :comment])[:grades]
+  end
 end
