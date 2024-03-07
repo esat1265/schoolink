@@ -15,6 +15,10 @@ Rails.application.routes.draw do
         end
       end
     end
+  end
+end
+  resources :grades, only: [:index]
+
 
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root

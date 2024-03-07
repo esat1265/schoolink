@@ -1,5 +1,5 @@
 class Parent < User
-  has_many :students
+  has_one :student
 
   validates :phone_number, presence: true
 end

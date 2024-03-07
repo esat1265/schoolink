@@ -6,13 +6,14 @@ class PagesController < ApplicationController
 
   def parent_dashboard
     @parent = current_user
-    @student = @parent.students.first
+    @student = @parent.student
     @section = @student.section
     @courses = @section.courses
     @student_grades = @student.grades
 
     # Group grades by course
     @grades_by_course = @student_grades.group_by(&:course)
+
 
     # Calculate averages of each course
     @averages_by_course = {}
@@ -25,12 +26,12 @@ class PagesController < ApplicationController
 
     # Calculate averages of course entire class
     @courses = @section.courses
-    @grades_by_course = {}
+    @grades_by_courses = {}
 
     @courses.each do |course|
       grades = Grade.where(course: course)
       course_average = grades.average(:grade).round(1)
-      @grades_by_course[course] = course_average
+      @grades_by_courses[course] = course_average
     end
 
   end

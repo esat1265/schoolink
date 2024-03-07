@@ -1,5 +1,33 @@
 class GradesController < ApplicationController
   def index
-    
+    @parent = current_user
+    @student = @parent.student
+    @section = @student.section
+    @courses = @section.courses
+    @student_grades = @student.grades
+
+    # Group grades by course
+    @grades_by_course = @student_grades.group_by(&:course)
+
+
+    # Calculate averages of each course
+    @averages_by_course = {}
+    @grades_by_course.each do |course, grades|
+      total_grades = grades.length
+      total_points = grades.reduce(0) { |sum, grade| sum + grade.grade }
+      average_grade = (total_points / total_grades.to_f).round(1)
+      @averages_by_course[course] = average_grade
+    end
+
+    # Calculate averages of course entire class
+    @courses = @section.courses
+    @grades_by_courses = {}
+
+    @courses.each do |course|
+      grades = Grade.where(course: course)
+      course_average = grades.average(:grade).round(1)
+      @grades_by_courses[course] = course_average
+    end
+
   end
 end
