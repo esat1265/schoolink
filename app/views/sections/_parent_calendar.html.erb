@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="schedule-table">
+        <table class="table bg-white">
+
+        <th></th>
+        <th class="text-center">Monday</th>
+        <th class="text-center">Tuesday</th>
+        <th class="text-center">Wednesday</th>
+        <th class="text-center">Thursday</th>
+        <th class="text-center">Friday</th>
+          <% 5.times do |i| %>
+            <tr>
+              <td class="schedule-table table tbody day"><%= "#{(8 + i).to_s.rjust(2, '0')}.00-#{(9 + i).to_s.rjust(2, '0')}.00" %></td>
+              <% 5.times do %>
+                <td><%= @courses.sample.name %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
