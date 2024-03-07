@@ -1,3 +1,21 @@
+@media screen and (max-width: 768px) {
+  .schedule-table table tbody td, th {
+    padding: 7px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .schedule-table table tbody td, th {
+    padding: 14px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .schedule-table table tbody td, th {
+    padding: 10px;
+  }
+}
+
 #top-cards-dashboard {
   display: flex;
   flex-direction: row;
@@ -16,6 +34,10 @@ h3 {
 
   &.subtitle {
     justify-content: left;
+  }
+
+  &.classes {
+    margin-left: 140px;
   }
 }
 
@@ -52,6 +74,18 @@ h3 {
   color: #3405a3;
   margin-bottom: 18px;
 }
+
+// .second-container h3 {
+//   font-weight: 600;
+//   margin-bottom: 0.5rem;
+//   margin-top: 0.5rem;
+//   margin-left: 140px;
+//   display: flex;
+//   justify-content: left;
+//   padding: 5px;
+//   color: rgba(0, 0, 0, 0.7);
+// }
+
 
 .info {
   display: flex;
@@ -114,8 +148,8 @@ h3 {
 .bottom-container-dashboard {
   display: flex;
   justify-content: space-between;
-  padding-left: 140px;
-  padding-right: 140px;
+  margin-left: 140px;
+  margin-right: 140px;
 }
 
 .card-dashboard {
