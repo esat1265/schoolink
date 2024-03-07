@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
-
     authenticated :user, ->(u) { u.type == 'Parent' } do
       root 'pages#parent_dashboard', as: :parent_root
     end
