@@ -17,15 +17,15 @@
   }
 }
 
-body {
-  overflow: hidden;
-}
+// body {
+//   overflow: hidden;
+// }
 
 #top-cards-dashboard {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin-left: 140px;
+  margin-left: 10px;
 }
 
 h3 {
@@ -42,7 +42,7 @@ h3 {
   }
 
   &.classes {
-    margin-left: 140px;
+    margin-left: 10px;
   }
 }
 
@@ -76,22 +76,10 @@ h3 {
 }
 
 .second-container h2 {
-  margin-left: 140px;
+  margin-left: 10px;
   color: #3405a3;
   margin-bottom: 18px;
 }
-
-// .second-container h3 {
-//   font-weight: 600;
-//   margin-bottom: 0.5rem;
-//   margin-top: 0.5rem;
-//   margin-left: 140px;
-//   display: flex;
-//   justify-content: left;
-//   padding: 5px;
-//   color: rgba(0, 0, 0, 0.7);
-// }
-
 
 .info {
   display: flex;
@@ -153,9 +141,9 @@ h3 {
 
 .bottom-container-dashboard {
   display: flex;
-  justify-content: space-between;
-  margin-left: 140px;
-  margin-right: 140px;
+  justify-content: space-evenly;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .card-dashboard {
