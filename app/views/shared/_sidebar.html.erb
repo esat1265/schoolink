@@ -21,9 +21,17 @@
       <p>Classes</p>
         <% end %>
       </li>
-      <li><%= link_to grades_path do %>
-        <%= image_tag("reports.png") %>
-        <p>Grades</p>
+      <li>
+        <%if current_user.type == "Parent" %>
+          <%= link_to grades_path do %>
+          <%= image_tag("reports.png") %>
+          <p>Grades</p>
+          <% end %>
+        <%else%>
+           <%= link_to "#" do %>
+          <%= image_tag("reports.png") %>
+          <p>Grades</p>
+          <% end %>
         <% end %>
       </li>
       <li><%= link_to "#" do %>

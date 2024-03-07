@@ -20,15 +20,9 @@
         <thead>
           <tr>
             <th>Course Name</th>
-            <%%>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-
+            <% @max_grades[1].times do |i| %>
+            <th><%= i + 1 %></th>
+            <% end %>
           </tr>
         </thead>
 
