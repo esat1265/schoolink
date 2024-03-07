@@ -52,7 +52,7 @@ Section.all.each_with_index do |section, index|
 end
 
 puts "____________Create 100 parents and 100 students"
-20.times do |n|
+100.times do |n|
   parent = Parent.create!(
     email: "parent#{n+1}@example.com",
     password: "password",
