@@ -1,3 +1,27 @@
+@media screen and (max-width: 768px) {
+  .schedule-table table tbody td.day {
+    padding: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .schedule-table table tbody td.day {
+    padding: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .schedule-table table tbody td.day {
+    padding: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 #top-cards-dashboard {
   display: flex;
   flex-direction: row;
