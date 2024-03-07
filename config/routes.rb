@@ -7,13 +7,13 @@ Rails.application.routes.draw do
     end
 
     authenticated :user, ->(u) { u.type == 'Teacher' } do
-    root 'pages#teacher_dashboard', as: :teacher_root
-    resources :sections, only: [:index, :show] do
-      member do
-      get :students
+      root 'pages#teacher_dashboard', as: :teacher_root
+      resources :sections, only: [:index, :show] do
+        member do
+          get :students
+        end
+      end
     end
-  end
-end
 
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root

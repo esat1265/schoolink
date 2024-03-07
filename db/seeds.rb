@@ -30,7 +30,7 @@ courses = [
   "History","Economy", "Music", "Philosophy", "Civic education"
 ]
 
-5.times do |n|
+8.times do |n|
   teacher = Teacher.create!(
     email: "teacher#{n+1}@example.com",
     password: "password",
@@ -43,15 +43,16 @@ end
 Section.all.each_with_index do |section, index|
   created_courses = []
   5.times do
+    teacher = section.teachers.count > 3 ? section.teachers.sample : Teacher.all.sample
     random_course = (courses - created_courses).sample
     created_courses.push(random_course)
-    section.courses.create!(teacher: Teacher.all.sample, name: random_course)
+    section.courses.create!(teacher: teacher, name: random_course)
     puts "Course #{random_course} created with section #{section.name}"
   end
 end
 
-puts "____________Create 100 parents"
-100.times do |n|
+puts "____________Create 100 parents and 100 students"
+20.times do |n|
   parent = Parent.create!(
     email: "parent#{n+1}@example.com",
     password: "password",
@@ -59,7 +60,6 @@ puts "____________Create 100 parents"
     last_name: Faker::Name.last_name,
     phone_number: "076 #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)}"
     )
-  puts "Parent #{n+1} created"
    Student.create!(
       email: "student#{n+1}@example.com",
       password: "password",
@@ -69,7 +69,6 @@ puts "____________Create 100 parents"
       section: Section.all.sample,
       parent: parent
     )
-    puts "Student #{n+1} created"
 end
 
 
@@ -77,6 +76,7 @@ puts "____________Create 30 grades per student"
 students = Student.all
 students.each do |student|
   courses = student.section.courses.sample(5)
+  puts "Creating grades for student #{student.first_name}"
 
   courses.each do |course|
 
@@ -89,7 +89,6 @@ students.each do |student|
         comment: Faker::Hipster.paragraph(sentence_count: 2),
         student_id: student.id
       )
-      puts "Grades #{n+1} for student #{student.first_name} created"
     end
   end
 end
