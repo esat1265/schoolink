@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user, ->(u) { u.type == 'Parent' } do
       root 'pages#parent_dashboard', as: :parent_root
+      resources :grades, only: [:index, :show]
     end
 
     authenticated :user, ->(u) { u.type == 'Teacher' } do
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
   unauthenticated do
     root 'devise/sessions#new', as: :unauthenticated_root
   end
-  resources :grades, only: [:index, :show]
 end
 
 # authenticated :user, ->(u) { u.super_admin? } do

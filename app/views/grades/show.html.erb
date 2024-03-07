@@ -4,34 +4,43 @@
     <h2>Grade Details</h2>
   </div>
   <div class="show-table-container me-4">
-    <div class="tabs">
-      <div class="d-flex justify-content-between pe-5">
-        <h4>Grades</h4>
+      <div class="tabs">
+        <%= link_to 'Grades', grades_path, id: "add-grade-btn" %>
       </div>
-      <div class="student-list d-flex">
-      <table class="me-2">
-        <thead>
-          <tr>
-            <th>Course Name</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-
-          </tr>
-        </thead>
-
-        <tbody>
-
-        </tbody>
-
-      </table>
-
-
+    <div class="tabs">
+      <div class="student-list mt-3 w-75" id="grade-details">
+        <table class="me-2 table table-hover ">
+          <thead>
+            <tr>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <th>Course Name</th>
+                <td><%=@grade.course.name%></td>
+              </tr>
+              <tr>
+                <th>Teacher Name</th>
+                <td><%=@grade.course.teacher.first_name%> <%=@grade.course.teacher.last_name%></td>
+              </tr>
+              <tr>
+                <th>Exam Name</th>
+                <td><%=@grade.exam_name%></td>
+              </tr>
+              <tr>
+                <th>Exam Date</th>
+                <td><%=@grade.date%></td>
+              </tr>
+              <tr>
+                <th>Grade</th>
+                <td><%=@grade.grade%></td>
+              </tr>
+              <tr>
+                <th>Comment</th>
+                <td><%=@grade.comment%></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    </div>
-  </div>
 </div>

@@ -16,18 +16,13 @@
 
     <!-- Student list -->
     <div class="student-list d-flex">
-      <table class="me-2">
+      <table class="table table-hover me-2">
         <thead>
           <tr>
             <th>Course Name</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-
+            <% @max_grades[1].times do |i| %>
+            <th><%= i + 1 %></th>
+            <% end %>
           </tr>
         </thead>
 
@@ -47,7 +42,7 @@
         </tbody>
 
       </table>
-      <table class="me-1" style="width: 120px;">
+      <table class="table table-hover me-1" style="width: 120px;">
         <thead>
           <tr>
             <th>Student</th>
@@ -63,7 +58,7 @@
         </tbody>
 
       </table>
-      <table style="width: 120px;">
+      <table class="table table-hover" style="width: 120px;">
         <thead>
           <tr>
             <th>Class </th>
