@@ -4,6 +4,7 @@
     <h2><%=@student.first_name%>'s Grades</h2>
     <h4>Class : <%=@section.name%></h4>
   </div>
+
   <div class="show-table-container me-4">
     <div class="tabs">
       <!-- Exemple pour Classroom Students (Assumant que c'est la page index des sections) -->
@@ -18,23 +19,26 @@
       <table class="table table-hover me-2">
         <thead>
           <tr>
-            <th>Course Name</th>
-            <% @max_grades[1].times do |i| %>
-            <th><%= i + 1 %></th>
+            <th class="text-center">Course Name</th>
+            <% @max_grades.times do |i| %>
+            <th class="text-center"><%= i + 1 %></th>
             <% end %>
           </tr>
         </thead>
 
         <tbody>
           <% @grades_by_course.each do |course, grades| %>
-            <tr>
-              <td><%= course.name %></td>
+            <tr class="text-center">
+              <td class="text-center"><%= course.name %></td>
               <% grades.each do |grade| %>
-                <td>
+                <td class="text-center">
                   <%= link_to grade_path(grade), class: 'text-decoration-none', style: 'color: black;' do %>
-                  <%= grade.grade%>
+                    <%= grade.grade%>
                   <% end %>
                 </td>
+              <% end %>
+              <% (@max_grades - grades.count).times do %>
+                <td></td>
               <% end %>
             </tr>
           <% end %>
@@ -50,8 +54,8 @@
 
         <tbody>
           <% @averages_by_course.each do |course, average_grade|%>
-            <tr>
-              <td><%=average_grade%></td>
+            <tr class="text-center">
+              <td class="text-center"><%=(average_grade * 2.0).round / 2.0 %></td>
             </tr>
           <% end %>
         </tbody>
@@ -59,14 +63,14 @@
       </table>
       <table class="table table-hover" style="width: 120px;">
         <thead>
-          <tr>
-            <th>Class </th>
+          <tr class="text-center">
+            <th class="text-center">Class </th>
           </tr>
         </thead>
         <tbody>
           <% @grades_by_courses.each do |course, average_grade|%>
-            <tr>
-              <td><%=average_grade%></td>
+            <tr class="text-center">
+              <td class="text-center"><%=(average_grade * 2.0).round / 2.0%></td>
             </tr>
           <% end %>
         </tbody>
