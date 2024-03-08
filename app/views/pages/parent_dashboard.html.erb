@@ -1,5 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <div class="parent-second-container d-flex flex-column">
   <div class="d-flex align-items-baseline justify-content-evenly mb-4">
 
@@ -29,85 +27,12 @@
 
   <!-- CHARTS -->
   <div class="container d-flex flex-column">
-    <div class="row d-flex align-items-baseline justify-content-left mb-4">
-      <div class="col-md-4 p-2 parent-card-chart align-self-start">
-        <div class="card graph-background">
-          <div class="card-body">
-            <canvas id="myLineChart"></canvas>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 p-2 card graph-background align-self-end">
+    <div class="row d-flex align-items-baseline justify-content-center mb-4" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
+      <div class="col-md-5 p-2 card graph-background align-self-end">
         <div class="card-body">
-          <canvas id="myBarChart"></canvas>
+          <canvas id="myBarChart" data-display-charts-target="bar"></canvas>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var ctx = document.getElementById('myLineChart').getContext('2d');
-    var myLineChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['Math', 'Science', 'PE', 'History', 'English'],
-        datasets: [{
-          label: 'Class Average Grades',
-          data: [3, 5, 4, 2, 6],
-          fill: false,
-          borderColor: 'rgb(75, 192, 192)',
-          tension: 0.1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0, // Set minimum value for y-axis
-            max: 6  // Set maximum value for y-axis
-          }
-        }
-      }    });
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var ctx = document.getElementById('myBarChart').getContext('2d');
-    var myBarChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Math', 'Science', 'PE', 'History', 'English'],
-        datasets: [{
-          label: 'Grades',
-          data: [5, 6, 4, 3, 4],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 6
-          }
-        }
-      }
-    });
-  });
-</script>
