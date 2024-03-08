@@ -4,7 +4,7 @@ class GradesController < ApplicationController
     @student = @parent.student
     @section = @student.section
     @courses = @section.courses
-    @student_grades = @student.grades
+    @student_grades = @student.grades.order(:created_at)
 
     # Group grades by course
     @grades_by_course = @student_grades.group_by(&:course)
