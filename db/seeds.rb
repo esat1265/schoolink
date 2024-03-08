@@ -129,10 +129,9 @@ Student.all.each do |student|
     6.times do |n|
       grade_value = (rand(1.0..6.0) * 2).round / 2
       comment = grade_value > 3 ? positive_teacher_comments.sample : negative_teacher_comments.sample
-
       Grade.create(
         course_id: course.id,
-        grade: (rand(1.0..6.0) * 2).round / 2,
+        grade: grade_value,
         date: random_date = Date.today - rand(1..365),
         exam_name: "#{course.name} Chapter #{rand(1..10)}",
         comment: comment,

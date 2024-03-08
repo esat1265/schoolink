@@ -1,5 +1,5 @@
 <div class="second-container">
-  <h3 class="subtitle classes">All your classes </h3>
+  <h4 class="text-center">All your classes </h4>
   <div id="top-cards-dashboard">
     <% @sections.each do |section| %>
       <%= link_to section_path(section) do %>
@@ -11,7 +11,7 @@
 
   <div class="bottom-container-dashboard">
     <div class="notifications-dashboard">
-      <h3 class="subtitle">Notifications</h3>
+      <h4 class="text-center">Notifications</h4>
       <% rand(3..5).times do %>
         <%= render 'sections/notifications', courses: @courses, notifications: @notifications %>
       <% end %>
@@ -19,14 +19,14 @@
     </div>
 
     <div class="todo-dashboard">
-      <h3 class="subtitle">To do today</h3>
+      <h4 class="text-center">To do today</h4>
       <% 6.times do %>
         <%= render 'sections/todos', todos: @todos %>
       <% end %>
     </div>
 
     <div class="timetable-dashboard">
-      <h3 class="subtitle">Timetable</h3>
+      <h4 class="text-center">Timetable</h4>
       <%= render 'sections/calendar', courses: @courses, sections: @sections  %>
     </div>
   </div>

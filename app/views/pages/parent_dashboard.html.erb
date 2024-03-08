@@ -35,6 +35,7 @@
   </div>
 
   <!-- CHARTS -->
+
   <div class="container d-flex flex-column">
     <h4 class="text-center">Timetable </h4>
     <div class="row d-flex align-items-baseline justify-content-center mb-4" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
@@ -43,5 +44,4 @@
         <%= render 'sections/parent_calendar' %>
     </div>
   </div>
-
 </div>
