@@ -5,15 +5,9 @@ class PagesController < ApplicationController
   end
 
   def parent_dashboard
-    @parent = current_user
-    @student = @parent.student
-    @section = @student.section
-    @courses = @section.courses
-    @student_grades = @student.grades
 
     # Group grades by course
-    @grades_by_course = @student_grades.group_by(&:course)
-
+    @grades_by_course = current_user.student.grades.group_by(&:course)
 
     # Calculate averages of each course
     @averages_by_course = {}
@@ -25,7 +19,7 @@ class PagesController < ApplicationController
     end
 
     # Calculate averages of course entire class
-    @courses = @section.courses
+    @courses = current_user.student.courses
     @grades_by_courses = {}
 
     @courses.each do |course|
@@ -34,6 +28,20 @@ class PagesController < ApplicationController
       @grades_by_courses[course] = course_average
     end
 
+    # Create array for piechart
+    @grades_for_charts = @averages_by_course.map do |course, avg_student|
+      {
+        section: course.name,
+        avg_student: (avg_student * 2.0).round / 2.0,
+        avg_class: (@grades_by_courses[course] * 2.0).round / 2.0
+      }
+    end
+
+    # @averages_by_course = [{
+      #   section: "math",
+      #   avg_sction: 3.4,
+      #   avg_student: 4
+    #   }]
   end
 
   def teacher_dashboard
