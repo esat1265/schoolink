@@ -4,7 +4,7 @@
     <!-- CALENDAR -->
     <div class="parent-card-timetable">
       <div class="row d-flex justify-content-center mb-1" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
-      <h3 class="text-center">Chart </h3>
+      <h4 class="text-center">Chart </h4>
         <div class="col-md-8 p-2 card graph-background align-self-end">
           <div class="card-body">
             <canvas id="myBarChart" data-display-charts-target="bar"></canvas>
@@ -23,7 +23,7 @@
     <!-- ANNOUNCEMENTS -->
     <div class="parent-card-annoucement pt-4">
       <div>
-        <h3 class="text-center">Annoucements </h3>
+        <h4 class="text-center">Annoucements </h4>
       </div>
       <div class="card gradient-background box-shadow-parent">
         <div class="card-body" style="max-width:400px">
@@ -36,7 +36,7 @@
 
   <!-- CHARTS -->
   <div class="container d-flex flex-column">
-    <h3 class="text-center">Timetable </h3>
+    <h4 class="text-center">Timetable </h4>
     <div class="row d-flex align-items-baseline justify-content-center mb-4" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
       </div>
       <div class="card-body calendar-parent">
