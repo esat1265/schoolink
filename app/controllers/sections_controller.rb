@@ -9,12 +9,14 @@ class SectionsController < ApplicationController
 
   def add_grade
     @section = Section.find(params[:id])
+    @sections = current_user.sections
+    @students = @section.students
   end
 
   def create_grades
     course_id = params[:section][:course_id]
-    exam_name = params[:exam_name]
-    date = params[:date]
+    exam_name = params[:section][:exam_name]
+    date = params[:section][:date]
 
     grades_params = params[:grades].permit!.to_h
 
