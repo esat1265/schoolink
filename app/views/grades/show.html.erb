@@ -9,38 +9,41 @@
       </div>
     <div class="tabs">
       <div class="student-list mt-3" id="grade-details">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-            </tr>
-          </thead>
-          <tbody>
+        <div class="col-md-6">
+          <table class="table table-hover smaller-table">
+            <thead>
               <tr>
-                <th class="grade-th">Course Name</th>
-                <td><%=@grade.course.name%></td>
               </tr>
-              <tr>
-                <th class="grade-th">Teacher Name</th>
-                <td><%=@grade.course.teacher.first_name%> <%=@grade.course.teacher.last_name%></td>
-              </tr>
-              <tr>
-                <th class="grade-th">Exam Name</th>
-                <td><%=@grade.exam_name%></td>
-              </tr>
-              <tr>
-                <th class="grade-th">Exam Date</th>
-                <td><%=@grade.date%></td>
-              </tr>
-              <tr>
-                <th class="grade-th">Grade</th>
-                <td><%=@grade.grade%></td>
-              </tr>
-              <tr>
-                <th class="grade-th">Comment</th>
-                <td><%=@grade.comment%></td>
-              </tr>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+                <tr>
+                  <th class="grade-th">Course Name</th>
+                  <td><%=@grade.course.name%></td>
+                </tr>
+                <tr>
+                  <th class="grade-th">Teacher Name</th>
+                  <td><%=@grade.course.teacher.first_name%> <%=@grade.course.teacher.last_name%></td>
+                </tr>
+                <tr>
+                  <th class="grade-th">Exam Name</th>
+                  <td><%=@grade.exam_name%></td>
+                </tr>
+                <tr>
+                  <th class="grade-th">Exam Date</th>
+                  <td><%=@grade.date%></td>
+                </tr>
+                <tr>
+                  <th class="grade-th">Grade</th>
+                  <td><%=@grade.grade%></td>
+                </tr>
+                <tr>
+                  <th class="grade-th">Comment</th>
+                  <td><%=@grade.comment%></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
     </div>
 </div>
