@@ -14,8 +14,7 @@
   <div class="tabs">
   <!-- Exemple pour Classroom Students (Assumant que c'est la page index des sections) -->
   <%= link_to 'Classroom students', section_path(@section), class: "#{ 'active' if current_page?(section_path(@section)) }" %>
-  <a href="/#">Personal infos</a>
-  <%= link_to 'Add a grade', add_grade_section_path(@section), id: "add-grade-btn" %>
+  <%= link_to 'Add a grade for this class', add_grade_section_path(@section), id: "add-grade-btn" %>
 </div>
 
   <div class="search-bar">
