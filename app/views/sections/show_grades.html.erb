@@ -4,6 +4,16 @@
     <h3 class="subtitle classes">Class <%=@section.name%> Grades</h3 class="subtitle">
     </div>
   <div class="show-table-container">
+  <div class="cards-container">
+    <h3 class="subtitle classes">Classes </h3 class="subtitle">
+    <div id="top-cards-dashboard">
+      <% @sections.each do |section| %>
+        <%= link_to show_grades_section_path(section) do %>
+        <%= render 'sections/grades_small', section: section, active: @section %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
   <div class="tabs">
     <!-- Exemple pour Classroom Students (Assumant que c'est la page index des sections) -->
     <%= link_to 'Classroom students', section_path(@section), class: "#{ 'active' if current_page?(section_path(@section)) }" %>
