@@ -10,8 +10,7 @@ class GradesController < ApplicationController
     @grades_by_course = @student_grades.group_by(&:course)
     # max number of grades
     @grades_count_by_course = @grades_by_course.transform_values(&:count)
-    @max_grades = @grades_count_by_course.max_by { |_, count| count }
-
+    @max_grades = @grades_count_by_course.max_by { |_, count| count }.last
 
     # Calculate averages of each course
     @averages_by_course = {}

@@ -53,9 +53,9 @@
               </td>
               <% @section.courses.each do |course| %>
                 <% grade = student.grades.find_by(course_id: course.id) %>
-                <td><%= grade.grade if grade %></td>
+                <td><%= (grade.grade * 2.0).round / 2.0 if grade %></td>
               <% end %>
-              <td><%= student.grades.average(:grade).to_f.round(2) %></td>
+              <td><%= (student.grades.average(:grade).to_f * 2.0).round / 2.0 %></td>
             </tr>
           <% end %>
         </tbody>

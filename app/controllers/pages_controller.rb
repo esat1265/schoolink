@@ -36,12 +36,6 @@ class PagesController < ApplicationController
         avg_class: (@grades_by_courses[course] * 2.0).round / 2.0
       }
     end
-
-    # @averages_by_course = [{
-      #   section: "math",
-      #   avg_sction: 3.4,
-      #   avg_student: 4
-    #   }]
   end
 
   def teacher_dashboard
