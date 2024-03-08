@@ -81,6 +81,20 @@
 
 .zoom-style{
   text-decoration: none;
+  color: black;
 }
+
+.contact-style{
+  color: white;
+  text-decoration: none;
+
+}
+
 .login-details{
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 15px;
+  align-items: center;
+  padding-top: 20px;
+  height: 100%;
 }
