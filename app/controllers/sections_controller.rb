@@ -16,6 +16,7 @@ class SectionsController < ApplicationController
   def show_grades
     @section = Section.find(params[:id])
     @students = @section.students
+    @sections = current_user.sections
   end
 
 
