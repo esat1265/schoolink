@@ -40,8 +40,38 @@
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 
 }
+.parent-second-container {
+  background-color: white;
+  height: 100%;
+  background-color: #fff6;
+  width: 98%;
+  border-radius: 20px;
+  margin-left: 18px;
+  margin-top: 40px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+  padding-bottom: 20px;
+  padding-right: 80px;
+}
 
+.parent-second-container .subtitles {
+  margin: 10px;
+}
 
+.parent-card-chart {
+  padding: 20px;
+}
+
+.parent-card-timetable {
+  gap: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 20px;
+  width: 60%;
+}
 
 .graph-background{
 // background-color: lightblue;
