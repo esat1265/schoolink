@@ -1,18 +1,20 @@
 @media screen and (max-width: 768px) {
-
-  .schedule-table table tbody td, th {
+  .schedule-table table tbody td,
+  th {
     padding: 7px;
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .schedule-table table tbody td, th {
+  .schedule-table table tbody td,
+  th {
     padding: 14px;
   }
 }
 
 @media screen and (min-width: 1025px) {
-  .schedule-table table tbody td, th {
+  .schedule-table table tbody td,
+  th {
     padding: 10px;
   }
 }
@@ -35,7 +37,7 @@ h3 {
   display: flex;
   justify-content: center;
   padding: 5px;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0, 0, 0, 0.7);
 
   &.subtitle {
     justify-content: left;
