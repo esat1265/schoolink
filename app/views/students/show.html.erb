@@ -1,0 +1,13 @@
+
+<div class="show-classes-container">
+  <div class="cards-container d-flex justify-content-center pt-3 ">
+    <h2><%=@student.first_name%>'s Grades Details</h2>
+  </div>
+  <div class="show-table-container me-4">
+      <div class="tabs">
+        <%= link_to 'Grades', show_grades_section_path(current_user.sections.first), id: "add-grade-btn" %>
+      </div>
+    <div class="tabs">
+
+    </div>
+</div>

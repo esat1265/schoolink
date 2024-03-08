@@ -8,10 +8,12 @@ Rails.application.routes.draw do
 
     authenticated :user, ->(u) { u.type == 'Teacher' } do
       root 'pages#teacher_dashboard', as: :teacher_root
+      resources :students, only: [:show]
       resources :sections, only: [:index, :show] do
         member do
           get :students
           get :add_grade, to: 'sections#add_grade'
+          get :show_grades, to: 'sections#show_grades'
           post :create_grades, to: 'sections#create_grades'
         end
       end
