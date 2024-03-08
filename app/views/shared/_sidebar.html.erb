@@ -31,7 +31,7 @@
 
 <% if current_user.type == "Teacher" && current_user.sections.any? %>
   <li>
-    <%= link_to add_grade_section_path(current_user.sections.first) do %>
+    <%= link_to show_grades_section_path(current_user.sections.first) do %>
       <%= image_tag("reports.png") %>
       <span>Grades</span>
     <% end %>

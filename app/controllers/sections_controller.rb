@@ -13,6 +13,12 @@ class SectionsController < ApplicationController
     @students = @section.students
   end
 
+  def show_grades
+    @section = Section.find(params[:id])
+    @students = @section.students
+  end
+
+
   def create_grades
     course_id = params[:section][:course_id]
     exam_name = params[:section][:exam_name]
