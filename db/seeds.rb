@@ -58,7 +58,7 @@ puts "____________Create 100 parents and 100 students"
     password: "password",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    phone_number: "076 #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)} #{rand(0..9)}"
+    phone_number: "076 #{rand(100..999)} #{rand(10..99)} #{rand(10..99)}"
   )
 
   Student.create!(
