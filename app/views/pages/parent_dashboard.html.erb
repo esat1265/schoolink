@@ -1,20 +1,29 @@
 <div class="parent-second-container d-flex flex-column">
-  <div class="d-flex align-items-baseline justify-content-evenly mb-4">
+  <div class="d-flex justify-content-evenly mb-1">
 
     <!-- CALENDAR -->
     <div class="parent-card-timetable">
-      <div>
+      <div class="row d-flex justify-content-center mb-1" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
+      <h3 class="text-center" style="font-weight: 400; color: rgba(0, 0, 0, 0.7);">Chart </h3>
+        <div class="col-md-8 p-2 card graph-background align-self-end">
+          <div class="card-body">
+            <canvas id="myBarChart" data-display-charts-target="bar"></canvas>
+          </div>
+        </div>
+      </div>
+       <!-- <div>
         <h3 class="subtitles">Timetable</h3>
       </div>
       <div class="card-body calendar-parent">
         <%= render 'sections/parent_calendar' %>
-      </div>
+      </div>-->
     </div>
 
+
     <!-- ANNOUNCEMENTS -->
-    <div class="parent-card-annoucement" style="border: 0px !important;">
+    <div class="parent-card-annoucement pt-4">
       <div>
-        <h3 class="subtitles">Announcements</h3>
+        <h3 class="text-center">Annoucements </h3>
       </div>
       <div class="card gradient-background box-shadow-parent">
         <div class="card-body" style="max-width:400px">
@@ -27,12 +36,12 @@
 
   <!-- CHARTS -->
   <div class="container d-flex flex-column">
+    <h3 class="text-center">Timetable </h3>
     <div class="row d-flex align-items-baseline justify-content-center mb-4" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
-      <div class="col-md-5 p-2 card graph-background align-self-end">
-        <div class="card-body">
-          <canvas id="myBarChart" data-display-charts-target="bar"></canvas>
-        </div>
       </div>
+      <div class="card-body calendar-parent">
+        <%= render 'sections/parent_calendar' %>
     </div>
   </div>
+
 </div>
