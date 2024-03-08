@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin-left: 10px;
+  margin-left: 110px;
   padding: 20px;
 }
 
@@ -118,6 +118,7 @@
 
 .cards-container {
   margin-bottom: 18px;
+  // margin-left: 110px;
 }
 
 /* General Styles for Tabs */
@@ -191,7 +192,7 @@
   padding: 20px;
   border-radius: 20px;
   margin-top: 20px;
-  margin-left: 10px;
+  margin-left: 110px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
@@ -228,7 +229,7 @@
   color: white;
 }
 
-
-#grade-details th, #grade-details td{
+#grade-details th,
+#grade-details td {
   text-align: center;
 }
