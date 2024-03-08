@@ -1,13 +1,39 @@
 
 <div class="show-classes-container">
   <div class="cards-container d-flex justify-content-center pt-3 ">
-    <h2><%=@student.first_name%>'s Grades Details</h2>
+    <h2><%= @student.first_name %> <%= @student.last_name %>'s Grades Details</h2>
   </div>
   <div class="show-table-container me-4">
       <div class="tabs">
         <%= link_to 'Grades', show_grades_section_path(current_user.sections.first), id: "add-grade-btn" %>
       </div>
-    <div class="tabs">
+    <div class="tabs student-list">
+        <div class="container">
+  <h3>Section: <%= @section.name %></h3>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>Grade</th>
+        <th>Exam Name</th>
+        <th>Exam Date</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @student.grades.includes(:course).each do |grade| %>
+        <tr>
+          <td><%= grade.course.name %></td>
+          <td><%= grade.grade %></td>
+          <td><%= grade.exam_name %></td>
+          <td><%= grade.date %></td>
+          <td><%= grade.comment %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
     </div>
 </div>
