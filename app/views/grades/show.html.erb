@@ -1,6 +1,6 @@
 
 <div class="show-classes-container">
-  <div class="cards-container d-flex justify-content-around pt-3">
+  <div class="cards-container d-flex justify-content-center pt-3 ">
     <h2>Grade Details</h2>
   </div>
   <div class="show-table-container me-4">
@@ -8,35 +8,35 @@
         <%= link_to 'Grades', grades_path, id: "add-grade-btn" %>
       </div>
     <div class="tabs">
-      <div class="student-list mt-3 w-75" id="grade-details">
-        <table class="me-2 table table-hover ">
+      <div class="student-list mt-3" id="grade-details">
+        <table class=" table table-hover ">
           <thead>
             <tr>
             </tr>
           </thead>
           <tbody>
               <tr>
-                <th>Course Name</th>
+                <th class="grade-th">Course Name</th>
                 <td><%=@grade.course.name%></td>
               </tr>
               <tr>
-                <th>Teacher Name</th>
+                <th class="grade-th">Teacher Name</th>
                 <td><%=@grade.course.teacher.first_name%> <%=@grade.course.teacher.last_name%></td>
               </tr>
               <tr>
-                <th>Exam Name</th>
+                <th class="grade-th">Exam Name</th>
                 <td><%=@grade.exam_name%></td>
               </tr>
               <tr>
-                <th>Exam Date</th>
+                <th class="grade-th">Exam Date</th>
                 <td><%=@grade.date%></td>
               </tr>
               <tr>
-                <th>Grade</th>
+                <th class="grade-th">Grade</th>
                 <td><%=@grade.grade%></td>
               </tr>
               <tr>
-                <th>Comment</th>
+                <th class="grade-th">Comment</th>
                 <td><%=@grade.comment%></td>
               </tr>
           </tbody>
