@@ -30,7 +30,7 @@
           <% @grades_by_course.each do |course, grades| %>
             <tr>
               <td><%= course.name %></td>
-              <% grades.each do |grade| %>
+              <% grades.reverse.each do |grade| %>
                 <td>
                   <%= link_to grade_path(grade), class: 'text-decoration-none', style: 'color: black;' do %>
                   <%= grade.grade%>

@@ -16,3 +16,30 @@
 .add-grades-form {
   margin-left: 140px;
 }
+
+.class-name,
+.class-grade {
+  width: 25%;
+}
+
+.class-comment {
+  width: 50%;
+}
+
+.table-responsive th {
+  background-color: #3405a3;
+  color: white;
+  padding: 15px;
+  text-align: left;
+}
+
+.table-responsive {
+}
+.custom-font {
+  font-family: "Arial", sans-serif;
+}
+
+.table-bordered-radius {
+  border-radius: 10px;
+  overflow: hidden;
+}
