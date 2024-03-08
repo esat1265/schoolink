@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import { Chart, registerables } from 'chart.js';
 
 export default class extends Controller {
-  static targets = ['line', 'bar']
+  static targets = ['bar']
   static values = {
     gradesavg: Array
    }
