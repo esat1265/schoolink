@@ -26,13 +26,13 @@
   </div>
 
   <!-- CHARTS -->
-  <div class="container d-flex flex-column">
-    <div class="row d-flex align-items-baseline justify-content-center mb-4" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
-      <div class="col-md-5 p-2 card graph-background align-self-end">
-        <div class="card-body">
-          <canvas id="myBarChart" data-display-charts-target="bar"></canvas>
+    <div class="container d-flex flex-column">
+        <div class="col-md-4 p-2 card graph-background align-self-end">
+      <div class="row d-flex align-items-baseline justify-content-center mb-4 " data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
+          <div class="card-body">
+            <canvas id="myBarChart" data-display-charts-target="bar"></canvas>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>

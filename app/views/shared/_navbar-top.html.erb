@@ -14,12 +14,14 @@
     <div class="search-contacts-container px-2">
       <i class="search-icon fa-solid fa-magnifying-glass px-2"></i>
       <div class="search-contacts">
-        Contacts
+      <a href="https://us05web.zoom.us/user/personalContact#/" target="_blank" class="contact-style">Contacts</a>
       </div>
     </div>
   </div>
 
   <div class="login-details">
-    <p class="text-center">Logged in as: <%= current_user.first_name %> <%= current_user.last_name %> <i class="fa-regular fa-user"></i></p>
+    <p class="text-center">Logged in as: <%= current_user.first_name %> <%= current_user.last_name %>   <div class="user">
+    <%= image_tag(("user.png") , :class => "user-img") %>
+    <div></p>
   </div>
 </header>
