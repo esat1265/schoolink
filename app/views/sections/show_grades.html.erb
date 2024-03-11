@@ -40,7 +40,7 @@
           <tr>
             <th>Student Name</th>
             <% @section.courses.each do |course| %>
-              <th><%= course.name %></th>
+              <th><i class="<%= course.icon %>"></i> <%= course.name %></th>
             <% end %>
             <th>Class Average</th>
           </tr>
