@@ -17,10 +17,17 @@
       <%= link_to 'Add a grade for this class', add_grade_section_path(@section), id: "add-grade-btn" %>
     </div>
 
-    <div class="input">
-        <input type="text" required="" autocomplete="off">
-        <label for="name">Search</label>
-    </div>
+    <%= form_tag(section_path(@section), method: :get, class: "input-group") do %>
+      <div class="input">
+        <%= text_field_tag :search, params[:search], id: "search-input", autocomplete: "off", class: "form-control" %>
+        <%= label_tag :search, "Search", class: "form-label" %>
+      </div>
+      <div class="input">
+        <%= button_tag(type: 'submit', class: "form-control", id: "submit-search") do %>
+          Go
+        <% end %>
+      </div>
+    <% end %>
 
   <!-- Student list -->
 <div class="student-list">
@@ -40,13 +47,22 @@
           <td><%= student.first_name %></td>
           <td><%= student.parent&.last_name %></td>
           <td><%= student.parent&.first_name %> <%= student.parent&.last_name %></td>
-          <td class=""><%= student.parent.phone_number %><i class="fa-solid fa-phone"></i></td>
-          <td class=""><%= student.parent.first_name[0] %>.<%= student.parent.last_name %>@slink.ch<i class="fa-solid fa-envelope"></i></td>
+          <td>
+            <span style="display: inline-flex; align-items: center;">
+              <%= student.parent.phone_number %>
+              <i class="fa-solid fa-phone" style="margin-left: 7px;"></i>
+            </span>
+          </td>
+          <td>
+            <span style="display: inline-flex; align-items: center;">
+              <%= student.parent.first_name[0] %>.<%= student.parent.last_name %>@slink.ch
+              <i class="fa-solid fa-envelope" style="margin-left: 7px;"></i>
+            </span>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-
 </div>
 </div>
