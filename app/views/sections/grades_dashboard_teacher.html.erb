@@ -6,30 +6,26 @@
   </div>
   <div class="show-table-container me-4">
     <div class="tabs">
-      <!-- Exemple pour Classroom Students (Assumant que c'est la page index des sections) -->
       <div class="d-flex justify-content-between pe-5">
         <h4>Grades</h4>
         <h4>Averages</h4>
       </div>
     </div>
 
-
-    <!-- Student list -->
-    <div class="student-list d-flex">
-      <table class="me-2">
-        <thead>
-          <tr>
-            <th>Course Name</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-          </tr>
-        </thead>
-
+      <div class="student-list d-flex">
+        <table class="me-2">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+            </tr>
+          </thead>
         <tbody>
           <% @grades_by_course.each do |course, grades| %>
             <tr>
@@ -40,15 +36,13 @@
             </tr>
           <% end %>
         </tbody>
-
-      </table>
+        </table>
       <table class="me-1" style="width: 120px;">
         <thead>
           <tr>
             <th>Student</th>
           </tr>
         </thead>
-
         <tbody>
           <% @averages_by_course.each do |course, average_grade|%>
             <tr>
@@ -56,7 +50,6 @@
             </tr>
           <% end %>
         </tbody>
-
       </table>
       <table style="width: 120px;">
         <thead>
@@ -71,9 +64,7 @@
             </tr>
           <% end %>
         </tbody>
-
       </table>
     </div>
-
   </div>
 </div>
