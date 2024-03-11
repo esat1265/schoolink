@@ -14,7 +14,8 @@
             <tr>
               <td class="schedule-table table tbody day"><%= "#{(8 + i).to_s.rjust(2, '0')}.00-#{(9 + i).to_s.rjust(2, '0')}.00" %></td>
               <% 5.times do %>
-                <td><%= @courses.sample.name %></td>
+                <% course = @courses.sample %>
+                <td class="bg-<%= course.name.downcase.gsub(' ', '-') %>" ><%= course.name %></td>
               <% end %>
             </tr>
           <% end %>

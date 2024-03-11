@@ -15,7 +15,8 @@ export default class extends Controller {
 
     const labels = gradesavgData.map(item => item.section);
     const dataStudent = gradesavgData.map(item => item.avg_student);
-    const dataSection = gradesavgData.map(item => item.avg_class)
+    const dataSection = gradesavgData.map(item => item.avg_class);
+    const colors = gradesavgData.map(item => item.color);
 
     new Chart(this.barTarget.getContext('2d'), {
       type: 'bar',
@@ -31,12 +32,8 @@ export default class extends Controller {
         }, {
           labels: 'Your child',
           data: dataStudent,
-          backgroundColor: [
-            'rgba(163, 5, 155, 0.5)',
-          ],
-          borderColor: [
-            'rgba(163, 5, 155, 0.5)',
-          ],
+          backgroundColor: colors,
+          borderColor: colors,
           borderWidth: 1
         }]
       },

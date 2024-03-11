@@ -18,9 +18,45 @@ $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
 
+$french: $french-color;
+$english: $english-color;
+$german: $german-color;
+$maths: $maths-color;
+$physics: $physics-color;
+$biology: $biology-color;
+$chemistry: $chemistry-color;
+$it: $it-color;
+$sport: $sport-color;
+$geography: $geography-color;
+$history: $history-color;
+$economy: $economy-color;
+$music: $music-color;
+$philosophy: $philosophy-color;
+$civic-education: $civic-education-color;
+
+
 // Buttons & inputs' radius
 $border-radius:    2px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
+$theme-colors: map-merge($theme-colors, ( "french": $french ));
+$theme-colors: map-merge($theme-colors, ( "english": $english ));
+$theme-colors: map-merge($theme-colors, ( "german": $german ));
+$theme-colors: map-merge($theme-colors, ( "maths": $maths ));
+$theme-colors: map-merge($theme-colors, ( "physics": $physics ));
+$theme-colors: map-merge($theme-colors, ( "biology": $biology ));
+$theme-colors: map-merge($theme-colors, ( "chemistry": $chemistry ));
+$theme-colors: map-merge($theme-colors, ( "it": $it ));
+$theme-colors: map-merge($theme-colors, ( "sport": $sport ));
+$theme-colors: map-merge($theme-colors, ( "geography": $geography ));
+$theme-colors: map-merge($theme-colors, ( "history": $history ));
+$theme-colors: map-merge($theme-colors, ( "economy": $economy ));
+$theme-colors: map-merge($theme-colors, ( "music": $music ));
+$theme-colors: map-merge($theme-colors, ( "philosophy": $philosophy ));
+$theme-colors: map-merge($theme-colors, ( "civic-education": $civic-education ));

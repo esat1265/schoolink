@@ -30,14 +30,35 @@ class PagesController < ApplicationController
       @grades_by_courses[course] = course_average
     end
 
+    # Colors for courses
+    colors = {
+    "french" => "#FFADAD",
+    "english" => "#FFD6A5",
+    "german" => "#FDFFB6",
+    "maths" => "#9BF6FF",
+    "physics" => "#A0C4FF",
+    "biology" => "#d0f4de",
+    "chemistry" => "#ffccd5",
+    "it" => "#C9E4DE",
+    "sport" => "#FAEDCB",
+    "geography" => "#a5ffd6",
+    "history" => "#8093f1",
+    "economy" => "#bfbee9",
+    "music" => "#eac4d5",
+    "philosophy" => "#affdd6",
+    "civic_education" => "#fbf8cc"
+    }
+
     # Create array for piechart
     @grades_for_charts = @averages_by_course.map do |course, avg_student|
       {
         section: course.name,
         avg_student: sprintf("%.1f", avg_student),
-        avg_class: sprintf("%.1f", @grades_by_courses[course])
+        avg_class: sprintf("%.1f", @grades_by_courses[course]),
+        color: colors[course.name.downcase.gsub(' ', '-')]
       }
     end
+
   end
 
   def teacher_dashboard

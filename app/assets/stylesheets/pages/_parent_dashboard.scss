@@ -15,9 +15,11 @@
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+
 .box-shadow-parent {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
+
 .parent-second-container {
   background-color: white;
   height: 100%;
@@ -49,9 +51,8 @@
   width: 60%;
 }
 
-.graph-background {
-  // background-color: lightblue;
-  border-radius: 10px;
+.graph-background{
+border-radius: 10px;
 }
 
 .calendar-parent {
