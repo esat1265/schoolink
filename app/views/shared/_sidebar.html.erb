@@ -53,12 +53,13 @@
 <% end %>
 
 
-   <!-- <li>
+   <li>
       <%= link_to "#" do %>
         <%= image_tag("messages.png") %>
         <span>Communications</span>
       <% end %>
-    </li> -->
+    </li>
+
     <li>
       <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
         <%= image_tag("logout.png") %>
