@@ -19,7 +19,6 @@ class SectionsController < ApplicationController
     @sections = current_user.sections
   end
 
-
   def create_grades
     course_id = params[:section][:course_id]
     exam_name = params[:section][:exam_name]
