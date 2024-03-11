@@ -20,8 +20,8 @@
 
     <div class="todo-dashboard">
       <h4 class="text-center">To do today</h4>
-      <% 6.times do %>
-        <%= render 'sections/todos', todos: @todos %>
+      <% @todos.each do |todo| %>
+        <%= render 'sections/todos', todo: todo %>
       <% end %>
     </div>
 

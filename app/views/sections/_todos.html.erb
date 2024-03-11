@@ -2,8 +2,19 @@
 <div class="notif-cards">
   <div class="notification">
     <div class="notification-content">
-      <p class="notification-para1"><%= @todos.sample %></p>
-
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-3">
+            <%= check_box('check', 'done', {checked: todo[:done]} ) %>
+          </div>
+          <div class="col-9">
+            <p class="notification-para1"><%= todo[:title] %></p>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+<!-- <% 'checked' if todo[:done] %> --->

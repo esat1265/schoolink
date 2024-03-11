@@ -32,10 +32,10 @@ export default class extends Controller {
           labels: 'Your child',
           data: dataStudent,
           backgroundColor: [
-            'rgba(163, 5, 155)',
+            'rgba(163, 5, 155, 0.5)',
           ],
           borderColor: [
-            'rgba(163, 5, 155)',
+            'rgba(163, 5, 155, 0.5)',
           ],
           borderWidth: 1
         }]
@@ -51,6 +51,8 @@ export default class extends Controller {
         plugins: {
           legend: {
             labels: {
+              usePointStyle: true,
+              pointStyle: 'line',
               filter: (legendItem, data) => (typeof legendItem.text !== 'undefined')
             }
           }
