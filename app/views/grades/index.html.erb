@@ -29,7 +29,7 @@
         <tbody>
           <% @grades_by_course.each do |course, grades| %>
             <tr class="text-center">
-              <td class="text-center"><%= course.name %></td>
+              <td class="text-center"><i class="<%= course.icon %>"></i> <%= course.name %></td>
               <% grades.each do |grade| %>
                 <td class="text-center">
                   <%= link_to grade_path(grade), class: 'text-decoration-underline', style: 'color: black;' do %>

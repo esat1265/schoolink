@@ -7,12 +7,13 @@ $color_3: #fff;
 		tbody {
 			td {
 				vertical-align: middle;
+				font-size: 18px;
 				font-weight: 400;
 				text-align: center;
         background-color: rgba($color: #ffffff, $alpha: 0.4);
 				.hover {
 					p {
-						font-size: 16px;
+						font-size: 18px;
 						margin-bottom: 5px;
 						color: $color_2;
 						line-height: normal;
@@ -40,9 +41,10 @@ $color_3: #fff;
       th {
         overflow: hidden;
         text-overflow: ellipsis;
+				font-size: 18px;
       }
 			td.day {
-				font-size: 12px;
+				font-size: 18px;
 				font-weight: 400;
         color: $color_2;
 				background: #3405a3;
@@ -60,10 +62,10 @@ $color_3: #fff;
       td.active {
         width: 60%;
         h4 {
-          font-size: 15px;
+          font-size: 16px;
         }
         p {
-          font-size: 13px;
+          font-size: 16px;
         }
       }
 		}
