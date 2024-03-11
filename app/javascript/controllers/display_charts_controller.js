@@ -51,6 +51,8 @@ export default class extends Controller {
         plugins: {
           legend: {
             labels: {
+              usePointStyle: true,
+              pointStyle: 'line',
               filter: (legendItem, data) => (typeof legendItem.text !== 'undefined')
             }
           }
