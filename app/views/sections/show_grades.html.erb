@@ -49,7 +49,7 @@
           <% @section.students.each do |student| %>
             <tr>
               <td>
-                <%= link_to "#{student.first_name} #{student.last_name}", student_path(student), class: 'text-decoration-none', style: 'color: black;' %>
+                <%= link_to "#{student.first_name} #{student.last_name}", student_path(student), class: 'text-decoration-underline', style: 'color: black;' %>
               </td>
               <% @section.courses.each do |course| %>
                 <% grades = student.grades.where(course_id: course.id) %>
