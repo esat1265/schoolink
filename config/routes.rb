@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'communications/index'
+  get 'communications/new'
+  get 'communications/create'
   devise_for :users
   devise_scope :user do
     authenticated :user, ->(u) { u.type == 'Parent' } do
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
           post :create_grades, to: 'sections#create_grades'
         end
       end
+      resources :communications, only: [:index, :new, :create]
     end
   end
   unauthenticated do
