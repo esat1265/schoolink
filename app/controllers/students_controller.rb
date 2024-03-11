@@ -2,5 +2,12 @@ class StudentsController < ApplicationController
   def show
     @student = Student.find(params[:id])
     @section = @student.section
+    @courses = @student.grades.includes(:course).map(&:course).uniq
+
+    if params[:course_id].present?
+      @grades = @student.grades.includes(:course).where(course_id: params[:course_id])
+    else
+      @grades = @student.grades.includes(:course)
+    end
   end
 end
