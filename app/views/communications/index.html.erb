@@ -1,0 +1,17 @@
+<div class="show-classes-container">
+
+<h2>Communications</h2>
+
+<h3>Sent Messages</h3>
+
+<% @sent_communications.each do |communication| %>
+  <p>To <%= communication.receiver&.first_name || "Unknown" %>: <%= communication.body %></p>
+<% end %>
+
+<h3>Received Messages</h3>
+<% @received_communications.each do |communication| %>
+  <p>From <%= communication.sender&.first_name || "Unknown" %>: <%= communication.body %></p>
+<% end %>
+
+<%= link_to 'Send a New Message', new_communication_path %>
+</div>
