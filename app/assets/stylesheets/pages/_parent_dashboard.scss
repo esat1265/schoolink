@@ -103,3 +103,30 @@ table {
     text-overflow: ellipsis;
   }
 }
+
+
+.post-it {
+  width: 400px;
+  height: auto;
+  background-color: #f7e197;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 10px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  transform: rotate(3deg);
+  border: 1px solid #ffeb99;
+  position: relative;
+  border: black solid 1px;
+}
+
+.post-it:before {
+  content: '';
+  width: 100%;
+  height: 20px;
+  background-color: #ffd42a;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
