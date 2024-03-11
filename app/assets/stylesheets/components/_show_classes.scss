@@ -158,7 +158,7 @@
   border-collapse: collapse;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .student-list th {
@@ -166,6 +166,7 @@
   color: white;
   padding: 15px;
   text-align: left;
+  // border-radius:  5px 5px 0 0 ;
 }
 
 .student-list td {
@@ -174,9 +175,13 @@
   // border-radius: 20px;
 }
 
-// .student-list tr {
-//   border-radius: 20px;
-// }
+.student-list th:first-child {
+ border-radius: 5px 0 0 0;
+}
+
+.student-list th:last-child {
+ border-radius: 0 5px 0 0;
+}
 
 .student-list tbody tr:nth-child(odd) {
   background-color: #f3f3f3;
