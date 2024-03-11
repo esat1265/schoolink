@@ -5,13 +5,16 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-3">
-            <input class="form-check-input" type="checkbox" id="checkboxNoLabel">
+            <%= check_box('check', 'done', {checked: todo[:done]} ) %>
           </div>
           <div class="col-9">
-            <p class="notification-para1"><%= todo %></p>
-          </div>
+            <p class="notification-para1"><%= todo[:title] %></p>
+        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<!-- <% 'checked' if todo[:done] %> --->

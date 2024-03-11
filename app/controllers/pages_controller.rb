@@ -56,11 +56,11 @@ class PagesController < ApplicationController
       "Achievement celebration assembly",
     ]
     @todos = [
-      "Emergency drill this morning",
-      "Tech maintenance this afternoon",
-      "Congrats Science Olympiad team!",
-      "Parking lot construction ongoing",
-      "Teacher of the Year nominations due",
+      { title: "Emergency drill this morning", done: true },
+      { title: "Tech maintenance this afternoon", done: false },
+      { title: "Congrats Science Olympiad team!", done: true },
+      { title: "Parking lot construction ongoing", done: false },
+      { title: "Teacher of the Year nominations due", done: false }
     ]
   end
 end
