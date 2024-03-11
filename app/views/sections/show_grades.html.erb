@@ -1,7 +1,7 @@
 
 <div class="second-container">
   <div class="cards-container">
-    <h3 class="subtitle classes">Class <%=@section.name%> Grades</h3 class="subtitle">
+    <h3 class="subtitle classes">Class <%=@section.name%> / Grade Averages</h3 class="subtitle">
     </div>
   <div class="show-table-container">
   <div class="cards-container">
@@ -40,9 +40,9 @@
           <tr>
             <th>Student Name</th>
             <% @section.courses.each do |course| %>
-              <th><%= course.name %></th>
+              <th><i class="<%= course.icon %>"></i> <%= course.name %></th>
             <% end %>
-            <th>Average</th>
+            <th>Class Average</th>
           </tr>
         </thead>
         <tbody>
@@ -52,10 +52,12 @@
                 <%= link_to "#{student.first_name} #{student.last_name}", student_path(student), class: 'text-decoration-none', style: 'color: black;' %>
               </td>
               <% @section.courses.each do |course| %>
-                <% grade = student.grades.find_by(course_id: course.id) %>
-                <td><%= (grade.grade * 2.0).round / 2.0 if grade %></td>
+                <% grades = student.grades.where(course_id: course.id) %>
+                <% course_average = grades.average(:grade)&.round(1) %>
+                <td><%= course_average if course_average %></td>
               <% end %>
-              <td><%= (student.grades.average(:grade).to_f * 2.0).round / 2.0 %></td>
+              <% class_average = student.grades.average(:grade)&.round(1) %>
+              <td><%= class_average if class_average %></td>
             </tr>
           <% end %>
         </tbody>
