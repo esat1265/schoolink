@@ -42,7 +42,7 @@
             <% @section.courses.each do |course| %>
               <th><%= course.name %></th>
             <% end %>
-            <th>Average</th>
+            <th>Class Average</th>
           </tr>
         </thead>
         <tbody>
@@ -52,14 +52,15 @@
                 <%= link_to "#{student.first_name} #{student.last_name}", student_path(student), class: 'text-decoration-none', style: 'color: black;' %>
               </td>
               <% @section.courses.each do |course| %>
-                <% grade = student.grades.find_by(course_id: course.id) %>
-                <td><%= (grade.grade * 2.0).round / 2.0 if grade %></td>
+                <% grades = student.grades.where(course_id: course.id) %>
+                <% course_average = grades.average(:grade)&.round(1) %>
+                <td><%= course_average if course_average %></td>
               <% end %>
-              <td><%= (student.grades.average(:grade).to_f * 2.0).round / 2.0 %></td>
+              <% class_average = student.grades.average(:grade)&.round(1) %>
+              <td><%= class_average if class_average %></td>
             </tr>
           <% end %>
         </tbody>
-      </table>
 
     </div>
 </div>
