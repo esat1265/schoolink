@@ -9,6 +9,7 @@ class GradesController < ApplicationController
 
     # Group grades by course
     @grades_by_course = @student_grades.group_by(&:course)
+
     # max number of grades
     @grades_count_by_course = @grades_by_course.transform_values(&:count)
     @max_grades = @grades_count_by_course.max_by { |_, count| count }.last
@@ -33,11 +34,9 @@ class GradesController < ApplicationController
       formatted_course_grade = sprintf("%.1f", course_average)
       @grades_by_courses[course] = course_average
     end
-
   end
 
   def show
     @grade = Grade.find(params[:id])
-
   end
 end

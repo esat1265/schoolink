@@ -34,6 +34,18 @@ $music: $music-color;
 $philosophy: $philosophy-color;
 $civic-education: $civic-education-color;
 
+$one: $one-color;
+$one-half: $one-half-color;
+$two: $two-color;
+$two-half: $two-half-color;
+$three: $three-color;
+$three-half: $three-half-color;
+$four: $four-color;
+$four-half: $four-half-color;
+$five: $five-color;
+$five-half: $five-half-color;
+$six: $six-color;
+
 
 // Buttons & inputs' radius
 $border-radius:    2px;
@@ -60,3 +72,15 @@ $theme-colors: map-merge($theme-colors, ( "economy": $economy ));
 $theme-colors: map-merge($theme-colors, ( "music": $music ));
 $theme-colors: map-merge($theme-colors, ( "philosophy": $philosophy ));
 $theme-colors: map-merge($theme-colors, ( "civic-education": $civic-education ));
+
+$theme-colors: map-merge($theme-colors, ( "one": $one ));
+$theme-colors: map-merge($theme-colors, ( "one-half": $one-half ));
+$theme-colors: map-merge($theme-colors, ( "two": $two ));
+$theme-colors: map-merge($theme-colors, ( "two-half": $two-half ));
+$theme-colors: map-merge($theme-colors, ( "three": $three ));
+$theme-colors: map-merge($theme-colors, ( "three-half": $three-half ));
+$theme-colors: map-merge($theme-colors, ( "four": $four ));
+$theme-colors: map-merge($theme-colors, ( "four-half": $four-half ));
+$theme-colors: map-merge($theme-colors, ( "five": $five ));
+$theme-colors: map-merge($theme-colors, ( "five-half": $five-half ));
+$theme-colors: map-merge($theme-colors, ( "six": $six ));
