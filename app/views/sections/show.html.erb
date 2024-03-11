@@ -2,28 +2,29 @@
 <div class="second-container">
   <div class="cards-container">
     <h3 class="subtitle classes">Classes </h3 class="subtitle">
-    <div id="top-cards-dashboard">
-      <% @sections.each do |section| %>
-        <%= link_to section_path(section) do %>
-        <%= render 'sections/grades_small', section: section, active: @section %>
+      <div id="top-cards-dashboard">
+        <% @sections.each do |section| %>
+          <%= link_to section_path(section) do %>
+          <%= render 'sections/grades_small', section: section, active: @section %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="show-table-container">
-  <div class="tabs">
-  <!-- Exemple pour Classroom Students (Assumant que c'est la page index des sections) -->
-  <%= link_to 'Classroom students', section_path(@section), class: "#{ 'active' if current_page?(section_path(@section)) }" %>
-  <%= link_to 'Add a grade for this class', add_grade_section_path(@section), id: "add-grade-btn" %>
-</div>
+      </div>
 
-  <div class="search-bar">
-    <input type="text" placeholder="Search">
   </div>
+    <div class="show-table-container">
+    <div class="tabs">
+      <%= link_to 'Classroom students', section_path(@section), class: "#{ 'active' if current_page?(section_path(@section)) }" %>
+      <%= link_to 'Add a grade for this class', add_grade_section_path(@section), id: "add-grade-btn" %>
+    </div>
+
+    <div class="input">
+        <input type="text" required="" autocomplete="off">
+        <label for="name">Search</label>
+    </div>
 
   <!-- Student list -->
 <div class="student-list">
-  <table class="table table-hover">
+  <table class="table table-hover rounded-table">
     <thead>
       <tr>
         <th>First Name</th>
@@ -37,10 +38,10 @@
       <% @students.each do |student| %>
         <tr>
           <td><%= student.first_name %></td>
-          <td><%= student.last_name %></td>
-          <td class="parent-contact"><%= student.parent&.first_name %> <%= student.parent&.last_name %> <i class="fa-solid fa-envelope"></i><i class="fa-solid fa-phone"></i></td>
-          <td><%= student.parent.phone_number %></td>
-          <td><%= student.parent.email %></td>
+          <td><%= student.parent&.last_name %></td>
+          <td><%= student.parent&.first_name %> <%= student.parent&.last_name %></td>
+          <td class=""><%= student.parent.phone_number %><i class="fa-solid fa-phone"></i></td>
+          <td class=""><%= student.parent.first_name[0] %>.<%= student.parent.last_name %>@slink.ch<i class="fa-solid fa-envelope"></i></td>
         </tr>
       <% end %>
     </tbody>

@@ -23,22 +23,22 @@
     <div class="container my-5">
       <%= form_with model: @section, url: create_grades_section_path(@section), method: :post, local: true, html: { class: 'needs-validation', novalidate: '' } do |form| %>
     <div class="form-group mb-3">
-      <%= form.label :course_id, 'Course', class: 'form-label' %>
-      <%= form.collection_select :course_id, @section.courses, :id, :name, { include_blank: 'Choose the course you want to rate' }, { class: 'form-select custom-font' } %>
+      <%= form.label :course_id, 'Course', class: 'form-label w-50' %>
+      <%= form.collection_select :course_id, @section.courses, :id, :name, { include_blank: 'Choose the course you want to rate' }, { class: 'form-select custom-font narrow-field' } %>
     </div>
 
-        <div class="form-group mb-3">
-          <%= form.label :exam_name, 'Exam name', class: 'form-label' %>
-          <%= form.text_field :exam_name, placeholder: 'Name of the exam you want to rate', class: 'form-control' %>
-        </div>
+    <div class="form-group mb-3">
+      <%= form.label :exam_name, 'Exam name', class: 'form-label' %>
+      <%= form.text_field :exam_name, placeholder: 'Name of the exam you want to rate', class: 'form-control narrow-field' %>
+    </div>
 
-        <div class="form-group mb-3">
-          <%= form.label :date, 'Date of exam - can not be in future', class: 'form-label' %>
-          <%= form.date_field :date, class: 'form-control' %>
-        </div>
+    <div class="form-group mb-3">
+      <%= form.label :date, 'Date of exam - can not be in future', class: 'form-label' %>
+      <%= form.date_field :date, class: 'form-control narrow-field' %>
+    </div>
 
         <div class="table-responsive">
-          <table class="table table-hover">
+          <table class="table table-hover rounded-table small-mg">
             <thead>
               <tr>
                 <th>First Name</th>
@@ -66,8 +66,7 @@
 
         <div class="form-actions d-flex justify-content-end mt-3">
           <%= link_to 'Cancel', section_path(@section), class: 'btn btn-secondary me-2' %>
-          <%= form.submit 'Save', class: 'btn btn-primary me-2' %>
-          <%= form.submit 'Submit', class: 'btn btn-success' %>
+          <%= form.submit 'Submit', class: 'btn btn-primary' %>
         </div>
       <% end %>
     </div>
