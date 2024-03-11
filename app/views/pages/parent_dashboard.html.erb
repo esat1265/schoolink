@@ -1,7 +1,7 @@
 <div class="parent-second-container d-flex flex-column">
   <div class="d-flex justify-content-evenly mb-1">
 
-    <!-- CALENDAR -->
+    <!-- CHART -->
     <div class="parent-card-timetable">
       <div class="row d-flex justify-content-center mb-1" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
       <h4 class="text-center"> <%= current_user.student.first_name %>  performance </h4>
@@ -11,12 +11,6 @@
           </div>
         </div>
       </div>
-       <!-- <div>
-        <h3 class="subtitles">Timetable</h3>
-      </div>
-      <div class="card-body calendar-parent">
-        <%= render 'sections/parent_calendar' %>
-      </div>-->
     </div>
 
 
@@ -31,14 +25,12 @@
         </div>
       </div>
     </div>
-
   </div>
 
-  <!-- CHARTS -->
-
+  <!-- TIMETABLE -->
   <div class="container d-flex flex-column">
     <h4 class="text-center">Timetable </h4>
-    <div class="row d-flex align-items-baseline justify-content-center mb-4" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
+    <div class="row d-flex align-items-baseline justify-content-center mb-4">
       </div>
       <div class="card-body calendar-parent">
         <%= render 'sections/parent_calendar' %>

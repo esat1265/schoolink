@@ -22,9 +22,11 @@
   }
 }
 
+$background-color_5: #05cf38;
+
 
 .gradient-background{
-  background-color: $background-color_1;
+  // background-color: $background-color_1;
 	background-image: linear-gradient(43deg, #4158D0 0%, #7e50c8 46%, #de70ff 100%);
 	border-radius: 8px;
 	color: white;
@@ -72,9 +74,7 @@
 }
 
 .graph-background{
-// background-color: lightblue;
 border-radius: 10px;
-
 }
 
 .calendar-parent{

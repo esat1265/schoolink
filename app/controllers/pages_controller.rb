@@ -38,6 +38,13 @@ class PagesController < ApplicationController
         avg_class: sprintf("%.1f", @grades_by_courses[course])
       }
     end
+
+    # Colors for courses
+      @colors_courses = []
+      @colors = ["#ff99c8", "#fcf6bd", "#d0f4de", "#a9def9", "#e4c1f9"]
+      @courses.each_with_index do |course, index|
+        @colors_courses.push({course: course.name, color: @colors[index]})
+      end
   end
 
   def teacher_dashboard
