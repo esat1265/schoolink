@@ -38,9 +38,9 @@
         <tr>
           <td><%= student.first_name %></td>
           <td><%= student.parent&.last_name %></td>
-          <td class="parent-contact"><%= student.parent&.first_name %> <%= student.parent&.last_name %> <i class="fa-solid fa-envelope"></i><i class="fa-solid fa-phone"></i></td>
-          <td><%= student.parent.phone_number %></td>
-          <td>  <%= student.parent.first_name[0] %>.<%= student.parent.last_name %>@slink.ch</td>
+          <td><%= student.parent&.first_name %> <%= student.parent&.last_name %></td>
+          <td class=""><%= student.parent.phone_number %><i class="fa-solid fa-phone"></i></td>
+          <td class=""><%= student.parent.first_name[0] %>.<%= student.parent.last_name %>@slink.ch<i class="fa-solid fa-envelope"></i></td>
         </tr>
       <% end %>
     </tbody>
