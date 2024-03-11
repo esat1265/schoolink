@@ -4,7 +4,7 @@
     <!-- CALENDAR -->
     <div class="parent-card-timetable">
       <div class="row d-flex justify-content-center mb-1" data-controller="display-charts" data-display-charts-gradesavg-value="<%= @grades_for_charts.to_json %>">
-      <h4 class="text-center">Chart </h4>
+      <h4 class="text-center"> <%= current_user.student.first_name %>  performance </h4>
         <div class="col-md-8 p-2 card graph-background align-self-end">
           <div class="card-body">
             <canvas id="myBarChart" data-display-charts-target="bar"></canvas>
