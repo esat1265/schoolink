@@ -20,7 +20,7 @@
       <%= link_to 'Add a grade for this class', add_grade_section_path(@section), class: 'active', id: "add-grade-btn" %>
     </div>
 
-    <div class="container my-5">
+    <div class="container my-5 ">
       <%= form_with model: @section, url: create_grades_section_path(@section), method: :post, local: true, html: { class: 'needs-validation', novalidate: '' } do |form| %>
     <div class="form-group mb-3">
       <%= form.label :course_id, 'Course', class: 'form-label' %>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="table-responsive">
-          <table class="table table-hover">
+          <table class="table table-hover rounded-table">
             <thead>
               <tr>
                 <th>First Name</th>
