@@ -30,7 +30,7 @@
                 </tr>
                 <tr>
                   <th class="text-center grade-th">Exam Date</th>
-                  <td class="text-center"><%=@grade.date%></td>
+                  <td class="text-center"><%=@grade.date.strftime("%B %d, %Y")%></td>
                 </tr>
                 <tr>
                   <th class="text-center grade-th">Grade</th>
@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                   <th class="text-center grade-th">Comment</th>
-                  <td><%=@grade.comment%></td>
+                  <td><em><%=@grade.comment%></em></td>
                 </tr>
             </tbody>
           </table>
