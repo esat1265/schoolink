@@ -53,9 +53,9 @@
         </thead>
 
         <tbody>
-          <% @averages_by_course.each do |course, average_grade|%>
+          <% @averages_by_course.each do |course, formatted_average_grade|%>
             <tr class="text-center">
-              <td class="text-center"><%=(average_grade * 2.0).round / 2.0 %></td>
+              <td class="text-center"><%=formatted_average_grade %></td>
             </tr>
           <% end %>
         </tbody>
@@ -68,9 +68,9 @@
           </tr>
         </thead>
         <tbody>
-          <% @grades_by_courses.each do |course, average_grade|%>
+          <% @grades_by_courses.each do |course, formatted_course_grade|%>
             <tr class="text-center">
-              <td class="text-center"><%=(average_grade * 2.0).round / 2.0%></td>
+              <td class="text-center"><%=formatted_course_grade%></td>
             </tr>
           <% end %>
         </tbody>

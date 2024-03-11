@@ -18,6 +18,7 @@ class GradesController < ApplicationController
       total_grades = grades.length
       total_points = grades.reduce(0) { |sum, grade| sum + grade.grade }
       average_grade = (total_points / total_grades.to_f).round(1)
+      formatted_average_grade = sprintf("%.1f", average_grade)
       @averages_by_course[course] = average_grade
     end
 
@@ -28,6 +29,7 @@ class GradesController < ApplicationController
     @courses.each do |course|
       grades = Grade.where(course: course)
       course_average = grades.average(:grade).round(1)
+      formatted_course_grade = sprintf("%.1f", course_average)
       @grades_by_courses[course] = course_average
     end
 
