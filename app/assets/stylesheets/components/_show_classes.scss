@@ -199,6 +199,22 @@
   margin-left: 110px;
 }
 
+.show-table-container-grades {
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 110px;
+  width: 70%;
+}
+
+.grade-th {
+  width: 25%;
+}
+
+.grade-details-td {
+  width: 75%;
+}
+
 .parent-contact {
   display: flex;
   flex-direction: row;
@@ -271,4 +287,11 @@
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 43px;
+}
+
+.text-center th {
+  background-color: #3405a3;
+  color: white;
+  padding: 15px;
+  text-align: center;
 }

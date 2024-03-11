@@ -5,6 +5,7 @@ class GradesController < ApplicationController
     @section = @student.section
     @courses = @section.courses
     @student_grades = @student.grades.order(:created_at)
+    @latest_grades = @student.grades.order(created_at: :desc).limit(3)
 
     # Group grades by course
     @grades_by_course = @student_grades.group_by(&:course)
