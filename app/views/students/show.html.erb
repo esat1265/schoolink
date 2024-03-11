@@ -29,7 +29,7 @@
           <tbody>
             <% @grades.each do |grade| %>
               <tr>
-                <td><%= grade.course.name %></td>
+                <td><i class="<%= grade.course.icon %>"></i> <%= grade.course.name %></td>
                 <td><%= grade.grade %></td>
                 <td><%= grade.exam_name %></td>
                 <td><%= grade.date.strftime("%B %d, %Y") %></td>
