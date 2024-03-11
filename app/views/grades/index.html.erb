@@ -32,7 +32,7 @@
               <td class="text-center"><%= course.name %></td>
               <% grades.each do |grade| %>
                 <td class="text-center">
-                  <%= link_to grade_path(grade), class: 'text-decoration-none', style: 'color: black;' do %>
+                  <%= link_to grade_path(grade), class: 'text-decoration-underline', style: 'color: black;' do %>
                     <%= grade.grade%>
                   <% end %>
                 </td>
@@ -74,9 +74,39 @@
             </tr>
           <% end %>
         </tbody>
-
       </table>
     </div>
-
   </div>
+    <div class="show-table-container me-4">
+  <h4>Latest Grades</h4>
+  <table class="table table-hover">
+    <thead>
+      <tr class="text-center">
+        <th class="table-header">Course</th>
+        <th class="table-header">Grade</th>
+        <th class="table-header">Exam Name</th>
+        <th class="table-header">Date Added</th>
+        <th class="table-header"></th> <!-- Colonne supplémentaire sans en-tête -->
+      </tr>
+    </thead>
+    <tbody>
+      <% @latest_grades.each do |grade| %>
+        <tr class="text-center">
+          <td><%= grade.course.name %></td>
+          <td>
+            <%= link_to grade_path(grade), class: 'text-decoration-underline', style: 'color: black;' do %>
+              <%= grade.grade %>
+            <% end %>
+          </td>
+          <td><%= grade.exam_name %></td>
+          <td><%= grade.created_at.strftime("%d %b %Y") %></td>
+          <td>
+            <%= link_to "See grade details", grade_path(grade), class: 'btn btn-primary btn-sm' %> <!-- Lien vers les détails de la note -->
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
 </div>
