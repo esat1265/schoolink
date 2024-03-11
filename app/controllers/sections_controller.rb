@@ -2,9 +2,17 @@ class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :add_grade, :create_grades]
 
   def show
-    @sections = current_user.sections
+    # Assurez-vous de définir @section avant de l'utiliser pour récupérer les étudiants
     @section = Section.find(params[:id])
+    @sections = current_user.sections
     @students = @section.students
+
+    if params[:search].present?
+      search_term = "%#{params[:search]}%"
+      @students = @students.joins("LEFT JOIN users parents ON parents.id = users.parent_id")
+                           .where("users.first_name ILIKE :search OR users.last_name ILIKE :search OR parents.first_name ILIKE :search OR parents.last_name ILIKE :search", search: search_term)
+    end
+    # Si params[:search] est vide ou non présent, @students contiendra déjà tous les étudiants de @section, donc aucun ajustement supplémentaire n'est nécessaire ici.
   end
 
   def add_grade
