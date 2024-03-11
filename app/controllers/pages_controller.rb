@@ -15,6 +15,7 @@ class PagesController < ApplicationController
       total_grades = grades.length
       total_points = grades.reduce(0) { |sum, grade| sum + grade.grade }
       average_grade = (total_points / total_grades.to_f).round(1)
+      formatted_average_grade = sprintf("%.1f", average_grade)
       @averages_by_course[course] = average_grade
     end
 
@@ -25,6 +26,7 @@ class PagesController < ApplicationController
     @courses.each do |course|
       grades = Grade.where(course: course)
       course_average = grades.average(:grade).round(1)
+      formatted_course_grade = sprintf("%.1f", course_average)
       @grades_by_courses[course] = course_average
     end
 
@@ -32,8 +34,8 @@ class PagesController < ApplicationController
     @grades_for_charts = @averages_by_course.map do |course, avg_student|
       {
         section: course.name,
-        avg_student: (avg_student * 2.0).round / 2.0,
-        avg_class: (@grades_by_courses[course] * 2.0).round / 2.0
+        avg_student: sprintf("%.1f", avg_student),
+        avg_class: sprintf("%.1f", @grades_by_courses[course])
       }
     end
   end
