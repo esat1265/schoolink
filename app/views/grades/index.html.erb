@@ -20,22 +20,44 @@
         <thead>
           <tr>
 
-
-            <th class="text-center">Course Name</th>
-            <% @max_grades.times do |i| %>
-            <th class="text-center" ><%= i + 1 %>.Grade</th>
-            <% end %>
+            <th>Course Name</th>
+            <th colspan="<%= @max_grades %>" class="text-center">Grades</th>
           </tr>
         </thead>
 
         <tbody>
           <% @grades_by_course.each do |course, grades| %>
             <tr class="text-center">
-              <td class="text-center bg-<%= course.name.downcase.gsub(' ', '-') %>"><%= course.name %></td>
+              <td><i class="<%= course.icon %>"></i> <%= course.name %></td>
               <% grades.each do |grade| %>
                 <td class="text-center">
-                  <%= link_to grade_path(grade), class: 'text-decoration-underline', style: 'color: black;' do %>
-                    <%= grade.grade%>
+                  <%= link_to grade_path(grade), class: 'text-decoration-none fw-bold', style: 'color: black;' do %>
+                    <% case grade.grade %>
+                      <% when 1.0 %>
+                        <span class="bg-one text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 1.5 %>
+                        <span class="bg-one-half text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 2.0 %>
+                        <span class="bg-two text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 2.5 %>
+                        <span class="bg-two-half text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 3.0 %>
+                        <span class="bg-three text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 3.5 %>
+                        <span class="bg-three-half text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 4.0 %>
+                        <span class="bg-four text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 4.5 %>
+                        <span class="bg-four-half text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 5.0 %>
+                        <span class="bg-five text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 5.5 %>
+                        <span class="bg-five-half text-white p-2 rounded"><%= grade.grade %></span>
+                      <% when 6.0 %>
+                        <span class="bg-six text-white p-2 rounded"><%= grade.grade %></span>
+                      <% else %>
+                        <span class="bg-success text-white p-2 rounded"><%= grade.grade %></span>
+                      <% end %>
                   <% end %>
                 </td>
               <% end %>
@@ -57,7 +79,7 @@
         <tbody>
           <% @averages_by_course.each do |course, formatted_average_grade|%>
             <tr class="text-center">
-              <td class="text-center"><%=formatted_average_grade %></td>
+              <td class="text-center fw-bold"><%=formatted_average_grade %></td>
             </tr>
           <% end %>
         </tbody>
@@ -72,7 +94,7 @@
         <tbody>
           <% @grades_by_courses.each do |course, formatted_course_grade|%>
             <tr class="text-center">
-              <td class="text-center"><%=formatted_course_grade%></td>
+              <td class="text-center fw-bold"><%=formatted_course_grade%></td>
             </tr>
           <% end %>
         </tbody>
@@ -96,14 +118,39 @@
         <tr class="text-center">
           <td><%= grade.course.name %></td>
           <td>
-            <%= link_to grade_path(grade), class: 'text-decoration-underline', style: 'color: black;' do %>
-              <%= grade.grade %>
+            <%= link_to grade_path(grade), class: 'text-decoration-none fw-bold', style: 'color: black;' do %>
+              <% case grade.grade %>
+                <% when 1.0 %>
+                  <span class="bg-one text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 1.5 %>
+                  <span class="bg-one-half text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 2.0 %>
+                  <span class="bg-two text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 2.5 %>
+                  <span class="bg-two-half text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 3.0 %>
+                  <span class="bg-three text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 3.5 %>
+                  <span class="bg-three-half text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 4.0 %>
+                  <span class="bg-four text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 4.5 %>
+                  <span class="bg-four-half text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 5.0 %>
+                  <span class="bg-five text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 5.5 %>
+                  <span class="bg-five-half text-white p-2 rounded"><%= grade.grade %></span>
+                <% when 6.0 %>
+                  <span class="bg-six text-white p-2 rounded"><%= grade.grade %></span>
+                <% else %>
+                  <span class="bg-success text-white p-2 rounded"><%= grade.grade %></span>
+              <% end %>
             <% end %>
           </td>
           <td><%= grade.exam_name %></td>
           <td><%= grade.created_at.strftime("%d %b %Y") %></td>
           <td>
-            <%= link_to "See grade details", grade_path(grade), class: 'btn btn-primary btn-sm' %> <!-- Lien vers les détails de la note -->
+            <%= link_to "See grade details", grade_path(grade), class: 'btn btn-outline-primary btn-sm' %> <!-- Lien vers les détails de la note -->
           </td>
         </tr>
       <% end %>
