@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
   belongs_to :section
-  belongs_to :teacher
+  belongs_to :teacher, class_name: 'User'
+  has_many :students, through: :section, source: :users
 
   validates :name, presence: true
 

@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :password, presence: true
   belongs_to :section, optional: true
+  has_many :courses, foreign_key: 'teacher_id'
+  belongs_to :section, optional: true
 end
