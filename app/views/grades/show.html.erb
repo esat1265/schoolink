@@ -1,4 +1,3 @@
-
 <div class="show-classes-container">
   <div class="cards-container d-flex justify-content-center pt-3 ">
     <h3 class = "subtitle">Grade Details</h3>
@@ -17,7 +16,7 @@
             </tr>
             <tr>
               <th class="text-center grade-th">Teacher Name</th>
-              <td class="text-center"><%=@grade.course.teacher.first_name%> <%=@grade.course.teacher.last_name%></td>
+              <td class="text-center bg-light"><%=@grade.course.teacher.first_name%> <%=@grade.course.teacher.last_name%></td>
             </tr>
             <tr>
               <th class="text-center grade-th">Exam Name</th>
@@ -25,15 +24,42 @@
             </tr>
             <tr>
               <th class="text-center grade-th">Exam Date</th>
-              <td class="text-center"><%=@grade.date.strftime("%B %d, %Y")%></td>
+              <td class="text-center bg-light"><%=@grade.date.strftime("%B %d, %Y")%></td>
             </tr>
             <tr>
               <th class="text-center grade-th">Grade</th>
-              <td class="text-center"><%=@grade.grade%></td>
+              <td class="text-center">
+                <% case @grade.grade %>
+                <% when 1.0 %>
+                  <span class="bg-one text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 1.5 %>
+                  <span class="bg-one-half text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 2.0 %>
+                  <span class="bg-two text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 2.5 %>
+                  <span class="bg-two-half text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 3.0 %>
+                  <span class="bg-three text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 3.5 %>
+                  <span class="bg-three-half text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 4.0 %>
+                  <span class="bg-four text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 4.5 %>
+                  <span class="bg-four-half text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 5.0 %>
+                  <span class="bg-five text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 5.5 %>
+                  <span class="bg-five-half text-white p-2 rounded"><%= @grade.grade %></span>
+                <% when 6.0 %>
+                  <span class="bg-six text-white p-2 rounded"><%= @grade.grade %></span>
+                <% else %>
+                  <span class="bg-success text-white p-2 rounded"><%= @grade.grade %></span>
+                <% end %>
+              </td>
             </tr>
             <tr>
               <th class="text-center grade-th">Comment</th>
-              <td><em><%=@grade.comment%></em></td>
+              <td class="bg-light"><em><%=@grade.comment%></em></td>
             </tr>
           </tbody>
         </table>
