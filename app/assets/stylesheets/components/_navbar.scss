@@ -3,7 +3,7 @@
   backdrop-filter: blur(105px);
   height: 80px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
@@ -11,14 +11,12 @@
   width: 300px;
   height: auto;
   border-radius: 10px;
-
-
+  margin-left: 135px;
 }
 .today-container {
   display: inline;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
-
 }
 .arrow-container {
   display: inline;
@@ -36,20 +34,20 @@
   // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-.videocall-container{
+.videocall-container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: auto;
   width: fit-content;
-  padding-left: 10px;  width: auto;
+  padding-left: 10px;
+  width: auto;
   border-radius: 6px;
   background-color: white;
   text-decoration: none;
 }
 
-.search-contacts-container{
+.search-contacts-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -61,18 +59,17 @@
   color: white;
 }
 
-.zoom-style{
+.zoom-style {
   text-decoration: none;
   color: black;
 }
 
-.contact-style{
+.contact-style {
   color: white;
   text-decoration: none;
-
 }
 
-.login-details{
+.login-details {
   display: flex;
   padding: 5px 10px;
   border-radius: 15px;
@@ -80,4 +77,10 @@
   padding-top: 20px;
   height: 100%;
   color: rgba(0, 0, 0, 0.8);
+  gap: 10px;
+}
+
+.fa-regular {
+  align-items: center;
+  gap: 8px;
 }
