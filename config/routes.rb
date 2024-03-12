@@ -20,7 +20,7 @@ Rails.application.routes.draw do
           post :create_grades, to: 'sections#create_grades'
         end
       end
-      resources :communications, only: [:index, :new, :create]
+      resources :chatrooms, only: :show
     end
   end
   unauthenticated do
