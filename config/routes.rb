@@ -19,8 +19,9 @@ Rails.application.routes.draw do
       end
     end
     authenticated :user do
-      resources :chatrooms, only: [:index, :show] do
-        resources :messages, only: :create
+      get 'chatrooms/find_or_create', to: 'chatrooms#find_or_create'
+      resources :chatrooms, only: [:show, :index, :create] do
+        resources :messages, only: [:create]
       end
     end
   end
