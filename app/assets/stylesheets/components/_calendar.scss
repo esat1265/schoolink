@@ -45,6 +45,7 @@ $color_3: #fff;
       }
 			td.day {
 				font-size: 18px;
+        width: 45%;
 				font-weight: 400;
         color: $color_2;
 				background: #3405a3;
@@ -60,7 +61,9 @@ $color_3: #fff;
 				}
 			}
       td.active {
-        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         h4 {
           font-size: 16px;
         }
