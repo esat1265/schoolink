@@ -18,6 +18,16 @@ class ChatroomsController < ApplicationController
       student = current_user.student
       @teachers = student.courses.map(&:teacher).uniq if student
     end
+    if params[:query].present?
+      search_term = "%#{params[:search]}%"
+      case current_user.type
+        when "Teacher"
+          @parents = @parents.join("LEFT JOIN users students ON students.id = users.student_id")
+                    .where("users.first_name ILIKE :search OR users.last_name ILIKE :search OR parents.first_name ILIKE :search OR parents.last_name ILIKE :search", search: search_term)
+        when "Parent"
+        end
+
+    end
   end
 
 

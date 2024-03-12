@@ -1,5 +1,18 @@
 <div class="second-container">
   <h4 class="text-center">List</h4>
+
+  <%= form_tag(section_path(@section), method: :get, class: "input-group") do %>
+    <div class="input">
+      <%= text_field_tag :search, params[:search], id: "search-input", autocomplete: "off", class: "form-control" %>
+      <%= label_tag :search, "Search", class: "form-label" %>
+    </div>
+    <div class="input">
+      <%= button_tag(type: 'submit', class: "form-control", id: "submit-search") do %>
+        Go
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="table-responsive" id="contacts-chatroom">
     <table class="table">
       <thead>
