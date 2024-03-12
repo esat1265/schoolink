@@ -2,50 +2,61 @@
   <div class="row">
     <div class="col-md-12">
       <div class="schedule-table rounded-table">
+        <table class="table bg-white rounded-table">
+            <% 5.times do |i| %>
+              <tr>
+                <td class="schedule-table table tbody day"><%= "#{(8 + i).to_s.rjust(2, '0')}.00-#{(9 + i).to_s.rjust(2, '0')}.00" %></td>
+                <% course = @courses.sample %>
+                <td class="active bg-<%= course.name.downcase.gsub(' ', '-') %>"><%= course.name %> <%= @sections.sample.name %>
+                  <%# <h4></h4> %>
+                  <%# <p>08:05 - 08:50</p> %>
+                </td>
+              </tr>
+            <% end %>
+        </table>
+
+
+
+
+        <!--
         <table class="table bg-white">
           <tbody>
             <tr>
-              <td class="day">08:00</td>
-              <td class="active">
-                <h4><%= @courses.sample.name %> <%= @sections.sample.name %></h4>
-                <p>08:05 - 08:50</p>
-                <div class="hover">
-                  <h4>Calculus test</h4>
-                </div>
+              <td class="day">08.00-09.00</td>
+              <% course = @courses.sample %>
+              <td class="active bg-<%= course.name.downcase.gsub(' ', '-') %>">
+                <h4><%= course.name %> <%= @sections.sample.name %></h4>
+                <%# <p>08:05 - 08:50</p> %>
               </td>
             </tr>
             <tr>
-              <td class="day">09:00</td>
-              <td class="active">
-                <h4><%= @courses.sample.name %> <%= @sections.sample.name %></h4>
-                <p>09:05 - 09:50</p>
-                <div class="hover">
-                  <h4></h4>
-                </div>
+              <td class="day">09.00-10.00</td>
+              <% course = @courses.sample %>
+              <td class="active bg-<%= course.name.downcase.gsub(' ', '-') %>">
+                <h4><%= course.name %> <%= @sections.sample.name %></h4>
+                <%# <p>09:05 - 09:50</p> %>
               </td>
             </tr>
              <tr>
-              <td class="day">10:00</td>
-              <td class="active">
-                <h4><%= @courses.sample.name %> <%= @sections.sample.name %></h4>
-                <p>10:20 - 11:00</p>
-                <div class="hover">
-                  <h4></h4>
-                </div>
+              <td class="day">10.00-11.00</td>
+              <% course = @courses.sample %>
+              <td class="active bg-<%= course.name.downcase.gsub(' ', '-') %>">
+                <h4><%= course.name %> <%= @sections.sample.name %></h4>
+                <%# <p>10:20 - 11:00</p> %>
               </td>
             </tr>
             <tr>
-              <td class="day">11:00</td>
-              <td class="active">
-                <h4><%= @courses.sample.name %> <%= @sections.sample.name %></h4>
-                <p>11:15 - 12:00</p>
-                <div class="hover">
-                  <h4></h4>
-                </div>
+              <td class="day">11.00-12.00</td>
+              <% course = @courses.sample %>
+              <td class="active bg-<%= course.name.downcase.gsub(' ', '-') %>">
+                <h4><%= course.name %> <%= @sections.sample.name %></h4>
+                <%# <p>11:15 - 12:00</p> %>
               </td>
             </tr>
           </tbody>
         </table>
+
+        -->
       </div>
     </div>
   </div>
