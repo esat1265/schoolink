@@ -75,8 +75,8 @@ body {
   align-items: center;
   text-decoration: none;
   color: inherit;
-  padding: 8px;
   overflow: hidden;
+  padding-left: 25px;
 }
 
 .side-nav ul li a p {
@@ -89,8 +89,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 70px;
-  height: 140px;
-  padding: 8px;
+  height: 120px;
   border-radius: 8px;
   margin-left: auto;
   margin-right: auto;
@@ -148,4 +147,8 @@ ul li span {
   display: none;
   width: 0;
   overflow: hidden;
+}
+
+ul li :hover{
+padding-left: 15px;
 }
