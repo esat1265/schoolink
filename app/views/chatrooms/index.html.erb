@@ -1,15 +1,47 @@
-<div class="show-classes-container">
-  <div class="cards-container d-flex justify-content-center pt-3 ">
-    <% if current_user.type == "Teacher" %>
-      <h2>Parents</h2>
-      <% @parents.each do |parent| %>
-        <%= link_to parent.first_name, chatrooms_find_or_create_path(teacher_id: current_user.id, parent_id: parent.id) %>
-      <% end %>
-    <% elsif current_user.type == "Parent" %>
-      <h2>Teachers</h2>
-      <% @teachers.each do |teacher| %>
-        <%= link_to teacher.first_name, chatrooms_find_or_create_path(teacher_id: teacher.id, parent_id: current_user.id) %>
-      <% end %>
-    <% end %>
+<div class="second-container">
+  <h4 class="text-center">List</h4>
+  <div class="table-responsive" id="contacts-chatroom">
+    <table class="table">
+      <thead>
+        <tr>
+          <% if current_user.type == "Teacher" %>
+            <th>Parent's Name</th>
+            <th>Student's Name</th>
+            <th>Section</th>
+            <th></th>
+          <% elsif current_user.type == "Parent" %>
+            <th>Teacher's Name</th>
+            <th>Course</th>
+            <th>Section</th>
+            <th></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% if current_user.type == "Teacher" %>
+          <% @parents.each do |parent| %>
+            <% student = parent.student %>
+            <% if student.present? %>
+              <tr>
+                <td><%= parent.first_name %> <%= parent.last_name %></td>
+                <td><%= student.first_name %> <%= student.last_name %></td>
+                <td><%= student.section.name %></td>
+                <td><%= link_to 'Contact Parent', chatrooms_find_or_create_path(teacher_id: current_user.id, parent_id: parent.id) %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        <% elsif current_user.type == "Parent" %>
+          <% student = current_user.student %>
+          <% student.courses.each do |course| %>
+            <tr>
+              <td><%= course.teacher.first_name %> <%= course.teacher.last_name %></td>
+              <td><%= course.name %></td>
+              <td><%= course.section.name %></td>
+              <td><%= link_to 'Contact Teacher', chatrooms_find_or_create_path(teacher_id: course.teacher.id, parent_id: current_user.id) %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
