@@ -1,15 +1,17 @@
-<div class="show-classes-container">
-  <div class="cards-container d-flex justify-content-center pt-3 ">
-    <% if current_user.type == "Teacher" %>
-      <h2>Parents</h2>
-      <% @parents.each do |parent| %>
-        <%= link_to parent.first_name, chatrooms_find_or_create_path(teacher_id: current_user.id, parent_id: parent.id) %>
+<div class="main-container">
+  <div class="show-classes-container">
+    <div class="cards-container d-flex justify-content-center pt-3 ">
+      <% if current_user.type == "Teacher" %>
+        <h2>Parents</h2>
+        <% @parents.each do |parent| %>
+          <%= link_to parent.first_name, chatrooms_find_or_create_path(teacher_id: current_user.id, parent_id: parent.id) %>
+        <% end %>
+      <% elsif current_user.type == "Parent" %>
+        <h2>Teachers</h2>
+        <% @teachers.each do |teacher| %>
+          <%= link_to teacher.first_name, chatrooms_find_or_create_path(teacher_id: teacher.id, parent_id: current_user.id) %>
+        <% end %>
       <% end %>
-    <% elsif current_user.type == "Parent" %>
-      <h2>Teachers</h2>
-      <% @teachers.each do |teacher| %>
-        <%= link_to teacher.first_name, chatrooms_find_or_create_path(teacher_id: teacher.id, parent_id: current_user.id) %>
-      <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
