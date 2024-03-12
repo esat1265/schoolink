@@ -10,18 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_12_094141) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_12_083652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum"
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "parent_id"
-    t.bigint "teacher_id"
-    t.index ["parent_id"], name: "index_chatrooms_on_parent_id"
-    t.index ["teacher_id"], name: "index_chatrooms_on_teacher_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -43,18 +67,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_094141) do
     t.bigint "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["course_id"], name: "index_grades_on_course_id"
     t.index ["student_id"], name: "index_grades_on_student_id"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.string "content"
-    t.bigint "chatroom_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "sections", force: :cascade do |t|
@@ -83,13 +98,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_094141) do
     t.index ["section_id"], name: "index_users_on_section_id"
   end
 
-  add_foreign_key "chatrooms", "users", column: "parent_id"
-  add_foreign_key "chatrooms", "users", column: "teacher_id"
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "courses", "sections"
   add_foreign_key "courses", "users", column: "teacher_id"
   add_foreign_key "grades", "courses"
   add_foreign_key "grades", "users", column: "student_id"
-  add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
   add_foreign_key "users", "users", column: "parent_id"
 end

@@ -58,6 +58,9 @@
                 <td>
                   <%= text_area_tag "grades[#{student.id}][comment]", nil, class: 'form-control' %>
                 </td>
+                <td>
+                  <%= form.file_field "grades[#{student.id}][photo]", class: 'form-control' %>
+                </td>
               </tr>
               <% end %>
             </tbody>

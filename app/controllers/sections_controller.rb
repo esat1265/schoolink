@@ -35,13 +35,15 @@ class SectionsController < ApplicationController
     grades_params = params[:grades].permit!.to_h
 
     grades_params.each do |student_id, grade_data|
+      photo = grade_data[:photo]
       Grade.create(
         course: Course.find(course_id),
         student: Student.find(student_id),
         grade: grade_data['grade'],
         comment: grade_data['comment'],
         exam_name: exam_name,
-        date: date
+        date: date,
+        photo: photo
       )
     end
     redirect_to section_path(@section), notice: 'Grades were successfully created.'
@@ -54,6 +56,6 @@ class SectionsController < ApplicationController
   end
 
   def grades_params
-    params.require(:grades).permit(grades: [:grade, :comment])[:grades]
+    params.require(:grades).permit(grades: [:grade, :comment, :photo])[:grades]
   end
 end
