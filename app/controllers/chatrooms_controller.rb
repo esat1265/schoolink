@@ -18,7 +18,7 @@ class ChatroomsController < ApplicationController
       student = current_user.student
       @teachers = student.courses.map(&:teacher).uniq if student
     end
-    if params[:query].present?
+    if params[:search].present?
       search_term = "%#{params[:search]}%"
       case current_user.type
         when "Teacher"
