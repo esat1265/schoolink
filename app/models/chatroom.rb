@@ -1,5 +1,5 @@
 class Chatroom < ApplicationRecord
-  has_many :messages
-  belongs_to :teacher
-  belongs_to :parent
+  belongs_to :parent, class_name: "Parent"
+  belongs_to :teacher, class_name: "Teacher"
+  has_many :messages, dependent: :destroy
 end

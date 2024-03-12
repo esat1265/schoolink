@@ -102,7 +102,7 @@ end
 puts "____________Create 100 parents and 100 students"
 100.times do |n|
   parent = Parent.create!(
-    email: "parent#{n+1}@example.com",
+    email: "parent#{n + 1}@example.com",
     password: "password",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
