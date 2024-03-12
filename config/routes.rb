@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
-  get 'communications/index'
-  get 'communications/new'
-  get 'communications/create'
   devise_for :users
   devise_scope :user do
     authenticated :user, ->(u) { u.type == 'Parent' } do
       root 'pages#parent_dashboard', as: :parent_root
       resources :grades, only: [:index, :show]
-      resources :chatrooms, only: :show do
-        resources :messages, only: :create
-      end
     end
 
     authenticated :user, ->(u) { u.type == 'Teacher' } do
@@ -23,7 +17,9 @@ Rails.application.routes.draw do
           post :create_grades, to: 'sections#create_grades'
         end
       end
-      resources :chatrooms, only: :show do
+    end
+    authenticated :user do
+      resources :chatrooms, only: [:index, :show] do
         resources :messages, only: :create
       end
     end

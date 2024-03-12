@@ -1,0 +1,18 @@
+
+
+<% if current_user.type == "Teacher" && current_user.sections.any? %>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt eius asperiores sint officia pariatur repudiandae modi quis laudantium, id est nihil aperiam quo facere, molestiae enim veniam magni molestias.</p>
+
+<% @parents.each do |parent| %>
+<%= parent.first_name %>
+  <% end %>
+
+
+<% else %>
+<h2>sdfdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</h2>
+<%= link_to chatroom_path(@chatroom) do %>
+  <% @teachers.each do |teacher| %>
+    <%= teacher.first_name %>
+    <% end %>
+  <% end %>
+<% end %>
