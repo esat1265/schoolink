@@ -117,11 +117,12 @@ puts "____________Create 100 parents and 100 students"
     email: "student#{n+1}@example.com",
     password: "password",
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    last_name: parent.last_name,
     type: "Student",
     section: Section.all.sample,
     parent: parent
   )
+  puts "Parent #{n} and student #{n} created."
 end
 
 puts "____________Create 30 grades per student"
