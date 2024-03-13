@@ -20,6 +20,7 @@ class ChatroomsController < ApplicationController
           contact: chatroom.parent,
           unread_messages_count: unread_messages_count
         }
+      end
       # Trouver tous les étudiants associés à cet enseignant à travers les cours.
       students = Student.joins(:courses).where(courses: {teacher_id: current_user.id}).distinct
       # En utilisant les étudiants, trouver les parents uniques et trier par section puis par last_name des parents
