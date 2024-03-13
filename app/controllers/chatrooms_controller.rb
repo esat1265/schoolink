@@ -20,6 +20,13 @@ class ChatroomsController < ApplicationController
           contact: chatroom.parent,
           unread_messages_count: unread_messages_count
         }
+      # Trouver tous les étudiants associés à cet enseignant à travers les cours.
+      students = Student.joins(:courses).where(courses: {teacher_id: current_user.id}).distinct
+      # En utilisant les étudiants, trouver les parents uniques et trier par section puis par last_name des parents
+      @parents = students.map(&:parent).compact.uniq.sort_by { |parent| [parent.student.section_id, parent.last_name] }
+      if params[:search].present?
+        search_term = "%#{params[:search]}%"
+        @parents = students.map(&:parent).uniq.compact
       end
     elsif current_user.type == "Parent"
       current_user.chatrooms.includes(:teacher, :messages).each do |chatroom|
