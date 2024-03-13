@@ -1,20 +1,21 @@
-<h2><%= @chatroom.name %></h2>
+<div class="chatroom-container">
+  <h2>Schoolink Messenger</h2>
 
-<div id="messages">
-  <% @messages.each do |message| %>
-    <p>
-      <strong><%= message.user.first_name %>:</strong>
-      <%= message.content %>
-    </p>
+  <div id="messages" class="messages">
+    <% @messages.each do |message| %>
+      <p>
+        <strong><%= message.user.first_name %>:</strong>
+        <%= message.content %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= form_for [@chatroom, @message], html: { class: "message-form" } do |f| %>
+    <div class="field">
+      <%= f.text_area :content, class: "text_area" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Send", class: "submit-button" %>
+    </div>
   <% end %>
 </div>
-
-<%= form_for [@chatroom, @message] do |f| %>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Send" %>
-  </div>
-<% end %>
