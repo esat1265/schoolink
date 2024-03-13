@@ -30,30 +30,30 @@
               <th class="text-center grade-th">Grade</th>
               <td class="text-center">
                 <% case @grade.grade %>
-                <% when 1.0 %>
-                  <span class="bg-one text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 1.5 %>
-                  <span class="bg-one-half text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 2.0 %>
-                  <span class="bg-two text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 2.5 %>
-                  <span class="bg-two-half text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 3.0 %>
-                  <span class="bg-three text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 3.5 %>
-                  <span class="bg-three-half text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 4.0 %>
-                  <span class="bg-four text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 4.5 %>
-                  <span class="bg-four-half text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 5.0 %>
-                  <span class="bg-five text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 5.5 %>
-                  <span class="bg-five-half text-white p-2 rounded"><%= @grade.grade %></span>
-                <% when 6.0 %>
-                  <span class="bg-six text-white p-2 rounded"><%= @grade.grade %></span>
-                <% else %>
-                  <span class="bg-success text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 1.0..1.4 %>
+                    <span class="bg-one text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 1.5..1.9 %>
+                    <span class="bg-one-half text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 2.0..2.4 %>
+                    <span class="bg-two text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 2.5..2.9 %>
+                    <span class="bg-two-half text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 3.0..3.4 %>
+                    <span class="bg-three text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 3.5..3.9 %>
+                    <span class="bg-three-half text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 4.0..4.4 %>
+                    <span class="bg-four text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 4.5..4.9 %>
+                    <span class="bg-four-half text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 5.0..5.4 %>
+                    <span class="bg-five text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 5.5..5.9 %>
+                    <span class="bg-five-half text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% when 6.0 %>
+                    <span class="bg-six text-white p-2 rounded"><%= @grade.grade %></span>
+                  <% else %>
+                    <span class="bg-success text-white p-2 rounded"><%= @grade.grade %></span>
                 <% end %>
               </td>
             </tr>

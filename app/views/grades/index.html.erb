@@ -33,25 +33,25 @@
                 <td class="text-center">
                   <%= link_to grade_path(grade), class: 'text-decoration-none fw-bold', style: 'color: black;' do %>
                     <% case grade.grade %>
-                      <% when 1.0 %>
+                      <% when 1.0..1.4 %>
                         <span class="bg-one text-white p-2 rounded"><%= grade.grade %></span>
-                      <% when 1.5 %>
+                      <% when 1.5..1.9 %>
                         <span class="bg-one-half text-white p-2 rounded"><%= grade.grade %></span>
-                      <% when 2.0 %>
+                      <% when 2.0..2.4 %>
                         <span class="bg-two text-white p-2 rounded"><%= grade.grade %></span>
-                      <% when 2.5 %>
+                      <% when 2.5..2.9 %>
                         <span class="bg-two-half text-white p-2 rounded"><%= grade.grade %></span>
-                      <% when 3.0 %>
+                      <% when 3.0..3.4 %>
                         <span class="bg-three text-white p-2 rounded"><%= grade.grade %></span>
-                      <% when 3.5 %>
+                      <% when 3.5..3.9 %>
                         <span class="bg-three-half text-white p-2 rounded"><%= grade.grade %></span>
-                      <% when 4.0 %>
+                      <% when 4.0..4.4 %>
                         <span class="bg-four text-white p-2 rounded"><%= grade.grade %></span>
-                      <% when 4.5 %>
+                      <% when 4.5..4.9 %>
                         <span class="bg-four-half text-white p-2 rounded"><%= grade.grade %></span>
-                      <% when 5.0 %>
+                      <% when 5.0..5.4 %>
                         <span class="bg-five text-white p-2 rounded"><%= grade.grade %></span>
-                      <% when 5.5 %>
+                      <% when 5.5..5.9 %>
                         <span class="bg-five-half text-white p-2 rounded"><%= grade.grade %></span>
                       <% when 6.0 %>
                         <span class="bg-six text-white p-2 rounded"><%= grade.grade %></span>
