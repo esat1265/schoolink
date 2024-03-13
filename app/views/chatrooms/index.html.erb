@@ -1,48 +1,45 @@
 <div class="second-container">
-
   <h4 class="text-center">Chatrooms List</h4>
-
-    <%= form_tag(chatrooms_path, method: :get, class: "input-group") do %>
-      <div class="input">
-        <%= text_field_tag :search, params[:search], id: "search-input", autocomplete: "off", class: "form-control" %>
-        <%= label_tag :search, "Search", class: "form-label" %>
+  <%= form_with url: chatrooms_path, method: :get, class: "input-group", local: true do |form| %>
+    <div class="input-group mb-3">
+      <%= form.text_field :search, value: params[:search], placeholder: "Search", class: "form-control", id: "search-input", autocomplete: "off" %>
+      <div class="input-group-append">
+        <%= form.submit "Go", class: "btn btn-outline-secondary" %>
       </div>
-      <div class="input">
-        <%= button_tag(type: 'submit', class: "form-control", id: "submit-search") do %>
-          Go
-        <% end %>
-      </div>
-    <% end %>
-
+    </div>
+  <% end %>
 
   <div class="table-responsive" id="contacts-chatroom">
-    <table class="table">
+  <table class="table">
       <thead>
         <tr>
-          <% if current_user.type == "Teacher" %>
-            <th>Parent's Name</th>
-            <th>Course</th>
-          <% elsif current_user.type == "Parent" %>
-            <th>Teacher's Name</th>
-            <th>Course</th>
-          <% end %>
+          <th>Name</th>
+          <th>Action</th>
           <th>Unread Messages</th>
         </tr>
       </thead>
       <tbody>
-        <% @contacts_with_unread_messages.each do |contact_info| %>
-          <tr>
-            <td><%= contact_info[:contact].first_name %> <%= contact_info[:contact].last_name %></td>
-            <td><%= contact_info[:course]&.name %></td>
-            <td>
-              <%= link_to 'Contact', chatroom_path(contact_info[:chatroom]) %>
-              <% if contact_info[:unread_messages_count] > 0 %>
-                <span class="inbox-icon">Inbox<i class="fa fa-envelope"></i><%= contact_info[:unread_messages_count] %></span>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+      <% @contacts_with_unread_messages.each do |contact_info| %>
+        <tr>
+          <td><%= contact_info[:contact].first_name %> <%= contact_info[:contact].last_name %></td>
+          <td>
+            <% if contact_info[:chatroom].present? %>
+              <%= link_to 'Open Chatroom', chatroom_path(contact_info[:chatroom]), class: 'btn btn-primary btn-sm' %>
+            <% else %>
+              Chatroom Not Available
+            <% end %>
+          </td>
+          <td>
+            <% if contact_info[:unread_messages_count] > 0 %>
+              <span class="inbox-icon">Inbox<i class="fa fa-envelope"></i><%= contact_info[:unread_messages_count] %></span>
+            <% else %>
+              No unread messages
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+</div>
+```
