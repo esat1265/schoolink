@@ -101,13 +101,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_123900) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "phone_number"
+    t.integer "phone_number"
     t.bigint "parent_id"
     t.string "first_name"
     t.string "last_name"
     t.string "type"
     t.bigint "section_id"
-    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["parent_id"], name: "index_users_on_parent_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
