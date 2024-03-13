@@ -6,6 +6,10 @@ Course.destroy_all
 puts 'All courses destroyed'
 Section.destroy_all
 puts 'All sections destroyed'
+Chatroom.destroy_all
+puts 'All chatrooms destroyed'
+Message.destroy_all
+puts 'All messages destroyed'
 Teacher.destroy_all
 puts 'All teachers destroyed'
 Student.destroy_all
