@@ -17,7 +17,7 @@ puts 'All students destroyed'
 Parent.destroy_all
 puts 'All parents destroyed'
 User.destroy_all
-puts 'All users destroyed'
+puts 'All users destroyedd'
 
 puts "____________Create 10 sections"
 sections = ["4A", "4B", "5A", "5B", "6A", "6B", "7A", "7B", "8A", "8B"]
