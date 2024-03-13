@@ -61,6 +61,17 @@
               <th class="text-center grade-th">Comment</th>
               <td class="bg-light"><em><%=@grade.comment%></em></td>
             </tr>
+            <tr>
+              <th class="text-center grade-th">Files</th>
+              <% if @grade.photo.nil? || @grade.photo.empty? %>
+                <td>No File</td>
+              <%else%>
+              <td>
+                <a href="<%=@grade.photo%>" target="_blank">view</a>
+              </td>
+              <%end%>
+            </tr>
+
           </tbody>
         </table>
       </div>

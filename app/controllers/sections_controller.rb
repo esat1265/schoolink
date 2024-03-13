@@ -35,7 +35,7 @@ class SectionsController < ApplicationController
     grades_params = params[:grades].permit!.to_h
 
     grades_params.each do |student_id, grade_data|
-      photo = grade_data[:photo]
+
       Grade.create(
         course: Course.find(course_id),
         student: Student.find(student_id),
@@ -43,8 +43,25 @@ class SectionsController < ApplicationController
         comment: grade_data['comment'],
         exam_name: exam_name,
         date: date,
-        photo: photo
       )
+    end
+
+    grades_params.each do |student_id, grade_data|
+
+      std_id = student_id.to_i
+      if params[:section]["grades[#{std_id}"].present?
+        file_photo = params[:section]["grades[#{std_id}"]
+        file = file_photo["photo"]["]"]
+        cloudinary_response = Cloudinary::Uploader.upload(file.tempfile, folder: 'grades')
+        cloudinary_url = cloudinary_response['secure_url']
+      else
+        cloudinary_url =""
+      end
+
+      find_grade = Student.find(student_id).grades.last
+      find_grade.photo = cloudinary_url
+      find_grade.save
+
     end
     redirect_to section_path(@section), notice: 'Grades were successfully created.'
   end
