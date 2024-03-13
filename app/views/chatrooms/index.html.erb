@@ -1,5 +1,6 @@
 <div class="second-container">
-  <h4 class="text-center">List</h4>
+
+  <h4 class="text-center">Chatrooms List</h4>
 
     <%= form_tag(chatrooms_path, method: :get, class: "input-group") do %>
       <div class="input">
@@ -13,69 +14,33 @@
       </div>
     <% end %>
 
-  <!--
-   <%= form_with url: chatrooms_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-      %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-    -->
-  <!--
-  <%= form_tag(chatrooms_path, method: :get, class: "input-group") do %>
-    <div class="input">
-      <%= text_field_tag :search, params[:search], id: "search-input", autocomplete: "off", class: "form-control" %>
-      <%= label_tag :search, "Search", class: "form-label" %>
-    </div>
-    <div class="input">
-      <%= button_tag(type: 'submit', class: "form-control", id: "submit-search") do %>
-        Go
-      <% end %>
-    </div>
-  <% end %>
--->
+
   <div class="table-responsive" id="contacts-chatroom">
     <table class="table">
       <thead>
         <tr>
           <% if current_user.type == "Teacher" %>
             <th>Parent's Name</th>
-            <th>Student's Name</th>
-            <th>Section</th>
-            <th></th>
+            <th>Course</th>
           <% elsif current_user.type == "Parent" %>
             <th>Teacher's Name</th>
             <th>Course</th>
-            <th>Section</th>
-            <th></th>
           <% end %>
+          <th>Unread Messages</th>
         </tr>
       </thead>
       <tbody>
-        <% if current_user.type == "Teacher" %>
-          <% @parents.each do |parent| %>
-            <% student = parent.student %>
-            <% if student.present? %>
-              <tr>
-                <td><%= parent.first_name %> <%= parent.last_name %></td>
-                <td><%= student.first_name %> <%= student.last_name %></td>
-                <td><%= student.section.name %></td>
-                <td><%= link_to 'Contact Parent', chatrooms_find_or_create_path(teacher_id: current_user.id, parent_id: parent.id) %></td>
-              </tr>
-            <% end %>
-          <% end %>
-        <% elsif current_user.type == "Parent" %>
-          <% student = current_user.student %>
-          <% student.courses.each do |course| %>
-            <tr>
-              <td><%= course.teacher.first_name %> <%= course.teacher.last_name %></td>
-              <td><%= course.name %></td>
-              <td><%= course.section.name %></td>
-              <td><%= link_to 'Contact Teacher', chatrooms_find_or_create_path(teacher_id: course.teacher.id, parent_id: current_user.id) %></td>
-            </tr>
-          <% end %>
+        <% @contacts_with_unread_messages.each do |contact_info| %>
+          <tr>
+            <td><%= contact_info[:contact].first_name %> <%= contact_info[:contact].last_name %></td>
+            <td><%= contact_info[:course]&.name %></td>
+            <td>
+              <%= link_to 'Contact', chatroom_path(contact_info[:chatroom]) %>
+              <% if contact_info[:unread_messages_count] > 0 %>
+                <span class="inbox-icon">Inbox<i class="fa fa-envelope"></i><%= contact_info[:unread_messages_count] %></span>
+              <% end %>
+            </td>
+          </tr>
         <% end %>
       </tbody>
     </table>
