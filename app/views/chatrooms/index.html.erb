@@ -1,6 +1,29 @@
 <div class="second-container">
   <h4 class="text-center">List</h4>
 
+    <%= form_tag(chatrooms_path, method: :get, class: "input-group") do %>
+      <div class="input">
+        <%= text_field_tag :search, params[:search], id: "search-input", autocomplete: "off", class: "form-control" %>
+        <%= label_tag :search, "Search", class: "form-label" %>
+      </div>
+      <div class="input">
+        <%= button_tag(type: 'submit', class: "form-control", id: "submit-search") do %>
+          Go
+        <% end %>
+      </div>
+    <% end %>
+
+  <!--
+   <%= form_with url: chatrooms_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+      %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+    -->
+  <!--
   <%= form_tag(chatrooms_path, method: :get, class: "input-group") do %>
     <div class="input">
       <%= text_field_tag :search, params[:search], id: "search-input", autocomplete: "off", class: "form-control" %>
@@ -12,7 +35,7 @@
       <% end %>
     </div>
   <% end %>
-
+-->
   <div class="table-responsive" id="contacts-chatroom">
     <table class="table">
       <thead>
@@ -23,7 +46,7 @@
             <th>Section</th>
             <th></th>
           <% elsif current_user.type == "Parent" %>
-            <th>Teacher's  Name</th>
+            <th>Teacher's Name</th>
             <th>Course</th>
             <th>Section</th>
             <th></th>

@@ -12,21 +12,15 @@ class ChatroomsController < ApplicationController
     if current_user.type == "Teacher"
       # Trouver tous les étudiants associés à cet enseignant à travers les cours.
       students = Student.joins(:courses).where(courses: {teacher_id: current_user.id}).distinct
-      # En utilisant les étudiants, trouver les parents uniques.
-      @parents = students.map(&:parent).uniq.compact
+      # En utilisant les étudiants, trouver les parents uniques et trier par section puis par last_name des parents
+      @parents = students.map(&:parent).compact.uniq.sort_by { |parent| [parent.student.section_id, parent.last_name] }
+      if params[:search].present?
+        search_term = "%#{params[:search]}%"
+        @parents = students.map(&:parent).uniq.compact
+      end
     elsif current_user.type == "Parent"
       student = current_user.student
       @teachers = student.courses.map(&:teacher).uniq if student
-    end
-    if params[:search].present?
-      search_term = "%#{params[:search]}%"
-      case current_user.type
-        when "Teacher"
-          @parents = @parents.join("LEFT JOIN users students ON students.id = users.student_id")
-                    .where("users.first_name ILIKE :search OR users.last_name ILIKE :search OR parents.first_name ILIKE :search OR parents.last_name ILIKE :search", search: search_term)
-        when "Parent"
-        end
-
     end
   end
 
