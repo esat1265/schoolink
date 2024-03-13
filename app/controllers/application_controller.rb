@@ -6,11 +6,10 @@ class ApplicationController < ActionController::Base
 
   def set_unread_messages_count
     if current_user
-      # Remplacer cette ligne avec la logique appropriée pour votre modèle
-      # Par exemple, si chaque utilisateur a des chatrooms :
       @unread_messages_count = Message.joins(:chatroom)
-                                      .where(chatrooms: {parent_id: current_user.id})
-                                      .or(Message.joins(:chatroom).where(chatrooms: {teacher_id: current_user.id}))
+                                      .where(chatrooms: { parent_id: current_user.id })
+                                      .or(Message.joins(:chatroom).where(chatrooms: { teacher_id: current_user.id }))
+                                      .where.not(user_id: current_user.id) # Exclure les messages envoyés par l'utilisateur courant
                                       .where(read: false)
                                       .count
     end

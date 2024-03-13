@@ -6,7 +6,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @messages = @chatroom.messages.includes(:user)
     @message = Message.new
-    @chatroom.messages.where.not(user: current_user).update_all(read: true)
+    @chatroom.messages.where.not(user_id: current_user.id).update_all(read: true)
   end
 
   def index
