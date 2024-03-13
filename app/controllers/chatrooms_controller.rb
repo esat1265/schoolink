@@ -10,26 +10,14 @@ class ChatroomsController < ApplicationController
   end
 
   def index
-    @contacts_with_unread_messages = []
-
     if current_user.type == "Teacher"
-      current_user.chatrooms.includes(:parent, :messages).each do |chatroom|
-        unread_messages_count = chatroom.messages.where.not(user: current_user).where(read: false).count
-        @contacts_with_unread_messages << {
-          chatroom: chatroom,
-          contact: chatroom.parent,
-          unread_messages_count: unread_messages_count
-        }
-      end
+      # Trouver tous les étudiants associés à cet enseignant à travers les cours.
+      students = Student.joins(:courses).where(courses: { teacher_id: current_user.id }).distinct
+      # En utilisant les étudiants, trouver les parents uniques.
+      @parents = students.map(&:parent).uniq.compact
     elsif current_user.type == "Parent"
-      current_user.chatrooms.includes(:teacher, :messages).each do |chatroom|
-        unread_messages_count = chatroom.messages.where.not(user: current_user).where(read: false).count
-        @contacts_with_unread_messages << {
-          chatroom: chatroom,
-          contact: chatroom.teacher,
-          unread_messages_count: unread_messages_count
-        }
-      end
+      student = current_user.student
+      @teachers = student.courses.map(&:teacher).uniq if student
     end
   end
 
