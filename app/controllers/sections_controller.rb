@@ -63,7 +63,7 @@ class SectionsController < ApplicationController
       find_grade.save
 
     end
-    redirect_to section_path(@section), notice: 'Grades were successfully created.'
+    redirect_to show_grades_section_path, notice: 'Grades were successfully created.'
   end
 
   private
