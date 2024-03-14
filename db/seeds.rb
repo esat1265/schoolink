@@ -131,17 +131,22 @@ Student.all.each do |student|
   puts "Creating grades for student #{student.first_name}"
 
   courses.each do |course|
+    chapter_number = 1
+    day = rand(25..180)
+
     6.times do |n|
       grade_value = (rand(1.0..6.0) * 2).round / 2
       comment = grade_value > 3 ? positive_teacher_comments.sample : negative_teacher_comments.sample
       Grade.create(
         course_id: course.id,
         grade: grade_value,
-        date: random_date = Date.today - rand(1..365),
-        exam_name: "#{course.name} Chapter #{rand(1..10)}",
+        date: Date.today - day,
+        exam_name: "#{course.name} Chapter #{chapter_number}",
         comment: comment,
         student_id: student.id
       )
+      chapter_number += 1
+      day -= 25
     end
   end
 end
