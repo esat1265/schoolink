@@ -12,11 +12,11 @@
           <tbody>
             <tr>
               <th class="text-center grade-th">Course Name</th>
-              <td class="text-center"><%=@grade.course.name%></td>
+              <td class="text-center"><i class="<%= @grade.course.icon %>"></i> <%=@grade.course.name%></td>
             </tr>
             <tr>
               <th class="text-center grade-th">Teacher Name</th>
-              <td class="text-center bg-light"><%=@grade.course.teacher.first_name%> <%=@grade.course.teacher.last_name%></td>
+              <td class="text-center bg-light"><i class="fas fa-graduation-cap"></i> <%=@grade.course.teacher.first_name%> <%=@grade.course.teacher.last_name%></td>
             </tr>
             <tr>
               <th class="text-center grade-th">Exam Name</th>
@@ -24,7 +24,7 @@
             </tr>
             <tr>
               <th class="text-center grade-th">Exam Date</th>
-              <td class="text-center bg-light"><%=@grade.date.strftime("%B %d, %Y")%></td>
+              <td class="text-center bg-light"><i class="fas fa-calendar-days ms-3"></i> <%=@grade.date.strftime("%B %d, %Y")%></td>
             </tr>
             <tr>
               <th class="text-center grade-th">Grade</th>
