@@ -4,7 +4,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
-    @messages = @chatroom.messages.includes(:user)
+    @messages = @chatroom.messages.includes(:user).order(created_at: :asc)
     @message = Message.new
     @chatroom.messages.where.not(user_id: current_user.id).update_all(read: true)
   end
