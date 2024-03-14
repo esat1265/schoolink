@@ -17,6 +17,8 @@
       <%= link_to 'Add a grade for this class', add_grade_section_path(@section), id: "add-grade-btn" %>
     </div>
 
+
+
     <%= form_tag(section_path(@section), method: :get, class: "input-group") do %>
       <div class="input">
         <%= text_field_tag :search, params[:search], id: "search-input", autocomplete: "off", class: "form-control" %>
@@ -29,6 +31,15 @@
       </div>
     <% end %>
 
+    <div>
+      <% if @students.count == 1 %>
+        <p><%= @students.count %> student found</p>
+      <% elsif @students.count == 0 %>
+        <p>No results for this seach</p>
+      <% else %>
+        <p><%= @students.count %> students</p>
+      <% end %>
+    </div>
   <!-- Student list -->
 <div class="student-list">
   <table class="table table-hover rounded-table">
