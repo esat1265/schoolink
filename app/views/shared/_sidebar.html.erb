@@ -1,18 +1,18 @@
 <div class="side-nav">
-  <div class="user">
+<!--  <div class="user">
 
-        <% if current_user.type == "Teacher" %>
-          <%= link_to teacher_root_path do %>
-            <%= image_tag(("logo.png") , :class => "user-img") %>
-          <% end %>
-        <% end %>
-
-        <% if current_user.type == "Parent" %>
-          <%= link_to teacher_root_path do %>
-            <%= image_tag(("logo.png") , :class => "user-img") %>
-          <% end %>
-        <% end %>
-  </div>
+        <%# if current_user.type == "Teacher" %>-->
+          <%#= link_to teacher_root_path do %>
+            <%#= image_tag(("logo.png") , :class => "user-img") %>
+          <%# end %>
+        <%# end %>
+<!---->
+        <%# if current_user.type == "Parent" %>
+          <%#= link_to teacher_root_path do %>
+            <%#= image_tag(("logo.png") , :class => "user-img") %>
+          <%# end %>
+        <%# end %>
+<!--  </div>-->
   <ul>
     <li><%= link_to teacher_root_path do %>
         <%= image_tag("dashboard.png") %>

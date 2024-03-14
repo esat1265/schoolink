@@ -5,6 +5,20 @@
 </div>
   </div>
 
+  <div class="nav-top-title flex-start ">
+    <% if current_user.type == "Teacher" %>
+      <%= link_to teacher_root_path do %>
+        <%= image_tag(("logo.png") , :class => "user-img") %>
+      <% end %>
+    <% end %>
+
+    <% if current_user.type == "Parent" %>
+      <%= link_to teacher_root_path do %>
+        <%= image_tag(("logo.png") , :class => "user-img ") %>
+      <% end %>
+    <% end %> <i>Schoolink</i>
+  </div>
+
   <div class="login-details">
     <div class="inbox">Inbox<i class="fa-regular fa-message"></i><%= @unread_messages_count %></div>
     <p class="text-center"><%= current_user.first_name %> <%= current_user.last_name %>
