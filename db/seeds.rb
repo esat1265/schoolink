@@ -85,7 +85,7 @@ negative_teacher_comments = [
 8.times do |n|
   teacher = Teacher.create!(
     email: "teacher#{n+1}@example.com",
-    password: "password",
+    password: "alain4ever",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
   )
@@ -105,11 +105,14 @@ end
 
 puts "____________Create 100 parents and 100 students"
 100.times do |n|
+  first__name = Faker::Name.first_name
+  last__name = Faker::Name.last_name
+
   parent = Parent.create!(
-    email: "parent#{n + 1}@example.com",
-    password: "password",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    email: "#{first__name[0].downcase}.#{last__name.downcase}@slink.ch",
+    password: "alain4ever",
+    first_name: first__name,
+    last_name: last__name,
     phone_number: "076 #{rand(100..999)} #{rand(10..99)} #{rand(10..99)}"
   )
 
