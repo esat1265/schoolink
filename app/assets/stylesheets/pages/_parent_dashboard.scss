@@ -15,7 +15,6 @@
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-
 .box-shadow-parent {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
@@ -51,8 +50,8 @@
   width: 60%;
 }
 
-.graph-background{
-border-radius: 10px;
+.graph-background {
+  border-radius: 10px;
 }
 
 .calendar-parent {
@@ -70,7 +69,6 @@ table {
   border-radius: 10px;
   overflow: hidden;
 }
-
 
 .rounded-table tr:last-child th,
 .rounded-table tr:last-child td {
@@ -104,7 +102,6 @@ table {
   }
 }
 
-
 .post-it {
   width: 400px;
   height: auto;
@@ -112,7 +109,7 @@ table {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   margin: 20px;
   padding: 10px;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   transform: rotate(3deg);
@@ -122,7 +119,7 @@ table {
 }
 
 .post-it:before {
-  content: '';
+  content: "";
   width: 100%;
   height: 20px;
   background-color: #ffd42a;
