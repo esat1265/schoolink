@@ -12,6 +12,7 @@ class ChatroomsController < ApplicationController
   def index
     if current_user.type == "Teacher"
       students = Student.joins(:courses).where(courses: { teacher_id: current_user.id }).distinct
+      students = students.sort_by { |student| [student.section_id, student.last_name] }
       @parent_data = students.map do |student|
         parent = student.parent
         next unless parent
