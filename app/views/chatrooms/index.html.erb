@@ -11,7 +11,7 @@
             <th></th>
           <% elsif current_user.type == "Parent" %>
             <th>Teacher's  Name</th>
-            <th>Course</th>
+            <th>Courses</th>
             <th>Section</th>
             <th></th>
           <% end %>
@@ -37,26 +37,23 @@
               <% end %>
             <% end %>
           <% elsif current_user.type == "Parent" %>
+            <% student = current_user.student %>
             <% @teacher_data.each do |data| %>
               <% teacher = data[:teacher] %>
-              <% student = current_user.student %>
-              <% student.courses.each do |course| %>
-                <% if course.teacher_id == teacher.id %>
-                  <tr>
-                    <td>
-                      <%= teacher.first_name %> <%= teacher.last_name %>
-                      <% if data[:unread_messages] && course.teacher_id == teacher.id %>
+              <tr>
+                <td>
+                  <%= teacher.first_name %> <%= teacher.last_name %>
+                  <% if data[:unread_messages] %>
                         <i class="fa-regular fa-message text-danger"></i>
-                      <% end %>
-                    </td>
-                    <td><%= course.name %></td>
-                    <td><%= course.section.name %></td>
-                    <td><%= link_to 'Contact Teacher', chatrooms_find_or_create_path(teacher_id: teacher.id, parent_id: current_user.id), class: "btn btn-outline-primary" %></td>
-                  </tr>
-                <% end %>
-              <% end %>
+                  <% end %>
+                </td>
+                <td><%= teacher.courses.where(section_id: student.section_id).map(&:name).join(", ") %></td>
+                <td><%= student.section.name %></td>
+                <td><%= link_to 'Contact Teacher', chatrooms_find_or_create_path(teacher_id: teacher.id, parent_id: current_user.id), class: "btn btn-outline-primary" %></td>
+              </tr>
             <% end %>
           <% end %>
+
         </tbody>
     </table>
   </div>
