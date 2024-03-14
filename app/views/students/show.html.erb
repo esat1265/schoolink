@@ -30,7 +30,32 @@
             <% @grades.each do |grade| %>
               <tr>
                 <td><i class="<%= grade.course.icon %>"></i> <%= grade.course.name %></td>
-                <td><%= grade.grade %></td>
+                <% case grade.grade %>
+                      <% when 1.0..1.4 %>
+                        <td><a class="bg-one text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 1.5..1.9 %>
+                        <td><a class="bg-one-half text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 2.0..2.4 %>
+                        <td><a class="bg-two text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 2.5..2.9 %>
+                        <td><a class="bg-two-half text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 3.0..3.4 %>
+                        <td><a class="bg-three text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 3.5..3.9 %>
+                        <td><a class="bg-three-half text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 4.0..4.4 %>
+                        <td><a class="bg-four text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 4.5..4.9 %>
+                        <td><a class="bg-four-half text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 5.0..5.4 %>
+                        <td><a class="bg-five text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 5.5..5.9 %>
+                        <td><a class="bg-five-half text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% when 6.0 %>
+                        <td><a class="bg-six text-white p-2 rounded"><%= grade.grade %></a></td>
+                      <% else %>
+                        <td><a class="bg-success text-white p-2 rounded"><%= grade.grade %></a></td>
+                  <% end %>
                 <td><%= grade.exam_name %></td>
                 <td><%= grade.date.strftime("%B %d, %Y") %></td>
                 <td><em><%= grade.comment %></em></td>

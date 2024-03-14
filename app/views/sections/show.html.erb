@@ -19,12 +19,11 @@
 
     <%= form_tag(section_path(@section), method: :get, class: "input-group") do %>
       <div class="input">
-        <%= text_field_tag :search, params[:search], id: "search-input", autocomplete: "off", class: "form-control" %>
-        <%= label_tag :search, "Search", class: "form-label" %>
+        <%= text_field_tag :search, params[:search], id: "search-input", autocomplete: "off", class: "form-control", placeholder: "Enter a name" %>
       </div>
       <div class="input">
         <%= button_tag(type: 'submit', class: "form-control", id: "submit-search") do %>
-          Go
+          Search
         <% end %>
       </div>
     <% end %>
