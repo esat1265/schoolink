@@ -22,5 +22,11 @@
       <%= render "shared/navbar-top" %>
       <%= yield %>
     </div>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var messages = document.getElementById("messages");
+    messages.scrollTop = messages.scrollHeight;
+  });
+</script>
   </body>
 </html>

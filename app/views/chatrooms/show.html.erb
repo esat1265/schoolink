@@ -3,10 +3,13 @@
 
   <div id="messages" class="messages">
     <% @messages.each do |message| %>
-      <p>
-        <strong><%= message.user.first_name %>:</strong>
-        <%= message.content %>
-      </p>
+      <div class="<%= message.user.type == 'Parent' ? 'message-parent' : 'message-teacher' %>">
+        <small><%= message.created_at.strftime("%d/%m/%Y %H:%M") %></small>
+        <p>
+          <strong><%= message.user.first_name %>:</strong>
+          <%= message.content %>
+        </p>
+      </div>
     <% end %>
   </div>
 
