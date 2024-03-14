@@ -51,7 +51,7 @@
                     </td>
                     <td><%= course.name %></td>
                     <td><%= course.section.name %></td>
-                    <td><%= link_to 'Contact Teacher', chatrooms_find_or_create_path(teacher_id: teacher.id, parent_id: current_user.id), class: "btn btn-primary" %></td>
+                    <td><%= link_to 'Contact Teacher', chatrooms_find_or_create_path(teacher_id: teacher.id, parent_id: current_user.id), class: "btn btn-outline-primary" %></td>
                   </tr>
                 <% end %>
               <% end %>
