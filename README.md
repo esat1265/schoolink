@@ -1,6 +1,6 @@
 # SCHOOLINK
 ## Make communication easier, increase success !
-Schoolink is an education platform which allows communicate between parents and teachers easily and quickly. It helps teachers and parents to follow students performans.
+Schoolink is an education platform which allows communicate between parents and teachers easily and quickly. It helps teachers and parents to simplify communication, make tracking progress easier, manage schedules and assignments smoothly, creating a more efficient learning environment.
 
 ## Specification
 Built on Ruby on Rails v7.1.0, Ruby v2.7.0, HTML5, CSS3 and JavaScript ES6. Deployed on a _Heroku_ Hobby instance.
